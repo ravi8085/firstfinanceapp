@@ -46,3 +46,34 @@
 .landing-calculator-heading h2,.landing-access-copy h2,.landing-access-copy p{font-family:'Segoe UI',sans-serif!important}
 @media(max-width:700px){.landing-journey{max-width:100%}.landing-hero-inner>.signin-card{padding:20px}.landing-intro>p{font-size:14px}}
 
+/* Editorial landing page: a cinematic opening and overlapping finance previews. */
+.welcome-shell{max-width:none;background:#f7f7f4;color:#172820;overflow:hidden}
+.landing-hero{min-height:560px;background-color:#071322;background-size:cover;background-position:center 52%;color:#fff;position:relative}
+.landing-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(3,11,18,.48));pointer-events:none}
+.welcome-header{height:76px;max-width:1480px;margin:auto;position:relative;z-index:2;border-bottom:1px solid rgba(255,255,255,.22)}
+.welcome-header .cf-brand,.welcome-header .cf-brand small,.landing-nav a{color:#fff}
+.welcome-header .cf-logo{background:#fff;color:#173c30;box-shadow:none}
+.landing-nav{margin:auto;gap:30px}.landing-nav a{font-size:13px;letter-spacing:.01em;opacity:.9}.landing-nav a:hover{opacity:1}
+.landing-signin-link{background:#fff!important;color:#14291f!important;border-color:#fff!important;border-radius:5px;padding:10px 22px;font-size:13px}
+.landing-hero-inner{position:relative;z-index:1;display:block;max-width:1180px;text-align:center;padding:96px 24px 165px}
+.landing-intro h1,.landing-intro h1 em{color:#fff;font-size:clamp(50px,6.5vw,96px);line-height:.99;letter-spacing:-.055em;font-weight:700}
+.landing-intro h1{margin:0 auto 22px}.landing-intro h1 em{font-style:normal}
+.landing-intro>p{color:#e9efea;font-size:clamp(16px,1.5vw,19px);line-height:1.5;max-width:650px;margin:0 auto 25px}
+.landing-start{background:#fff!important;color:#14291f!important;border:1px solid #fff!important;border-radius:5px;min-height:48px;padding:12px 22px;font-size:15px;gap:20px}
+.landing-start:hover,.landing-signin-link:hover{background:#d9f3d7!important}
+.landing-showcase{position:relative;z-index:3;display:grid;grid-template-columns:minmax(0,1fr) minmax(340px,.88fr);gap:22px;align-items:start;max-width:1210px;margin:-115px auto 0;padding:0 24px}
+.landing-example{margin:0;width:100%;scroll-margin-top:85px;background:#fff;border:1px solid #dfe5dc;border-radius:14px;padding:17px;box-shadow:0 23px 55px #081c1b21}
+.landing-income-visual img{display:block;width:100%;max-height:360px;object-fit:contain;object-position:top}
+.landing-income-visual figcaption{font-size:12px;max-width:none;color:#5d6b65;margin-top:7px}
+.landing-showcase>.signin-card{margin:0;width:100%;max-width:none;padding:26px 30px;border-radius:14px;box-shadow:0 23px 55px #081c1b21;scroll-margin-top:85px}
+.landing-showcase .signin-card h2{font-size:29px;letter-spacing:-.03em;margin:5px 0 6px}
+.landing-showcase .signin-card>p{font-size:14px;margin:0 0 16px}
+.landing-showcase .signin-card label{font-size:13px}.landing-showcase .signin-card .cf-button{font-size:14px;min-height:42px}
+.landing-showcase .signin-card .cf-input{font-size:14px;min-height:42px}.landing-showcase .signin-card .mobile-field input{font-size:14px}
+.landing-access{max-width:1210px;padding:0 24px;margin:48px auto 0}.landing-access-copy{border:0;padding:0}.landing-access-copy h2{font-size:clamp(25px,2.5vw,36px);letter-spacing:-.04em;margin-bottom:7px}.landing-access-copy p{font-size:16px;line-height:1.5;max-width:830px}
+.landing-calculator{max-width:1162px;margin:25px auto 42px;background:#fff;border-radius:14px;box-shadow:none}
+.landing-journey{max-width:1210px;padding:0 24px;margin:0 auto 45px}.landing-journey-heading{margin-bottom:18px}.landing-journey-heading h2{font-size:clamp(23px,2.4vw,32px);letter-spacing:-.04em}.landing-journey-heading p{font-size:15px}.landing-journey img{border-radius:14px;background:#fff}
+.welcome-shell .cf-footer{max-width:1210px;margin:auto}
+@media(max-width:800px){.landing-hero{min-height:480px}.landing-hero-inner{padding:82px 22px 160px}.landing-showcase{grid-template-columns:1fr;max-width:620px;margin-top:-90px}.landing-income-visual img{max-height:none}.landing-access{max-width:620px;margin-top:36px}.landing-calculator{margin-left:24px;margin-right:24px}.landing-journey{margin-left:auto;margin-right:auto}}
+@media(max-width:600px){.welcome-header{height:66px;padding:0 18px}.landing-nav{display:none}.landing-signin-link{margin-left:auto}.landing-hero{min-height:420px;background-position:62% center}.landing-hero-inner{padding:84px 22px 140px}.landing-intro h1,.landing-intro h1 em{font-size:clamp(43px,11vw,64px)}.landing-intro>p{font-size:15px}.landing-showcase{padding:0 16px;gap:18px;margin-top:-70px}.landing-example{padding:10px}.landing-showcase>.signin-card{padding:22px}.landing-access{padding:0 18px}.landing-access-copy h2{font-size:27px}.landing-access-copy p{font-size:15px}.landing-calculator{margin:22px 18px 34px}.landing-journey{padding:0 18px}.landing-journey-heading h2{font-size:25px}}
+
