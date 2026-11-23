@@ -15,6 +15,7 @@ import { PlannerSessionProvider } from '@/components/calculator/PlannerSession';
 import FinanceGuide from './components/calculator/FinanceGuide';
 import FixedDepositsPage from './pages/FixedDepositsPage';
 import TermInsurancePage from './pages/TermInsurancePage';
+import SipCalculatorPage from './pages/SipCalculatorPage';
 
 const queryClient = new QueryClient();
 
@@ -24,6 +25,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <Routes><Route path="/sip-calculator" element={<SipCalculatorPage />} /><Route path="/*" element={
         <AuthProvider>
         <PlannerSessionProvider>
         <Navbar />
@@ -40,6 +42,7 @@ const App = () => (
         <FinanceGuide />
         </PlannerSessionProvider>
         </AuthProvider>
+        } /></Routes>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
