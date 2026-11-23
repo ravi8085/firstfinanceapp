@@ -1,0 +1,48 @@
+import { Toaster } from "@/components/ui/toaster";
+import { Toaster as Sonner } from "@/components/ui/sonner";
+import { TooltipProvider } from "@/components/ui/tooltip";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Navbar from "@/components/Navbar";
+import HomePage from "./pages/HomePage";
+import CalculatorPage from "./pages/CalculatorPage";
+import InvestmentsPage from "./pages/InvestmentsPage";
+import ExpensesPage from "./pages/ExpensesPage";
+import MutualFundsPage from "./pages/MutualFundsPage";
+import NotFound from "./pages/NotFound";
+import AuthProvider from "@/components/auth/AuthProvider";
+import { PlannerSessionProvider } from '@/components/calculator/PlannerSession';
+import FinanceGuide from './components/calculator/FinanceGuide';
+import FixedDepositsPage from './pages/FixedDepositsPage';
+import TermInsurancePage from './pages/TermInsurancePage';
+
+const queryClient = new QueryClient();
+
+const App = () => (
+  <QueryClientProvider client={queryClient}>
+    <TooltipProvider>
+      <Toaster />
+      <Sonner />
+      <BrowserRouter>
+        <AuthProvider>
+        <PlannerSessionProvider>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/calculator" element={<CalculatorPage />} />
+          <Route path="/investments" element={<InvestmentsPage />} />
+          <Route path="/mutual-funds" element={<MutualFundsPage />} />
+          <Route path="/expenses" element={<ExpensesPage />} />
+          <Route path="/fixed-deposits" element={<FixedDepositsPage />} />
+          <Route path="/term-insurance" element={<TermInsurancePage />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+        <FinanceGuide />
+        </PlannerSessionProvider>
+        </AuthProvider>
+      </BrowserRouter>
+    </TooltipProvider>
+  </QueryClientProvider>
+);
+
+export default App;
