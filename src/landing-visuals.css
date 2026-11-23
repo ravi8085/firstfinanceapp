@@ -77,3 +77,14 @@
 @media(max-width:800px){.landing-hero{min-height:480px}.landing-hero-inner{padding:82px 22px 160px}.landing-showcase{grid-template-columns:1fr;max-width:620px;margin-top:-90px}.landing-income-visual img{max-height:none}.landing-access{max-width:620px;margin-top:36px}.landing-calculator{margin-left:24px;margin-right:24px}.landing-journey{margin-left:auto;margin-right:auto}}
 @media(max-width:600px){.welcome-header{height:66px;padding:0 18px}.landing-nav{display:none}.landing-signin-link{margin-left:auto}.landing-hero{min-height:420px;background-position:62% center}.landing-hero-inner{padding:84px 22px 140px}.landing-intro h1,.landing-intro h1 em{font-size:clamp(43px,11vw,64px)}.landing-intro>p{font-size:15px}.landing-showcase{padding:0 16px;gap:18px;margin-top:-70px}.landing-example{padding:10px}.landing-showcase>.signin-card{padding:22px}.landing-access{padding:0 18px}.landing-access-copy h2{font-size:27px}.landing-access-copy p{font-size:15px}.landing-calculator{margin:22px 18px 34px}.landing-journey{padding:0 18px}.landing-journey-heading h2{font-size:25px}}
 
+/* Keep the brand and navigation legible above the dark hero artwork. */
+.welcome-shell .welcome-header{max-width:none;height:86px;background:#fff;border-bottom:1px solid #e3e7e3;box-shadow:none;backdrop-filter:none}
+.welcome-shell .welcome-header .cf-brand{color:#111b17;font-size:31px;line-height:1;font-weight:800;letter-spacing:-1.4px}
+.welcome-shell .welcome-header .cf-brand small{color:#263a30;font-size:11px;font-weight:700;letter-spacing:2.2px;margin-top:5px}
+.welcome-shell .welcome-header .cf-logo{width:50px;height:50px;font-size:32px;background:#183e2c;color:#fff;border-radius:13px}
+.welcome-shell .landing-nav a{color:#172820;font-size:15px;font-weight:650;opacity:1}
+.welcome-shell .landing-nav a:hover{color:#285c44}
+.welcome-shell .landing-signin-link{background:#183e2c!important;border-color:#183e2c!important;color:#fff!important;font-size:15px;font-weight:700;padding:11px 24px}
+.welcome-shell .landing-signin-link:hover{background:#285c44!important}
+@media(max-width:600px){.welcome-shell .welcome-header{height:76px}.welcome-shell .welcome-header .cf-brand{font-size:25px}.welcome-shell .welcome-header .cf-brand small{font-size:8px;letter-spacing:1.6px}.welcome-shell .welcome-header .cf-logo{width:42px;height:42px;font-size:28px}.welcome-shell .landing-signin-link{font-size:13px;padding:9px 14px}}
+
