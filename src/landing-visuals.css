@@ -29,9 +29,9 @@
 @media(max-width:900px){.landing-calculator{margin-left:22px;margin-right:22px}.landing-calculator-body{grid-template-columns:1fr;gap:15px}}
 @media(max-width:600px){.landing-calculator{margin:18px 18px 24px;padding:18px}.landing-calculator-heading{align-items:start;flex-direction:column}.landing-calculator-fields{grid-template-columns:1fr 1fr}.landing-calculator-fields label:first-child{grid-column:1/-1}.landing-calculator-result dl{gap:10px}.landing-calculator-result dd{font-size:14px}}
 
-/* Hero balance: 35% example, 55% sign-in, 10% breathing room. */
+/* Hero balance: 40% example, 50% sign-in, 10% breathing room. */
 @media(min-width:901px){
-  .landing-hero-inner{grid-template-columns:minmax(0,35fr) minmax(0,55fr);column-gap:10%;justify-content:space-between}
+  .landing-hero-inner{grid-template-columns:minmax(0,40fr) minmax(0,50fr);column-gap:10%;justify-content:space-between}
   .landing-hero-inner>.signin-card{padding:26px 32px}
   .landing-intro h1{font-size:clamp(34px,3vw,42px)}
   .landing-intro>p{font-size:15px;line-height:1.55}
@@ -43,5 +43,6 @@
 .landing-hero-inner .signin-card h2{font-size:25px}.landing-hero-inner .signin-card>p{font-size:14px}
 .landing-hero-inner .signin-card label{font-size:13px}.landing-hero-inner .signin-card .cf-button{font-size:14px}.landing-hero-inner .signin-card .cf-input,.landing-hero-inner .signin-card .mobile-field input{font-size:14px}
 .landing-calculator-heading h2{font-size:clamp(22px,2vw,27px)}.landing-calculator-heading p{font-size:14px}.landing-calculator-fields label{font-size:13px}.landing-calculator-note{font-size:12px}
+.landing-calculator-heading h2,.landing-access-copy h2,.landing-access-copy p{font-family:'Segoe UI',sans-serif!important}
 @media(max-width:700px){.landing-journey{max-width:100%}.landing-hero-inner>.signin-card{padding:20px}.landing-intro>p{font-size:14px}}
 
