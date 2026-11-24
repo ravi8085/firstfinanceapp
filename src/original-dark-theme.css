@@ -153,6 +153,7 @@ button,input,select,textarea{font-family:var(--font-body)}
 .term-quote-result,.goal-success{background:#173831;color:#77dbb9;border-color:#2a5f53}
 .term-questionnaire .term-choice-grid button:hover,.term-questionnaire .term-choice-grid button[aria-pressed=true]{background:#203e51;border-color:#4f9cc1}
 .city-guide-table .city-row-selected,.allocation-row.highlighted{background:#20324b}
+.city-guide-table tbody th button,.city-guide-table tbody th button:hover,.city-guide-table tbody th button:focus-visible{color:#f8c525}
 .calc-selector button{background:#202c41;border-color:#364861;color:#f4f6fa}
 .calc-selector button[aria-pressed=true]{background:#2867c8;border-color:#3774d3;box-shadow:inset 4px 0 #f8c525,0 3px 0 #163c83}
 .calc-page,.sip-page{background:#0b0f19;color:#f3f5f8}
