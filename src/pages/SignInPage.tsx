@@ -1,16 +1,7 @@
 import { useEffect, useState, type FormEvent } from 'react';
-import { ShieldCheck, ArrowRight, BriefcaseBusiness, ReceiptText, TrendingUp, Target, RefreshCw, Home, Calculator, ChartNoAxesCombined, MapPin, BarChart3 } from 'lucide-react';
+import { ShieldCheck, ArrowRight, TrendingUp, Home, Calculator, ChartNoAxesCombined, MapPin, BarChart3 } from 'lucide-react';
 import { authClient } from '@/lib/auth';
 import financeHero from '@/assets/finance-hero.jpg';
-
-const journeySteps = [
-  { title: 'Understand', description: 'Income, family & expenses', icon: BriefcaseBusiness },
-  { title: 'Organise', description: 'Budget & debt payments', icon: ReceiptText },
-  { title: 'Protect', description: 'Emergency fund & insurance', icon: ShieldCheck },
-  { title: 'Invest', description: 'Goals, time & risk', icon: TrendingUp },
-  { title: 'Plan ahead', description: 'Home, education & retirement', icon: Target },
-  { title: 'Review', description: 'Adjust as life changes', icon: RefreshCw },
-];
 
 export default function SignInPage({ onDemo, initialError = '' }: { onDemo?: () => void; initialError?: string }) {
   const [phone, setPhone] = useState('');
@@ -98,11 +89,6 @@ export default function SignInPage({ onDemo, initialError = '' }: { onDemo?: () 
     : <form onSubmit={verify}><label htmlFor="code">Code sent to {sentPhone.slice(0, 3)} ••••••{sentPhone.slice(-4)}</label><input id="code" className="cf-input otp-input" type="text" inputMode="numeric" autoComplete="one-time-code" pattern="[0-9]{6}" maxLength={6} value={otp} onChange={e => setOtp(e.target.value.replace(/\D/g, ''))} required autoFocus /><button className="cf-button cf-primary" disabled={busy}>{busy ? 'Verifying…' : 'Verify and continue'}</button><div className="signin-links"><button type="button" disabled={busy} onClick={() => { setSentPhone(''); setOtp(''); setMessage(''); }}>Change number</button><button type="button" disabled={busy || cooldown > 0} onClick={() => sendCode()}>{cooldown ? `Resend in ${cooldown}s` : 'Resend code'}</button></div></form>}
     {message && <p className="signin-message" role="status">{message}</p>}<div className="signin-privacy"><ShieldCheck size={18} /><p>Your financial details stay yours.<small>We never ask for your bank password or payment PIN.</small></p></div>{onDemo && <div className="demo-entry"><span>Want to see how it works?</span><button onClick={onDemo}>Explore the interactive demo</button><small>Demo only · no account created</small></div>}</section>
       </div>
-      <div className="landing-access">
-        <div className="landing-access-copy">
-          <h2>Start with what you know.</h2>
-          <p>Tell us about your income and expenses in your own words, or enter them in a simple form. Review your details before you build your plan.</p>
-        </div>
-</div><section id="planning-journey" className="landing-journey" aria-labelledby="journey-title"><div className="landing-journey-heading"><div><div className="cf-eyebrow">THE BIG PICTURE</div><h2 id="journey-title">From your first input to your future goals.</h2><p>See how your income, protection, investments and life goals fit together.</p></div><a className="cf-button cf-secondary" href="#customer-signin">Build my plan</a></div><div className="journey-scene"><div className="journey-scene-heading"><span>YOUR FINANCIAL PLANNING JOURNEY</span><strong>Clarity today. A plan that grows with you.</strong></div><ol className="journey-workflow">{journeySteps.map((step, index) => { const Icon = step.icon; return <li className="journey-step" key={step.title}><div className="journey-step-number">{String(index + 1).padStart(2, '0')}</div><div className="journey-icon"><Icon size={31} strokeWidth={1.8} aria-hidden="true" /></div><h3>{step.title}</h3><p>{step.description}</p></li>; })}</ol></div><p className="landing-journey-note">Start with your voice or a form. Review your details, explore the illustrations, and update your plan as your circumstances change.</p></section></main><footer className="cf-footer"><span>© {new Date().getFullYear()} Chanakya Finance Solutions</span><span>Clarity today. Confidence tomorrow.</span></footer>
+    </main><footer className="cf-footer"><span>© {new Date().getFullYear()} Chanakya Finance Solutions</span><span>Clarity today. Confidence tomorrow.</span></footer>
   </div>;
 }
