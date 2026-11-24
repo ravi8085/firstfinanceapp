@@ -75,3 +75,45 @@ body,button,input,select,textarea{font-family:var(--font-body)}
 @media(max-width:1250px){.welcome-shell .welcome-header .cf-brand{font-size:22px}.welcome-shell .landing-nav a{font-size:13px;padding:10px 9px;gap:5px}.welcome-shell .landing-nav a svg{width:16px}.welcome-shell .landing-signin-link{font-size:12px;padding:10px 13px}}
 @media(max-width:850px){.welcome-shell .welcome-header{padding:0 18px}.welcome-shell .landing-nav a:not(.landing-nav-home):not([href="/calculators"]){display:none}.welcome-shell .landing-hero-inner{padding:95px 22px 130px;min-height:545px}.welcome-shell .landing-intro h1,.welcome-shell .landing-intro h1 em{font-size:clamp(49px,8vw,70px)}}
 @media(max-width:600px){.welcome-shell .welcome-header{height:70px;gap:8px}.welcome-shell .welcome-header .cf-brand{font-size:18px;gap:8px}.welcome-shell .welcome-header .cf-logo{width:37px;height:37px;border-radius:10px}.welcome-shell .welcome-header .cf-logo svg{width:18px}.welcome-shell .landing-nav{display:flex;margin-left:auto}.welcome-shell .landing-nav a.landing-nav-home{display:none}.welcome-shell .landing-nav a[href="/calculators"]{display:inline-flex;padding:7px;font-size:11px}.welcome-shell .landing-nav a[href="/calculators"] svg{display:none}.welcome-shell .landing-signin-link{margin-left:0;font-size:11px;padding:8px 10px}.welcome-shell .landing-hero{min-height:560px;background-position:62% center}.welcome-shell .landing-hero-inner{padding:75px 18px 135px}.landing-hero-badge{font-size:11px;margin-bottom:25px;padding:7px 11px}.landing-hero-badge svg{flex-shrink:0}.welcome-shell .landing-intro h1,.welcome-shell .landing-intro h1 em{font-size:clamp(43px,10vw,60px)}.welcome-shell .landing-intro>p{font-size:17px;line-height:1.5;margin-bottom:26px}.landing-hero-actions{gap:10px}.welcome-shell .landing-start,.welcome-shell .landing-explore{min-height:48px;min-width:0;padding:10px 14px;font-size:13px;border-radius:10px}}
+/* Shared landing-style chrome and accents on every app page. */
+body{background:#f7f8fb;background-image:none;color:#17202e}
+.site-header.app-header,.public-site-header{height:82px;max-width:none;padding:0 28px;background:#11151d;border-bottom:1px solid #242a35;box-shadow:none;backdrop-filter:none;display:flex;align-items:center;gap:24px;position:sticky;top:0;z-index:40}
+.site-header .cf-brand,.public-site-brand{display:inline-flex;align-items:center;gap:12px;flex-shrink:0;color:#f5f5f7;font-family:var(--font-display);font-size:25px;font-weight:750;letter-spacing:-.04em;text-decoration:none;white-space:nowrap}
+.site-header .cf-logo,.public-site-brand>span{display:grid;place-items:center;flex-shrink:0;width:48px;height:48px;border:0;border-radius:15px;background:linear-gradient(145deg,#42bf9b,#28a986);color:#07171c;box-shadow:none}
+.site-header .app-links,.public-site-header nav{display:flex;align-items:center;justify-content:flex-end;gap:4px;flex:1;min-width:0;margin:0}
+.site-header .app-links a,.public-site-header nav a{display:inline-flex;align-items:center;gap:7px;padding:11px 12px;border-radius:12px;color:#9aa2b2;font-size:14px;font-weight:550;text-decoration:none;white-space:nowrap}
+.site-header .app-links a:hover,.public-site-header nav a:hover{background:#252b38;color:#fff}
+.site-header .app-links a.active,.public-site-header nav a.public-site-active{background:#2867c8;color:#fff;box-shadow:0 0 0 2px #f5f5f7,0 0 0 5px #11151d}
+.site-header .account-actions{gap:7px;flex-shrink:0}.site-header .account-actions button{color:#fff}.site-header .account-actions button:hover{color:#ffc31a;background:#252b38}
+.public-site-signin{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:9px 18px;border-radius:10px;background:#f9c422;color:#101521;font-size:14px;font-weight:750;text-decoration:none;white-space:nowrap}
+.public-site-signin:hover{background:#ffda4d}
+.site-header .cf-badge{background:#283346;border-color:#526174;color:#fff}
+.site-header .menu-toggle{color:#fff}
+.overview-page,.planner-page,.calc-main,.sip-main{color:#17202e}
+.overview-heading .cf-eyebrow,.planner-heading .cf-eyebrow,.calc-heading>span,.sip-heading>span{color:#a37300;font-weight:800}
+.overview-heading h1,.planner-heading h1,.calc-heading h1,.sip-heading h1{color:#11151d;font-family:var(--font-display);font-weight:800;letter-spacing:-.045em}
+.start-panel,.planner-card,.calc-form,.sip-input-card,.sip-timeline,.calc-preview{background:#fff;border-color:#e2e5ea;box-shadow:0 12px 35px #11151d0b}
+.start-option,.explore-grid>a{background:#fff;border-color:#e2e5ea}
+.start-option:hover,.explore-grid>a:hover{border-color:#dba900;box-shadow:0 14px 28px #11151d14}
+.start-option b,.cf-text-button,.demo-entry button{color:#b28400}
+.option-icon,.section-icon{background:#fff6d7;color:#8a6500;border-color:#f1e2a8}
+.plan-preview,.result-hero,.calc-results,.sip-result-card,.landing-calculator-result{background:radial-gradient(circle at 100% 0%,#263652,transparent 53%),linear-gradient(135deg,#11151d,#17243b);border-color:#293449;color:#fff}
+.plan-preview>svg,.result-hero strong{color:#ffc31a}
+.planner-steps .current,.plan-tabs button[data-state='active']{color:#9c7200}
+.planner-steps .current>span,.planner-steps .complete>span{background:#f9c422;border-color:#f9c422;color:#101521}
+.input-choice.selected{background:#fff9e7;border-color:#e9c459}.input-choice.selected>svg{color:#a37300}
+.cf-button.cf-primary{background:#f9c422!important;border-color:#f9c422!important;color:#101521!important;box-shadow:0 5px 14px #11151d18}
+.cf-button.cf-primary:hover:not(:disabled){background:#ffda4d!important;border-color:#ffda4d!important}
+.cf-button.cf-secondary{background:#fff6d7;color:#6e5200;border-color:#eedc9b}
+.cf-button.cf-secondary:hover:not(:disabled){background:#fff0bd}
+.calc-selector button{background:#242d3e;border-color:#303a4b;box-shadow:0 3px 0 #11151d;color:#fff}
+.calc-selector button:hover{background:#35415a}.calc-selector button[aria-pressed=true]{background:#2867c8;border-color:#1b54ab;box-shadow:inset 4px 0 #ffc31a,0 3px 0 #133c80}
+.calc-preview-heading span,.sip-card-heading>span,.sip-timeline-heading span{color:#a37300}
+.calc-pension{background:#ffffff1a}.calc-results>span,.calc-result-row span,.calc-pension span,.sip-result-card>p,.sip-figures span{color:#c6cfde}
+.calc-result-bar,.sip-split{background:#f9c422}.calc-result-bar i,.sip-split span:first-child{background:#4479c6}.sip-split span:last-child{background:#f9c422}
+.sip-input-card input[type=range]{accent-color:#2867c8}.sip-input-card label strong{color:#1d54a6}
+.sip-table-wrap th{background:#f4f6fa;color:#243a5e}.sip-bar{background:#f9c422}.sip-bar span{background:#4479c6}
+.landing-frequency button[aria-pressed=true]{background:#2867c8}.landing-return-bar i:first-child{background:#4479c6}.landing-return-bar i:last-child{background:#f9c422}
+@media(max-width:1450px){.site-header .app-links{display:none}.site-header .menu-toggle{display:inline-flex}.site-header .app-links.open{display:flex;position:absolute;top:82px;left:0;right:0;max-height:calc(100vh - 82px);overflow:auto;flex-direction:column;align-items:stretch;padding:16px 24px;background:#11151d;border-bottom:1px solid #303849;box-shadow:0 20px 30px #11151d33}.site-header .app-links.open a{font-size:15px;padding:12px 14px}.site-header .account-actions{margin-left:auto}}
+@media(max-width:1100px){.public-site-header{gap:12px;padding:0 18px}.public-site-brand{font-size:20px}.public-site-header nav a{font-size:12px;padding:9px 7px;gap:4px}.public-site-header nav svg{width:15px}}
+@media(max-width:750px){.public-site-header{height:auto;min-height:66px;flex-wrap:wrap;padding:10px 16px;gap:8px}.public-site-brand{font-size:18px}.public-site-brand>span{width:38px;height:38px}.public-site-signin{margin-left:auto;font-size:12px;min-height:36px;padding:7px 12px}.public-site-header nav{order:3;flex-basis:100%;justify-content:flex-start;overflow-x:auto;padding:4px 0 8px}.public-site-header nav a{font-size:12px}.site-header.app-header{height:70px;padding:0 16px}.site-header .cf-brand{font-size:18px}.site-header .cf-logo{width:38px;height:38px}.site-header .app-links.open{top:70px;max-height:calc(100vh - 70px)}}

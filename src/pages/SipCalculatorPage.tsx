@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react';
-import { ArrowLeft, ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import { calculateSip } from '@/lib/sip';
+import PublicHeader from '@/components/PublicHeader';
 import './sip-calculator.css';
 
 const money = (value: number) => new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 }).format(value);
@@ -15,7 +16,7 @@ export default function SipCalculatorPage({ embedded = false }: { embedded?: boo
   const maxValue = result.value || 1;
 
   return <div className={embedded ? 'sip-page sip-embedded' : 'sip-page'}>
-    {!embedded && <header className="sip-header"><a href="/" className="sip-brand"><span>च</span><b>chanakya<small>FINANCE, SIMPLIFIED</small></b></a><nav className="sip-nav"><a className="sip-back" href="/calculators">All calculators</a><a className="sip-back" href="/"><ArrowLeft size={17} /> Back to Chanakya</a></nav></header>}
+    {!embedded && <PublicHeader />}
     <main className="sip-main">
       {!embedded && <div className="sip-heading"><span>SYSTEMATIC INVESTMENT PLANNER</span><h1>SIP calculator</h1><p>Explore how regular monthly investing could grow over time. Change the assumptions to see your own scenario.</p></div>}
       <div className="sip-grid">

@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import type { ReactNode } from 'react';
-import { ArrowLeft, Landmark, TrendingUp, PiggyBank, ChartNoAxesCombined } from 'lucide-react';
+import { Landmark, TrendingUp, PiggyBank, ChartNoAxesCombined } from 'lucide-react';
 import LandingInvestmentCalculator from '@/components/home/LandingInvestmentCalculator';
+import PublicHeader from '@/components/PublicHeader';
 import SipCalculatorPage from './SipCalculatorPage';
 import { calculateFd, calculateNps } from '@/lib/standaloneCalculators';
 import './calculators.css';
@@ -16,7 +17,7 @@ const tools = [
 
 function Shell({ title, eyebrow, description, children, embedded = false }: { title: string; eyebrow: string; description: string; children: ReactNode; embedded?: boolean }) {
   if (embedded) return <>{children}</>;
-  return <div className="calc-page"><header className="calc-header"><a className="calc-brand" href="/"><span>च</span><b>chanakya<small>FINANCE, SIMPLIFIED</small></b></a><nav><a href="/calculators">All calculators</a><a href="/"><ArrowLeft size={16}/> Back to Chanakya</a></nav></header><main className="calc-main"><div className="calc-heading"><span>{eyebrow}</span><h1>{title}</h1><p>{description}</p></div>{children}</main></div>;
+  return <div className="calc-page"><PublicHeader /><main className="calc-main"><div className="calc-heading"><span>{eyebrow}</span><h1>{title}</h1><p>{description}</p></div>{children}</main></div>;
 }
 
 export default function CalculatorsPage() {
