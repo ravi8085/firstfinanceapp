@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+/* Visual system from the supplied original project. */
+:root,.dark{
+  color-scheme:dark;
+  --background:222 30% 6%;--foreground:0 0% 95%;
+  --card:222 25% 10%;--card-foreground:0 0% 95%;
+  --popover:222 25% 10%;--popover-foreground:0 0% 95%;
+  --primary:217 70% 50%;--primary-foreground:0 0% 100%;
+  --secondary:45 90% 55%;--secondary-foreground:222 30% 6%;
+  --muted:222 20% 15%;--muted-foreground:220 10% 67%;
+  --accent:217 60% 30%;--accent-foreground:0 0% 95%;
+  --border:222 20% 20%;--input:222 20% 20%;--ring:217 70% 50%;
+  --emerald:160 50% 45%;--emerald-light:160 40% 15%;
+  --navy:222 30% 6%;--navy-light:217 60% 30%;
+  --amber:45 90% 55%;--amber-light:45 70% 15%;
+  --sky:200 80% 55%;--sky-light:200 60% 15%;
+  --rose:350 70% 55%;--rose-light:350 50% 15%;
+  --font-display:'Space Grotesk',sans-serif;
+  --font-body:'DM Sans',sans-serif;
+  --gradient-hero:linear-gradient(135deg,#090d16,#142a51 65%,#101827);
+  --gradient-card:linear-gradient(135deg,#192131,#121a29);
+  --gradient-emerald:linear-gradient(135deg,#33b994,#55d1ad);
+  --shadow-card:0 1px 3px #0003,0 4px 12px #0002;
+  --shadow-card-hover:0 4px 12px #246bd626,0 8px 24px #0003;
+  --shadow-hero:0 8px 32px #246bd640;
+}
+body{background:#0b0f19;background-image:none;color:#f3f5f8;font-family:var(--font-body)}
+h1,h2,h3,h4,h5,h6,.cf-brand{font-family:var(--font-display)}
+button,input,select,textarea{font-family:var(--font-body)}
+::selection{background:#f8c525;color:#0b0f19}
+:focus-visible{outline-color:#f8c525}
+
+/* Common navigation and page structure. */
+.site-header.app-header,.public-site-header,.welcome-shell .welcome-header{background:#11151d;border-color:#303746}
+.site-header .cf-brand,.public-site-brand,.welcome-shell .welcome-header .cf-brand{color:#f5f5f7}
+.site-header .cf-logo,.public-site-brand>span,.welcome-shell .welcome-header .cf-logo{background:linear-gradient(135deg,#35b994,#4bcea8);color:#08131a}
+.site-header .app-links a,.public-site-header nav a,.welcome-shell .landing-nav a{color:#a1a9b9}
+.site-header .app-links a.active,.public-site-header nav a.public-site-active,.welcome-shell .landing-nav a.landing-nav-home{background:#2867c8;color:#fff}
+.site-header .account-actions button,.site-header .menu-toggle{color:#e7ebf3}
+.site-header .app-links.open{background:#11151d;border-color:#303746}
+.public-site-signin,.welcome-shell .landing-signin-link{background:#f8c525!important;border-color:#f8c525!important;color:#101521!important}
+.cf-button.cf-primary{background:#f8c525!important;border-color:#f8c525!important;color:#101521!important;box-shadow:0 8px 32px #246bd625}
+.cf-button.cf-primary:hover:not(:disabled){background:#ffdc51!important;border-color:#ffdc51!important}
+.cf-button.cf-secondary{background:#222c40;color:#e8edf6;border-color:#3b4760}
+.cf-button.cf-secondary:hover:not(:disabled){background:#2d3a53}
+.cf-eyebrow,.overview-heading .cf-eyebrow,.planner-heading .cf-eyebrow,.calc-heading>span,.sip-heading>span{color:#f8c525}
+.cf-help,.cf-footnote,.cf-footer,.overview-heading p,.planner-heading p{color:#a5afc1}
+.cf-footer{background:#0d121e;border-color:#303746}
+.cf-badge{background:#193a38;color:#73dbbd;border-color:#2b6058}
+.overview-page,.planner-page,.term-insurance-page,.city-guide-page,.calc-page,.sip-page{color:#f3f5f8;background:transparent}
+.overview-heading h1,.planner-heading h1,.compact-planner-header h1,.city-guide-heading h1,.calc-heading h1,.sip-heading h1{color:#f5f5f7}
+.overview-heading h1,.planner-heading h1,.calc-heading h1,.sip-heading h1{font-family:var(--font-display)}
+
+/* Landing hero, stats, and account entry. */
+.welcome-shell,.welcome-shell *,.welcome-shell *::before,.welcome-shell *::after{font-family:var(--font-body)!important}
+.welcome-shell h1,.welcome-shell h2,.welcome-shell h3,.welcome-shell .cf-brand{font-family:var(--font-display)!important}
+.welcome-shell{max-width:none;background:#0b0f19;color:#f3f5f8}
+.welcome-shell .landing-hero{min-height:730px;background-color:#090d16;background-size:cover;background-position:center}
+.welcome-shell .landing-hero::after{background:linear-gradient(90deg,#090d16c9,#090d1666 70%,#090d1622)}
+.welcome-shell .landing-hero-inner{max-width:1180px;min-height:640px;padding:80px 24px 92px;text-align:left}
+.welcome-shell .landing-intro{max-width:720px}
+.welcome-shell .landing-intro h1,.welcome-shell .landing-intro h1 em{font-size:clamp(48px,5vw,75px);line-height:1.08;letter-spacing:-.045em}
+.welcome-shell .landing-intro h1 em{color:#f8c525}
+.welcome-shell .landing-intro>p{max-width:630px;color:#a9b3c5;font-size:clamp(17px,1.55vw,21px);line-height:1.6}
+.welcome-shell .landing-hero-badge{color:#f8c525;background:#f8c5251b;border-color:#f8c52545;font-size:13px}
+.welcome-shell .landing-start{background:#f8c525!important;border-color:#f8c525!important;color:#0d1420!important}
+.welcome-shell .landing-explore{background:#f3f5f814;color:#f3f5f8;border-color:#f3f5f844}
+.original-hero-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;max-width:1050px;margin-top:64px}
+.original-hero-stats>div{min-height:91px;padding:16px;border:1px solid #ffffff2a;border-radius:13px;background:#17202ac2;backdrop-filter:blur(12px)}
+.original-hero-stats strong{display:block;color:#f8c525;font:700 25px/1.1 var(--font-display)}
+.original-hero-stats span{display:block;margin-top:8px;color:#aeb7c7;font-size:12px;line-height:1.4}
+.landing-showcase{max-width:1180px;margin:-38px auto 0}
+.landing-example,.landing-showcase>.signin-card{background:#151c2b;border:1px solid #313b4f;box-shadow:0 23px 55px #0005}
+.landing-income-visual figcaption,.landing-income-visual details p,.signin-card>p,.signin-privacy,.signin-privacy small,.signin-divider,.demo-entry{color:#aeb7c7}
+.landing-income-visual summary,.landing-income-visual a,.demo-entry button{color:#f8c525}
+.budget-art{border-color:#354256;background:radial-gradient(circle at 80% 0%,#273f6177,transparent 42%),linear-gradient(145deg,#182338,#121b2a);box-shadow:0 9px 0 #101827,0 18px 27px #0004}
+.budget-art-header h2,.budget-art-header>strong,.budget-donut-core,.budget-breakdown-row strong,.budget-investment-header{color:#f4f6fa}
+.budget-art-header p,.budget-breakdown-row span{color:#b4c0d0}
+.budget-art-kicker{background:#f8c52524;color:#f8c525}
+.budget-donut{background:conic-gradient(#287ab5 0 50%,#38bda7 50% 60%,#f8c525 60% 100%)}
+.budget-donut::after{background:linear-gradient(145deg,#1c2940,#121d2f)}
+.budget-donut-core strong{color:#f8c525}
+.budget-breakdown-row{background:#1d2a3e;border-color:#36465d;box-shadow:0 4px 0 #101827,0 8px 12px #0003}
+.budget-breakdown-row b{color:#f8c525}
+.budget-investment-card{background:linear-gradient(145deg,#236a74,#174253)}
+.budget-investment-card.debt{background:linear-gradient(145deg,#735f32,#514324)}
+.budget-investment-card.equity{background:linear-gradient(145deg,#764368,#4b2a4a)}
+.signin-card::before{background:linear-gradient(90deg,transparent,#f8c525,#36bc9a,transparent)}
+.signin-card h2,.signin-card label{color:#f4f6fa}
+.signin-card .cf-input,.signin-card .mobile-field,.signin-card input{background:#111a29;color:#f4f6fa;border-color:#3a465a}
+.signin-card input::placeholder{color:#7f8ba0}
+.signin-card .google-button{background:#1d2a3d;color:#f4f6fa;border-color:#48556a}
+.signin-card .google-button:hover{background:#26354c}
+.signin-card .signin-privacy svg{color:#38bda7}
+
+/* Original landing content: image cards and editorial sections. */
+.original-landing-sections{background:#0b0f19;padding-bottom:70px}
+.original-section{max-width:1160px;margin:0 auto;padding:68px 24px 18px}
+.original-section-heading{text-align:center;max-width:690px;margin:0 auto 32px}
+.original-kicker{display:inline-flex;align-items:center;gap:8px;color:#f8c525;font-size:12px;font-weight:700;letter-spacing:.08em}
+.original-section h2{color:#f4f6fa;font:700 clamp(27px,3vw,39px)/1.17 var(--font-display);letter-spacing:-.035em;margin:12px 0}
+.original-section h3{color:#f4f6fa;font:600 18px/1.3 var(--font-display)}
+.original-section p{color:#aeb7c7;font-size:15px;line-height:1.65}
+.original-instrument-grid,.original-investor-grid,.original-feature-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.original-instrument-grid>a,.original-feature-grid>article,.original-investor-grid>article{min-width:0;padding:22px;border:1px solid #313b4f;border-radius:16px;background:#151c2b;box-shadow:0 4px 12px #0002;text-decoration:none;transition:transform .2s,border-color .2s}
+.original-instrument-grid>a:hover,.original-feature-grid>article:hover{transform:translateY(-4px);border-color:#f8c52577}
+.original-icon{display:grid;place-items:center;width:46px;height:46px;border-radius:12px;background:#1c4c43;color:#50d1ac;margin-bottom:21px}
+.original-instrument-grid h3,.original-feature-grid h3{margin:0 0 8px}
+.original-instrument-grid p,.original-feature-grid p{font-size:13px;margin:0}
+.original-instrument-grid b{display:inline-flex;align-items:center;gap:7px;color:#f8c525;font-size:13px;margin-top:22px}
+.original-featured{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.original-featured p{max-width:500px}
+.original-yellow-link{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:13px 20px;border-radius:12px;background:#f8c525;color:#11151d;font-weight:700;font-size:14px;text-decoration:none;margin-top:16px}
+.original-yellow-link:hover{background:#ffda4d}
+.original-fd-graphic{display:grid;align-content:center;gap:12px;min-height:250px;padding:25px;border:1px solid #313b4f;border-radius:18px;background:radial-gradient(circle at 85% 0%,#31568855,transparent 45%),#151c2b;box-shadow:0 20px 40px #0004;color:#e8edf6}
+.original-fd-graphic>span{color:#aeb7c7;font-size:13px}
+.original-fd-graphic>div{display:flex;align-items:end;gap:14px;height:125px;border-bottom:1px solid #45516a}
+.original-fd-graphic i{display:block;flex:1;max-width:70px;border-radius:8px 8px 0 0;background:linear-gradient(180deg,#f8c525,#ac7a15)}
+.original-fd-graphic i:nth-child(1){height:36%}.original-fd-graphic i:nth-child(2){height:52%}.original-fd-graphic i:nth-child(3){height:74%}.original-fd-graphic i:nth-child(4){height:96%}
+.original-fd-graphic strong{font:600 15px var(--font-display)}
+.original-investor-grid>article{padding:0;overflow:hidden}
+.original-investor-grid img{display:block;width:100%;height:155px;object-fit:cover}
+.original-investor-grid article>div{padding:16px}.original-investor-grid h3{font-size:15px;margin:0 0 5px}.original-investor-grid p{font-size:12px;margin:0}
+.original-feature-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.original-feature-grid>article{min-height:155px}
+.original-last-cta{text-align:center;margin-top:50px;padding:40px 24px 50px;border:1px solid #f8c52555;border-radius:20px;background:#151c2b}
+.original-last-cta p{margin:0 auto;max-width:530px}
+
+/* Signed-in workflows and public calculators. */
+.start-panel,.start-option,.explore-grid>a,.planner-card,.goal-result-grid>div,.goal-assumptions,.city-benchmarks,.city-guide-table,.fd-offer,.fd-other-banks,.term-comparison,.term-insurance-page>.term-comparison,.term-comparison>details,.term-plan-cards>article,.term-table-scroll,.term-questionnaire,.calc-form,.calc-preview,.sip-input-card,.sip-timeline{background:#151c2b;border-color:#313b4f;color:#f3f5f8;box-shadow:0 8px 28px #0002}
+.start-panel{background:linear-gradient(120deg,#151c2b,#18243a)}
+.start-option:hover,.explore-grid>a:hover,.input-choice:hover{background:#1d2b40;border-color:#f8c52577}
+.start-option h3,.explore-grid h3,.planner-card h2,.section-heading h2,.term-comparison-heading h4,.term-plan-title h5,.term-questionnaire h2,.fd-offer h2,.goal-description h4,.calc-form h2,.calc-preview h2,.sip-input-card h2,.sip-timeline h2{color:#f4f6fa}
+.start-option p,.explore-grid p,.planner-card>p,.start-panel>div>p,.goal-result-grid span,.goal-result-grid small,.goal-description p,.term-plan-facts p,.term-comparison .cf-help,.fd-offer p,.city-guide-heading p,.city-guide-note,.calc-heading p,.sip-heading p,.calc-preview-heading p{color:#aeb7c7}
+.start-option b,.cf-text-button,.term-plan-cards .cf-text-button,.fd-offer>a,.fd-other-banks a{color:#f8c525}
+.option-icon,.section-icon,.input-choice.selected{background:#263a3e;color:#59d2b1;border-color:#366859}
+.plan-preview,.result-hero,.calc-results,.sip-result-card,.landing-calculator-result{background:radial-gradient(circle at 100% 0%,#263e67,transparent 55%),linear-gradient(135deg,#111b2e,#121826);border-color:#364962}
+.plan-tabs,.compact-mode-switch,.term-gap,.term-results-toolbar,.term-card-overview,.goal-description{background:#1e2a3d;border-color:#36465b}
+.plan-tabs button[data-state='active'],.compact-mode-switch button[aria-pressed=true]{background:#2867c8;color:#fff}
+.planner-steps .current,.goal-result-grid strong,.goal-assumptions summary,.term-gap>strong,.fd-result-summary strong,.fd-offer-numbers strong{color:#f8c525}
+.planner-steps .current>span,.planner-steps .complete>span{background:#2867c8;border-color:#2867c8;color:#fff}
+.input-choice{background:#151c2b;border-color:#313b4f;color:#f4f6fa}
+.input-choice.selected{background:#1d3540;border-color:#59d2b1}
+.input-choice b,.input-choice small,.planner-fields label,.goal-selector-label,.term-quote-label,.fd-controls label,.term-results-toolbar label,.calc-form label,.sip-input-card label{color:#d8e0eb}
+.cf-input,.planner-fields input,.planner-fields select,.goal-selector-label input,.goal-selector-label select,.term-quote-label input,.fd-controls input,.fd-controls select,.term-results-toolbar input,.term-results-toolbar select,.calc-form input,.calc-form select,.sip-input-card input[type=number],.city-price-options select,.term-choice-grid button{background:#0f1725;border-color:#3b485c;color:#f4f6fa}
+.mobile-field,.voice-panel,.city-benchmarks,.term-card-details{background:#151f30;border-color:#3b485c}
+.safety-grid>div,.allocation-row.highlighted{background:#1c293d;border-color:#3b485c;box-shadow:none}
+.safety-grid strong,.allocation-chart-summary>strong,.allocation-category,.allocation-row-heading>strong,.term-summary-table tbody th,.term-card-overview strong,.city-price-table th,.compact-totals b{color:#f4f6fa}
+.term-summary-table,.city-price-table,.fd-table{background:#151c2b;color:#d8e0eb;border-color:#313b4f}
+.term-summary-table thead,.city-price-table thead,.fd-table thead,.sip-table-wrap th{background:#202e43;color:#f8c525}
+.term-summary-table td,.term-summary-table th,.city-price-table td,.city-price-table th,.fd-table td,.fd-table th{border-color:#313b4f}
+.term-plan-cards>article,.fd-offer{background:#151c2b}
+.term-quote-result,.goal-success{background:#173831;color:#77dbb9;border-color:#2a5f53}
+.term-questionnaire .term-choice-grid button:hover,.term-questionnaire .term-choice-grid button[aria-pressed=true]{background:#203e51;border-color:#4f9cc1}
+.city-guide-table .city-row-selected,.allocation-row.highlighted{background:#20324b}
+.calc-selector button{background:#202c41;border-color:#364861;color:#f4f6fa}
+.calc-selector button[aria-pressed=true]{background:#2867c8;border-color:#3774d3;box-shadow:inset 4px 0 #f8c525,0 3px 0 #163c83}
+.calc-page,.sip-page{background:#0b0f19;color:#f3f5f8}
+.calc-preview .sip-embedded{background:transparent}
+.sip-input-card input[type=range]{accent-color:#f8c525}
+.sip-table-wrap{border-color:#313b4f}.sip-table-wrap td{border-color:#313b4f;color:#d8e0eb}
+.calc-result-bar,.sip-split,.sip-bar{background:#f8c525}
+.calc-result-bar i,.sip-split span:first-child,.sip-bar span{background:#2867c8}
+.calc-note,.sip-disclaimer,.sip-input-help,.sip-timeline-heading p{color:#aeb7c7}
+
+@media(max-width:900px){.original-instrument-grid,.original-investor-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.welcome-shell .landing-hero{min-height:700px}}
+@media(max-width:600px){.welcome-shell .landing-hero-inner{padding:75px 18px 85px;min-height:0}.original-hero-stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin-top:40px}.original-hero-stats>div{min-height:75px;padding:11px}.original-hero-stats strong{font-size:20px}.original-hero-stats span{font-size:10px}.landing-showcase{margin-top:-25px}.original-section{padding:48px 18px 10px}.original-instrument-grid,.original-investor-grid,.original-feature-grid,.original-featured{grid-template-columns:1fr}.original-investor-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.original-last-cta{margin:45px 18px 0}.original-investor-grid img{height:110px}}
+@media(prefers-reduced-motion:reduce){.original-instrument-grid>a,.original-feature-grid>article{transition:none}.original-instrument-grid>a:hover,.original-feature-grid>article:hover{transform:none}}

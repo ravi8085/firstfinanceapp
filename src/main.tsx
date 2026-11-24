@@ -10,5 +10,6 @@ import "./city-prices.css";
 import "./landing-visuals.css";
 import "./finance-guide.css";
 import "./reference-theme.css";
+import "./original-dark-theme.css";
 
 createRoot(document.getElementById("root")!).render(<App />);

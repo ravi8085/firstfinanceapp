@@ -2,6 +2,7 @@ import { useEffect, useState, type FormEvent } from 'react';
 import { ShieldCheck, ArrowRight, TrendingUp, Home, Calculator, ChartNoAxesCombined, MapPin, BarChart3 } from 'lucide-react';
 import { authClient } from '@/lib/auth';
 import financeHero from '@/assets/finance-hero.jpg';
+import OriginalLandingSections from '@/components/home/OriginalLandingSections';
 
 export default function SignInPage({ onDemo, initialError = '' }: { onDemo?: () => void; initialError?: string }) {
   const [phone, setPhone] = useState('');
@@ -78,6 +79,7 @@ export default function SignInPage({ onDemo, initialError = '' }: { onDemo?: () 
             <p>Stop guessing. Get a clear breakdown of where every rupee should go — from FDs and mutual funds to term insurance and stocks.</p>
             <div className="landing-hero-actions"><a className="cf-button cf-primary landing-start" href="#customer-signin">Start Planning <ArrowRight size={18} aria-hidden="true" /></a><a className="cf-button landing-explore" href="/investments">Explore Investments</a></div>
           </div>
+          <div className="original-hero-stats" aria-label="What you can explore"><div><strong>2</strong><span>Ways to start: voice or form</span></div><div><strong>4</strong><span>Financial calculators</span></div><div><strong>1</strong><span>Plan built around you</span></div><div><strong>India</strong><span>Focused money planning</span></div></div>
         </div>
       </div>
       <div className="landing-showcase">
@@ -89,6 +91,7 @@ export default function SignInPage({ onDemo, initialError = '' }: { onDemo?: () 
     : <form onSubmit={verify}><label htmlFor="code">Code sent to {sentPhone.slice(0, 3)} ••••••{sentPhone.slice(-4)}</label><input id="code" className="cf-input otp-input" type="text" inputMode="numeric" autoComplete="one-time-code" pattern="[0-9]{6}" maxLength={6} value={otp} onChange={e => setOtp(e.target.value.replace(/\D/g, ''))} required autoFocus /><button className="cf-button cf-primary" disabled={busy}>{busy ? 'Verifying…' : 'Verify and continue'}</button><div className="signin-links"><button type="button" disabled={busy} onClick={() => { setSentPhone(''); setOtp(''); setMessage(''); }}>Change number</button><button type="button" disabled={busy || cooldown > 0} onClick={() => sendCode()}>{cooldown ? `Resend in ${cooldown}s` : 'Resend code'}</button></div></form>}
     {message && <p className="signin-message" role="status">{message}</p>}<div className="signin-privacy"><ShieldCheck size={18} /><p>Your financial details stay yours.<small>We never ask for your bank password or payment PIN.</small></p></div>{onDemo && <div className="demo-entry"><span>Want to see how it works?</span><button onClick={onDemo}>Explore the interactive demo</button><small>Demo only · no account created</small></div>}</section>
       </div>
+      <OriginalLandingSections />
     </main><footer className="cf-footer"><span>© {new Date().getFullYear()} Chanakya Finance Solutions</span><span>Clarity today. Confidence tomorrow.</span></footer>
   </div>;
 }
