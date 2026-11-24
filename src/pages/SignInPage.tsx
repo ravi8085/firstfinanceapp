@@ -1,5 +1,5 @@
 import { useEffect, useState, type FormEvent } from 'react';
-import { ShieldCheck, ArrowUpRight, BriefcaseBusiness, ReceiptText, TrendingUp, Target, RefreshCw } from 'lucide-react';
+import { ShieldCheck, ArrowRight, BriefcaseBusiness, ReceiptText, TrendingUp, Target, RefreshCw, Home, Calculator, ChartNoAxesCombined, MapPin, BarChart3 } from 'lucide-react';
 import { authClient } from '@/lib/auth';
 import financeHero from '@/assets/finance-hero.jpg';
 
@@ -70,19 +70,22 @@ export default function SignInPage({ onDemo, initialError = '' }: { onDemo?: () 
     <main>
       <div className="landing-hero" style={{ backgroundImage: `linear-gradient(90deg, rgba(5, 12, 25, .88), rgba(5, 12, 25, .55)), url(${financeHero})` }}>
         <header className="welcome-header">
-          <a href="/" className="cf-brand"><span className="cf-logo">च</span><span>chanakya<small>FINANCE, SIMPLIFIED</small></span></a>
+          <a href="/" className="cf-brand"><span className="cf-logo"><TrendingUp size={22} aria-hidden="true" /></span><span>Chanakya Finance</span></a>
           <nav className="landing-nav" aria-label="On this page">
-            <a href="#sample-budget">Sample budget</a>
-            <a href="#planning-journey">How it works</a>
-            <a href="/calculators" target="_blank" rel="noopener noreferrer">Calculators ↗</a>
+            <a className="landing-nav-home" href="/"><Home size={18} aria-hidden="true" />Home</a>
+            <a href="/calculators" target="_blank" rel="noopener noreferrer"><Calculator size={18} aria-hidden="true" />Calculator</a>
+            <a href="/investments"><TrendingUp size={18} aria-hidden="true" />Investments</a>
+            <a href="/mutual-funds"><ChartNoAxesCombined size={18} aria-hidden="true" />Mutual Funds</a>
+            <a href="/expenses"><MapPin size={18} aria-hidden="true" />City Expenses</a>
           </nav>
           <a className="cf-button cf-primary landing-signin-link" href="#customer-signin">Sign in</a>
         </header>
         <div className="landing-hero-inner">
           <div className="landing-intro">
-            <h1>Plan your money.<br /><em>Build your future.</em></h1>
-            <p>Start with your salary and expenses. See what you can save, how to protect your family, and what it takes to fund your goals.</p>
-            <a className="cf-button cf-primary landing-start" href="#customer-signin">Start planning <ArrowUpRight size={17} aria-hidden="true" /></a>
+            <div className="landing-hero-badge"><BarChart3 size={17} aria-hidden="true" />Chanakya Finance Solutions — Built for Indian salaried professionals</div>
+            <h1>Your salary, <em>smartly<br /> invested.</em></h1>
+            <p>Stop guessing. Get a clear breakdown of where every rupee should go — from FDs and mutual funds to term insurance and stocks.</p>
+            <div className="landing-hero-actions"><a className="cf-button cf-primary landing-start" href="#customer-signin">Start Planning <ArrowRight size={18} aria-hidden="true" /></a><a className="cf-button landing-explore" href="/investments">Explore Investments</a></div>
           </div>
         </div>
       </div>
