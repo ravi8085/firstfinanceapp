@@ -9,6 +9,6 @@ import "./compact-planner.css";
 import "./city-prices.css";
 import "./landing-visuals.css";
 import "./finance-guide.css";
-import "./navy-theme.css";
+import "./reference-theme.css";
 
 createRoot(document.getElementById("root")!).render(<App />);

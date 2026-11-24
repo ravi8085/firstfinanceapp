@@ -1,0 +1,51 @@
+/* Colours and typography from the supplied salary-guide-india-redesigned project. */
+:root{
+  --font-display:'Geist','Segoe UI',sans-serif;
+  --font-body:'Geist','Segoe UI',sans-serif;
+}
+body,button,input,select,textarea{font-family:var(--font-body)}
+.welcome-shell,.welcome-shell *,.welcome-shell *::before,.welcome-shell *::after,
+.calc-page,.calc-page *,.sip-page,.sip-page *{font-family:var(--font-body)!important}
+/* Landing illustrations added after the supplied design. */
+.welcome-shell{background:#f7f9fd;color:#172820}
+.welcome-shell .welcome-header{background:#fff;border-bottom-color:#dce6de}
+.welcome-shell .welcome-header .cf-brand{color:#172820}
+.welcome-shell .welcome-header .cf-brand small{color:#52645b}
+.welcome-shell .welcome-header .cf-logo{background:linear-gradient(145deg,#35694e,#28563f);color:#fff}
+.welcome-shell .landing-nav a{color:#304e40}.welcome-shell .landing-nav a:hover{color:#285c44}
+.welcome-shell .landing-signin-link{background:#285c44!important;border-color:#285c44!important;color:#fff!important}
+.welcome-shell .landing-signin-link:hover{background:#38664c!important}
+.landing-example,.landing-showcase>.signin-card{border-color:#dce6de}
+.budget-art{border-color:#dbe8df;background:radial-gradient(circle at 78% 12%,#e4f6e9 0,transparent 33%),linear-gradient(145deg,#fff,#f2f8f4)}
+.budget-art-kicker{background:#dff0df;color:#245b3b}
+.budget-art-header h2,.budget-art-header>strong,.budget-donut-core{color:#172820}
+.budget-donut{background:conic-gradient(#285c44 0 50%,#45a79a 50% 60%,#c8ec82 60% 100%)}
+.budget-breakdown-row b,.budget-investment-header{color:#285c44}
+.budget-investment-card{background:linear-gradient(145deg,#245944,#143b2a)}
+.budget-investment-card.debt{background:linear-gradient(145deg,#81704a,#584323)}
+.budget-investment-card.equity{background:linear-gradient(145deg,#7a4260,#4b263e)}
+.journey-scene{border-color:#d8e6db;background:radial-gradient(circle at 82% 8%,#dceede 0,transparent 29%),radial-gradient(circle at 14% 80%,#dcece7 0,transparent 31%),linear-gradient(135deg,#f4f8f3,#eaf2ec 70%,#e6efe9)}
+.journey-scene-heading span,.journey-step-number{color:#285c44}
+.journey-scene-heading strong,.journey-step h3{color:#172820}
+.journey-step{border-color:#d3e1d6;background:linear-gradient(145deg,#fff 3%,#f6faf7 77%,#e4ede7)}
+.journey-icon,.journey-step:nth-child(3) .journey-icon,.journey-step:nth-child(5) .journey-icon{background:linear-gradient(145deg,#f7fff5,#d6ebd9 58%,#a9d0b5);color:#20543b}
+/* Calculator surfaces use the supplied green, cream, and white visual language. */
+.calc-page,.sip-page{background:#f7f9fd;color:#172820}
+.calc-header,.sip-header{background:#fff;border-bottom-color:#dce6de}
+.calc-brand,.sip-brand,.calc-heading h1,.sip-heading h1{color:#172820}
+.calc-brand>span,.sip-brand>span{background:linear-gradient(145deg,#35694e,#28563f)}
+.calc-header nav a,.sip-back{color:#285c44}
+.calc-heading>span,.sip-heading>span,.calc-preview-heading span,.sip-card-heading>span,.sip-timeline-heading span{color:#35694e}
+.calc-heading p,.sip-heading p,.calc-preview-heading p{color:#52645b}
+.calc-selector button{background:#35694e;border-color:#285c44;box-shadow:0 3px 0 #1d4732}
+.calc-selector button:hover{background:#285c44}
+.calc-selector button[aria-pressed=true]{background:#173d2a;border-color:#123522;box-shadow:inset 4px 0 #a9d0b5,0 3px 0 #123522}
+.calc-preview{background:#f8faf6;border-color:#dce6de}
+.calc-form,.sip-input-card,.sip-timeline{background:#fff;border-color:#dce8de}
+.calc-form label,.sip-input-card label{color:#304e40}
+.calc-form input,.calc-form select,.sip-input-card input[type=number]{border-color:#cbded0;color:#172820}
+.calc-results,.sip-result-card{background:radial-gradient(circle at 100% 0,#347454 0,transparent 45%),linear-gradient(135deg,#173d2a,#0c291d);color:#fff}
+.calc-results>span,.calc-result-row span,.calc-pension span,.sip-result-card>p,.sip-figures span{color:#c7ddcb}
+.calc-result-bar,.sip-split{background:#c6ec82}.calc-result-bar i,.sip-split span:first-child{background:#70c0a3}.sip-split span:last-child{background:#c6ec82}
+.sip-input-card label strong{color:#205d3a}.sip-input-card input[type=range]{accent-color:#286c47}
+.sip-table-wrap th{background:#eff6f0;color:#28553d}.sip-bar{background:#c6ec82}.sip-bar span{background:#58ae8a}
