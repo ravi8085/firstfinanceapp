@@ -124,3 +124,5 @@
 @media(prefers-reduced-motion:reduce){.budget-investment-card{transition:none}.budget-investment-card:hover{transform:none}}
 .landing-sip-link{display:inline-flex;margin-top:13px;color:#245b3b;font-size:14px;font-weight:700;text-decoration:underline;text-underline-offset:3px}.landing-sip-link:hover{color:#133b27}
 
+
+@media(max-width:600px){.welcome-shell .landing-nav{display:flex;margin-left:auto}.welcome-shell .landing-nav a:not(:last-child){display:none}.welcome-shell .landing-nav a{font-size:12px}.welcome-shell .landing-signin-link{margin-left:0}}

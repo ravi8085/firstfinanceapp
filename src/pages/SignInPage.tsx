@@ -1,7 +1,6 @@
 import { useEffect, useState, type FormEvent } from 'react';
 import { ShieldCheck, ArrowUpRight, BriefcaseBusiness, ReceiptText, TrendingUp, Target, RefreshCw } from 'lucide-react';
 import { authClient } from '@/lib/auth';
-import LandingInvestmentCalculator from '@/components/home/LandingInvestmentCalculator';
 import financeHero from '@/assets/finance-hero.jpg';
 
 const journeySteps = [
@@ -75,6 +74,7 @@ export default function SignInPage({ onDemo, initialError = '' }: { onDemo?: () 
           <nav className="landing-nav" aria-label="On this page">
             <a href="#sample-budget">Sample budget</a>
             <a href="#planning-journey">How it works</a>
+            <a href="/calculators" target="_blank" rel="noopener noreferrer">Calculators ↗</a>
           </nav>
           <a className="cf-button cf-primary landing-signin-link" href="#customer-signin">Sign in</a>
         </header>
@@ -100,6 +100,6 @@ export default function SignInPage({ onDemo, initialError = '' }: { onDemo?: () 
           <h2>Start with what you know.</h2>
           <p>Tell us about your income and expenses in your own words, or enter them in a simple form. Review your details before you build your plan.</p>
         </div>
-</div><LandingInvestmentCalculator /><section id="planning-journey" className="landing-journey" aria-labelledby="journey-title"><div className="landing-journey-heading"><div><div className="cf-eyebrow">THE BIG PICTURE</div><h2 id="journey-title">From your first input to your future goals.</h2><p>See how your income, protection, investments and life goals fit together.</p></div><a className="cf-button cf-secondary" href="#customer-signin">Build my plan</a></div><div className="journey-scene"><div className="journey-scene-heading"><span>YOUR FINANCIAL PLANNING JOURNEY</span><strong>Clarity today. A plan that grows with you.</strong></div><ol className="journey-workflow">{journeySteps.map((step, index) => { const Icon = step.icon; return <li className="journey-step" key={step.title}><div className="journey-step-number">{String(index + 1).padStart(2, '0')}</div><div className="journey-icon"><Icon size={31} strokeWidth={1.8} aria-hidden="true" /></div><h3>{step.title}</h3><p>{step.description}</p></li>; })}</ol></div><p className="landing-journey-note">Start with your voice or a form. Review your details, explore the illustrations, and update your plan as your circumstances change.</p></section></main><footer className="cf-footer"><span>© {new Date().getFullYear()} Chanakya Finance Solutions</span><span>Clarity today. Confidence tomorrow.</span></footer>
+</div><section id="planning-journey" className="landing-journey" aria-labelledby="journey-title"><div className="landing-journey-heading"><div><div className="cf-eyebrow">THE BIG PICTURE</div><h2 id="journey-title">From your first input to your future goals.</h2><p>See how your income, protection, investments and life goals fit together.</p></div><a className="cf-button cf-secondary" href="#customer-signin">Build my plan</a></div><div className="journey-scene"><div className="journey-scene-heading"><span>YOUR FINANCIAL PLANNING JOURNEY</span><strong>Clarity today. A plan that grows with you.</strong></div><ol className="journey-workflow">{journeySteps.map((step, index) => { const Icon = step.icon; return <li className="journey-step" key={step.title}><div className="journey-step-number">{String(index + 1).padStart(2, '0')}</div><div className="journey-icon"><Icon size={31} strokeWidth={1.8} aria-hidden="true" /></div><h3>{step.title}</h3><p>{step.description}</p></li>; })}</ol></div><p className="landing-journey-note">Start with your voice or a form. Review your details, explore the illustrations, and update your plan as your circumstances change.</p></section></main><footer className="cf-footer"><span>© {new Date().getFullYear()} Chanakya Finance Solutions</span><span>Clarity today. Confidence tomorrow.</span></footer>
   </div>;
 }

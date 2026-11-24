@@ -15,7 +15,7 @@ export default function SipCalculatorPage() {
   const maxValue = result.value || 1;
 
   return <div className="sip-page">
-    <header className="sip-header"><a href="/" className="sip-brand"><span>च</span><b>chanakya<small>FINANCE, SIMPLIFIED</small></b></a><a className="sip-back" href="/"><ArrowLeft size={17} /> Back to Chanakya</a></header>
+    <header className="sip-header"><a href="/" className="sip-brand"><span>च</span><b>chanakya<small>FINANCE, SIMPLIFIED</small></b></a><nav className="sip-nav"><a className="sip-back" href="/calculators">All calculators</a><a className="sip-back" href="/"><ArrowLeft size={17} /> Back to Chanakya</a></nav></header>
     <main className="sip-main">
       <div className="sip-heading"><span>SYSTEMATIC INVESTMENT PLANNER</span><h1>SIP calculator</h1><p>Explore how regular monthly investing could grow over time. Change the assumptions to see your own scenario.</p></div>
       <div className="sip-grid">
