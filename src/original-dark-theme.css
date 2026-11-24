@@ -167,3 +167,17 @@ button,input,select,textarea{font-family:var(--font-body)}
 @media(max-width:900px){.original-instrument-grid,.original-investor-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.welcome-shell .landing-hero{min-height:700px}}
 @media(max-width:600px){.welcome-shell .landing-hero-inner{padding:75px 18px 85px;min-height:0}.original-hero-stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin-top:40px}.original-hero-stats>div{min-height:75px;padding:11px}.original-hero-stats strong{font-size:20px}.original-hero-stats span{font-size:10px}.landing-showcase{margin-top:-25px}.original-section{padding:48px 18px 10px}.original-instrument-grid,.original-investor-grid,.original-feature-grid,.original-featured{grid-template-columns:1fr}.original-investor-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.original-last-cta{margin:45px 18px 0}.original-investor-grid img{height:110px}}
 @media(prefers-reduced-motion:reduce){.original-instrument-grid>a,.original-feature-grid>article{transition:none}.original-instrument-grid>a:hover,.original-feature-grid>article:hover{transform:none}}
+
+/* Keep signed-in navigation visible instead of collapsing into a hamburger. */
+@media(max-width:1450px){
+  .site-header.app-header{height:auto;min-height:82px;flex-wrap:wrap;padding:12px 24px;gap:8px 16px}
+  .site-header .app-links,.site-header .app-links.open{display:flex;position:static;order:3;flex:1 0 100%;flex-flow:row wrap;align-items:center;justify-content:center;gap:4px;max-height:none;overflow:visible;padding:0;background:transparent;border:0;box-shadow:none}
+  .site-header .app-links a,.site-header .app-links.open a{font-size:13px;padding:8px 10px}
+  .site-header .menu-toggle{display:none}
+  .site-header .account-actions{margin-left:auto}
+}
+@media(max-width:750px){
+  .site-header.app-header{min-height:70px;padding:10px 16px}
+  .site-header .app-links,.site-header .app-links.open{justify-content:flex-start}
+  .site-header .app-links a,.site-header .app-links.open a{font-size:12px;padding:7px 8px}
+}
