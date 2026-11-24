@@ -6,6 +6,16 @@ import SignInPage from './SignInPage';
 afterEach(cleanup);
 beforeEach(()=>{vi.clearAllMocks();auth.signInWithOtp.mockResolvedValue({error:null});auth.verifyOtp.mockResolvedValue({data:{session:null},error:new Error('Invalid verification code')});});
 describe('mobile OTP sign-in',()=>{
+  it('shows the interactive demo beside the brand and opens it from the header',()=>{
+    const onDemo=vi.fn();
+    render(<SignInPage onDemo={onDemo}/>);
+    const demo=screen.getByRole('button',{name:'Interactive demo'});
+    expect(demo.closest('header')).toBeInTheDocument();
+    expect(demo.previousElementSibling).toHaveClass('cf-brand');
+    fireEvent.click(demo);
+    expect(onDemo).toHaveBeenCalledOnce();
+    expect(screen.queryByText('Want to see how it works?')).not.toBeInTheDocument();
+  });
   it('sends to the normalized number and verifies against the same destination',async()=>{
     render(<SignInPage/>);
     fireEvent.change(screen.getByLabelText('Mobile number'),{target:{value:'9876543210'}});

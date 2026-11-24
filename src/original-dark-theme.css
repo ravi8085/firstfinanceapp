@@ -187,3 +187,21 @@ button,input,select,textarea{font-family:var(--font-body)}
   .site-header .app-links,.site-header .app-links.open{justify-content:flex-start}
   .site-header .app-links a,.site-header .app-links.open a{font-size:12px;padding:7px 8px}
 }
+
+/* Keep the demo beside the brand, and make sign-in readable at a glance. */
+.welcome-shell .landing-demo-button{flex:0 0 auto;padding:9px 13px;border:1px solid #f8c525;border-radius:9px;background:#f8c525;color:#11151d;font-size:14px;font-weight:700;line-height:1.2;cursor:pointer;white-space:nowrap}
+.welcome-shell .landing-demo-button:hover{background:#ffda4d}
+.welcome-shell .landing-demo-button:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.landing-showcase .signin-card .cf-eyebrow{font-size:14px}
+.landing-showcase .signin-card h2{font-size:33px}
+.landing-showcase .signin-card>p{font-size:17px}
+.landing-showcase .signin-card label{font-size:16px}
+.landing-showcase .signin-card .cf-button{font-size:16px;min-height:49px}
+.landing-showcase .signin-card .cf-input,.landing-showcase .signin-card .mobile-field input,.landing-showcase .signin-card .mobile-field>span{font-size:16px}
+.landing-showcase .signin-card .signin-divider{font-size:14px}
+.landing-showcase .signin-card .cf-help{font-size:14px}
+.landing-showcase .signin-card .signin-privacy p{font-size:14px}
+.landing-showcase .signin-card .signin-privacy small{font-size:13px}
+.landing-showcase .signin-card .signin-links{font-size:14px}
+@media(max-width:1050px){.welcome-shell .welcome-header.has-demo{height:auto;min-height:86px;flex-wrap:wrap;padding-top:12px;padding-bottom:12px;gap:10px 16px}.welcome-shell .welcome-header.has-demo .landing-nav{order:3;flex:1 0 100%;justify-content:center;margin:0}.welcome-shell .welcome-header.has-demo .landing-signin-link{margin-left:auto}}
+@media(max-width:600px){.welcome-shell .welcome-header.has-demo{min-height:70px}.welcome-shell .landing-demo-button{font-size:12px;padding:8px 10px}.welcome-shell .welcome-header.has-demo .landing-nav{display:none}.landing-showcase .signin-card h2{font-size:30px}}
