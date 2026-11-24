@@ -18,7 +18,7 @@ function Shell({ title, eyebrow, description, children }: { title: string; eyebr
 }
 
 export default function CalculatorsPage() {
-  return <Shell eyebrow="PLAN WITH THE NUMBERS" title="Financial calculators" description="Explore each scenario in its own window. Change the inputs and see how the estimated outcome responds."><div className="calc-hub">{tools.map(({ href, icon: Icon, title, description }) => <a className="calc-hub-card" href={href} target="_blank" rel="noopener noreferrer" key={href}><div className="calc-hub-icon"><Icon size={28} strokeWidth={1.8}/></div><h2>{title}</h2><p>{description}</p><span>Open calculator <ArrowUpRight size={17}/></span></a>)}</div><p className="calc-note">All returns and rates are editable illustrations. Actual product terms, charges, taxes, and returns can differ.</p></Shell>;
+  return <Shell eyebrow="PLAN WITH THE NUMBERS" title="Financial calculators" description="Choose a calculator and explore your numbers here. Return to this menu to switch tools."><div className="calc-hub">{tools.map(({ href, icon: Icon, title, description }) => <a className="calc-hub-card" href={href} key={href}><div className="calc-hub-icon"><Icon size={20} strokeWidth={1.8}/></div><h2>{title}</h2><p>{description}</p><span>Open calculator <ArrowUpRight size={17}/></span></a>)}</div><p className="calc-note">All returns and rates are editable illustrations. Actual product terms, charges, taxes, and returns can differ.</p></Shell>;
 }
 
 export function FdCalculatorPage() {
