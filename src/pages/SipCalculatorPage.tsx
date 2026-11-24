@@ -5,7 +5,7 @@ import './sip-calculator.css';
 
 const money = (value: number) => new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 }).format(value);
 
-export default function SipCalculatorPage() {
+export default function SipCalculatorPage({ embedded = false }: { embedded?: boolean }) {
   const [monthlyInvestment, setMonthlyInvestment] = useState(10000);
   const [years, setYears] = useState(15);
   const [annualReturn, setAnnualReturn] = useState(10);
@@ -14,10 +14,10 @@ export default function SipCalculatorPage() {
   const investedShare = result.value > 0 ? result.invested / result.value * 100 : 100;
   const maxValue = result.value || 1;
 
-  return <div className="sip-page">
-    <header className="sip-header"><a href="/" className="sip-brand"><span>च</span><b>chanakya<small>FINANCE, SIMPLIFIED</small></b></a><nav className="sip-nav"><a className="sip-back" href="/calculators">All calculators</a><a className="sip-back" href="/"><ArrowLeft size={17} /> Back to Chanakya</a></nav></header>
+  return <div className={embedded ? 'sip-page sip-embedded' : 'sip-page'}>
+    {!embedded && <header className="sip-header"><a href="/" className="sip-brand"><span>च</span><b>chanakya<small>FINANCE, SIMPLIFIED</small></b></a><nav className="sip-nav"><a className="sip-back" href="/calculators">All calculators</a><a className="sip-back" href="/"><ArrowLeft size={17} /> Back to Chanakya</a></nav></header>}
     <main className="sip-main">
-      <div className="sip-heading"><span>SYSTEMATIC INVESTMENT PLANNER</span><h1>SIP calculator</h1><p>Explore how regular monthly investing could grow over time. Change the assumptions to see your own scenario.</p></div>
+      {!embedded && <div className="sip-heading"><span>SYSTEMATIC INVESTMENT PLANNER</span><h1>SIP calculator</h1><p>Explore how regular monthly investing could grow over time. Change the assumptions to see your own scenario.</p></div>}
       <div className="sip-grid">
         <section className="sip-input-card" aria-labelledby="sip-input-title"><div className="sip-card-heading"><span>01 / YOUR PLAN</span><h2 id="sip-input-title">Set your monthly investment</h2></div>
           <label htmlFor="sip-amount">Monthly investment <strong>{money(monthlyInvestment)}</strong></label><input id="sip-amount" type="range" min="500" max="200000" step="500" value={monthlyInvestment} onChange={e => setMonthlyInvestment(Number(e.target.value))}/><input aria-label="Monthly investment amount" type="number" min="0" max="10000000" step="500" value={monthlyInvestment} onChange={e => setMonthlyInvestment(Math.max(0, Math.min(10000000, Number(e.target.value) || 0)))}/>
