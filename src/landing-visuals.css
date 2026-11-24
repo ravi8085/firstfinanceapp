@@ -1,5 +1,4 @@
 .welcome-shell{max-width:1440px;margin:0 auto;color:#172820}
-.welcome-shell,.welcome-shell *,.welcome-shell *::before,.welcome-shell *::after{font-family:'Segoe UI',sans-serif!important}
 .welcome-header{height:64px;padding:0 clamp(20px,4vw,52px);display:flex;align-items:center;gap:24px}
 .welcome-header .cf-brand{font-size:23px}.welcome-header .cf-logo{width:38px;height:38px;font-size:26px}
 .landing-nav{display:flex;gap:20px;margin-left:auto}.landing-nav a{font-size:12px;font-weight:600;color:#52645b;text-decoration:none}.landing-nav a:hover{text-decoration:underline}
@@ -29,9 +28,9 @@
 @media(max-width:900px){.landing-calculator{margin-left:22px;margin-right:22px}.landing-calculator-body{grid-template-columns:1fr;gap:15px}}
 @media(max-width:600px){.landing-calculator{margin:18px 18px 24px;padding:18px}.landing-calculator-heading{align-items:start;flex-direction:column}.landing-calculator-fields{grid-template-columns:1fr 1fr}.landing-calculator-fields label:first-child{grid-column:1/-1}.landing-calculator-result dl{gap:10px}.landing-calculator-result dd{font-size:14px}}
 
-/* Hero balance: 40% example, 50% sign-in, 10% breathing room. */
+/* Hero balance: 35% example, 55% sign-in, 10% breathing room. */
 @media(min-width:901px){
-  .landing-hero-inner{grid-template-columns:minmax(0,40fr) minmax(0,50fr);column-gap:10%;justify-content:space-between}
+  .landing-hero-inner{grid-template-columns:minmax(0,35fr) minmax(0,55fr);column-gap:10%;justify-content:space-between}
   .landing-hero-inner>.signin-card{padding:26px 32px}
   .landing-intro h1{font-size:clamp(34px,3vw,42px)}
   .landing-intro>p{font-size:15px;line-height:1.55}
@@ -43,86 +42,10 @@
 .landing-hero-inner .signin-card h2{font-size:25px}.landing-hero-inner .signin-card>p{font-size:14px}
 .landing-hero-inner .signin-card label{font-size:13px}.landing-hero-inner .signin-card .cf-button{font-size:14px}.landing-hero-inner .signin-card .cf-input,.landing-hero-inner .signin-card .mobile-field input{font-size:14px}
 .landing-calculator-heading h2{font-size:clamp(22px,2vw,27px)}.landing-calculator-heading p{font-size:14px}.landing-calculator-fields label{font-size:13px}.landing-calculator-note{font-size:12px}
-.landing-calculator-heading h2,.landing-access-copy h2,.landing-access-copy p{font-family:'Segoe UI',sans-serif!important}
 @media(max-width:700px){.landing-journey{max-width:100%}.landing-hero-inner>.signin-card{padding:20px}.landing-intro>p{font-size:14px}}
 
-/* Editorial landing page: a cinematic opening and overlapping finance previews. */
-.welcome-shell{max-width:none;background:#f7f7f4;color:#172820;overflow:hidden}
-.landing-hero{min-height:560px;background-color:#071322;background-size:cover;background-position:center 52%;color:#fff;position:relative}
-.landing-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(3,11,18,.48));pointer-events:none}
-.welcome-header{height:76px;max-width:1480px;margin:auto;position:relative;z-index:2;border-bottom:1px solid rgba(255,255,255,.22)}
-.welcome-header .cf-brand,.welcome-header .cf-brand small,.landing-nav a{color:#fff}
-.welcome-header .cf-logo{background:#fff;color:#173c30;box-shadow:none}
-.landing-nav{margin:auto;gap:30px}.landing-nav a{font-size:13px;letter-spacing:.01em;opacity:.9}.landing-nav a:hover{opacity:1}
-.landing-signin-link{background:#fff!important;color:#14291f!important;border-color:#fff!important;border-radius:5px;padding:10px 22px;font-size:13px}
-.landing-hero-inner{position:relative;z-index:1;display:block;max-width:1180px;text-align:center;padding:96px 24px 165px}
-.landing-intro h1,.landing-intro h1 em{color:#fff;font-size:clamp(50px,6.5vw,96px);line-height:.99;letter-spacing:-.055em;font-weight:700}
-.landing-intro h1{margin:0 auto 22px}.landing-intro h1 em{font-style:normal}
-.landing-intro>p{color:#e9efea;font-size:clamp(16px,1.5vw,19px);line-height:1.5;max-width:650px;margin:0 auto 25px}
-.landing-start{background:#fff!important;color:#14291f!important;border:1px solid #fff!important;border-radius:5px;min-height:48px;padding:12px 22px;font-size:15px;gap:20px}
-.landing-start:hover,.landing-signin-link:hover{background:#d9f3d7!important}
-.landing-showcase{position:relative;z-index:3;display:grid;grid-template-columns:minmax(0,1fr) minmax(340px,.88fr);gap:22px;align-items:start;max-width:1210px;margin:-115px auto 0;padding:0 24px}
-.landing-example{margin:0;width:100%;scroll-margin-top:85px;background:#fff;border:1px solid #dfe5dc;border-radius:14px;padding:17px;box-shadow:0 23px 55px #081c1b21}
-.landing-income-visual img{display:block;width:100%;max-height:360px;object-fit:contain;object-position:top}
-.landing-income-visual figcaption{font-size:12px;max-width:none;color:#5d6b65;margin-top:7px}
-.landing-showcase>.signin-card{margin:0;width:100%;max-width:none;padding:26px 30px;border-radius:14px;box-shadow:0 23px 55px #081c1b21;scroll-margin-top:85px}
-.landing-showcase .signin-card h2{font-size:29px;letter-spacing:-.03em;margin:5px 0 6px}
-.landing-showcase .signin-card>p{font-size:14px;margin:0 0 16px}
-.landing-showcase .signin-card label{font-size:13px}.landing-showcase .signin-card .cf-button{font-size:14px;min-height:42px}
-.landing-showcase .signin-card .cf-input{font-size:14px;min-height:42px}.landing-showcase .signin-card .mobile-field input{font-size:14px}
-.landing-access{max-width:1210px;padding:0 24px;margin:48px auto 0}.landing-access-copy{border:0;padding:0}.landing-access-copy h2{font-size:clamp(25px,2.5vw,36px);letter-spacing:-.04em;margin-bottom:7px}.landing-access-copy p{font-size:16px;line-height:1.5;max-width:830px}
-.landing-calculator{max-width:1162px;margin:25px auto 42px;background:#fff;border-radius:14px;box-shadow:none}
-.landing-journey{max-width:1210px;padding:0 24px;margin:0 auto 45px}.landing-journey-heading{margin-bottom:18px}.landing-journey-heading h2{font-size:clamp(23px,2.4vw,32px);letter-spacing:-.04em}.landing-journey-heading p{font-size:15px}.landing-journey img{border-radius:14px;background:#fff}
-.welcome-shell .cf-footer{max-width:1210px;margin:auto}
-@media(max-width:800px){.landing-hero{min-height:480px}.landing-hero-inner{padding:82px 22px 160px}.landing-showcase{grid-template-columns:1fr;max-width:620px;margin-top:-90px}.landing-income-visual img{max-height:none}.landing-access{max-width:620px;margin-top:36px}.landing-calculator{margin-left:24px;margin-right:24px}.landing-journey{margin-left:auto;margin-right:auto}}
-@media(max-width:600px){.welcome-header{height:66px;padding:0 18px}.landing-nav{display:none}.landing-signin-link{margin-left:auto}.landing-hero{min-height:420px;background-position:62% center}.landing-hero-inner{padding:84px 22px 140px}.landing-intro h1,.landing-intro h1 em{font-size:clamp(43px,11vw,64px)}.landing-intro>p{font-size:15px}.landing-showcase{padding:0 16px;gap:18px;margin-top:-70px}.landing-example{padding:10px}.landing-showcase>.signin-card{padding:22px}.landing-access{padding:0 18px}.landing-access-copy h2{font-size:27px}.landing-access-copy p{font-size:15px}.landing-calculator{margin:22px 18px 34px}.landing-journey{padding:0 18px}.landing-journey-heading h2{font-size:25px}}
+/* Preserve the attached landing page's green actions despite shared app chrome. */
+.welcome-shell .cf-button.cf-primary{background:#285c44!important;border-color:#285c44!important;color:#fff!important;box-shadow:0 5px 14px #285c4424}
+.welcome-shell .cf-button.cf-primary:hover:not(:disabled){background:#35694e!important;border-color:#35694e!important}
+.welcome-shell .cf-button.cf-secondary{background:#edf4e9;color:#28563f;border-color:#dce8d8}
 
-/* Keep the brand and navigation legible above the dark hero artwork. */
-.welcome-shell .welcome-header{max-width:none;height:86px;background:#fff;border-bottom:1px solid #e3e7e3;box-shadow:none;backdrop-filter:none}
-.welcome-shell .welcome-header .cf-brand{color:#111b17;font-size:31px;line-height:1;font-weight:800;letter-spacing:-1.4px}
-.welcome-shell .welcome-header .cf-brand small{color:#263a30;font-size:11px;font-weight:700;letter-spacing:2.2px;margin-top:5px}
-.welcome-shell .welcome-header .cf-logo{width:50px;height:50px;font-size:32px;background:#183e2c;color:#fff;border-radius:13px}
-.welcome-shell .landing-nav a{color:#172820;font-size:15px;font-weight:650;opacity:1}
-.welcome-shell .landing-nav a:hover{color:#285c44}
-.welcome-shell .landing-signin-link{background:#183e2c!important;border-color:#183e2c!important;color:#fff!important;font-size:15px;font-weight:700;padding:11px 24px}
-.welcome-shell .landing-signin-link:hover{background:#285c44!important}
-@media(max-width:600px){.welcome-shell .welcome-header{height:76px}.welcome-shell .welcome-header .cf-brand{font-size:25px}.welcome-shell .welcome-header .cf-brand small{font-size:8px;letter-spacing:1.6px}.welcome-shell .welcome-header .cf-logo{width:42px;height:42px;font-size:28px}.welcome-shell .landing-signin-link{font-size:13px;padding:9px 14px}}
-
-/* Raised workflow cards replace the flat journey graphic. */
-.journey-scene{position:relative;overflow:hidden;padding:34px 34px 46px;border:1px solid #d8e6db;border-radius:24px;background:radial-gradient(circle at 82% 8%,#dceede 0,transparent 29%),radial-gradient(circle at 14% 80%,#dcece7 0,transparent 31%),linear-gradient(135deg,#f4f8f3,#eaf2ec 70%,#e6efe9);box-shadow:inset 0 2px #ffffffb8,0 20px 45px #153c2814}
-.journey-scene::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.32;background-image:linear-gradient(#90af9e42 1px,transparent 1px),linear-gradient(90deg,#90af9e42 1px,transparent 1px);background-size:32px 32px;mask-image:linear-gradient(transparent,#000 85%)}
-.journey-scene-heading{position:relative;z-index:1;margin-bottom:34px}.journey-scene-heading span{display:block;color:#285c44;font-size:12px;font-weight:800;letter-spacing:.16em;margin-bottom:8px}.journey-scene-heading strong{display:block;color:#142b23;font-size:clamp(21px,2.6vw,32px);letter-spacing:-.04em;line-height:1.2}
-.journey-workflow{position:relative;z-index:1;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:13px;list-style:none;padding:0;margin:0;counter-reset:journey}
-.journey-workflow::before{content:"";position:absolute;left:5%;right:5%;top:44%;height:5px;border-radius:20px;background:linear-gradient(90deg,#89b1a0,#8bb7aa,#c5b78b,#86b6a4);box-shadow:0 2px 4px #244d3633}
-.journey-step{position:relative;min-height:190px;padding:21px 14px 18px;text-align:center;border:1px solid #d3e1d6;border-radius:16px;background:linear-gradient(145deg,#fff 3%,#f6faf7 77%,#e4ede7);box-shadow:0 7px 0 #cadace,0 17px 23px #1b533224;transition:transform .22s ease,box-shadow .22s ease}
-.journey-step:hover{transform:translateY(-8px);box-shadow:0 14px 0 #cadace,0 25px 30px #1b533230}
-.journey-step-number{position:absolute;right:12px;top:11px;font-size:11px;font-weight:800;letter-spacing:.08em;color:#6e907c}
-.journey-icon{display:grid;place-items:center;width:68px;height:68px;margin:0 auto 17px;border-radius:18px;color:#20543b;background:linear-gradient(145deg,#f7fff5,#d6ebd9 58%,#a9d0b5);box-shadow:inset 2px 2px 4px #ffffff,5px 7px 0 #b5d0bc,9px 12px 16px #2d67402b;transform:rotate(-5deg)}
-.journey-icon svg{filter:drop-shadow(1px 2px 1px #ffffffb8);transform:rotate(5deg)}
-.journey-step:nth-child(3) .journey-icon,.journey-step:nth-child(5) .journey-icon{background:linear-gradient(145deg,#fffaf0,#e7e4c9 55%,#d3c79b);color:#66542b;box-shadow:inset 2px 2px 4px #fff,5px 7px 0 #d5d0ab,9px 12px 16px #66542b2b}
-.journey-step h3{font-size:18px;line-height:1.2;letter-spacing:-.03em;margin:0 0 8px;color:#142b23}.journey-step p{font-size:13px;line-height:1.4;color:#4f6759;margin:0}
-.landing-journey-note{margin-top:18px;font-size:13px}
-@media(max-width:1050px){.journey-workflow{grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}.journey-workflow::before{display:none}.journey-step{min-height:175px}}
-@media(max-width:600px){.journey-scene{padding:25px 18px 28px}.journey-scene-heading{margin-bottom:24px}.journey-workflow{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 12px}.journey-step{min-height:170px;padding:20px 10px 13px}.journey-icon{width:55px;height:55px;margin-bottom:15px}.journey-icon svg{width:27px;height:27px}.journey-step h3{font-size:16px}.journey-step p{font-size:12px}}
-@media(max-width:380px){.journey-workflow{grid-template-columns:1fr}.journey-step{min-height:auto}}
-@media(prefers-reduced-motion:reduce){.journey-step{transition:none}.journey-step:hover{transform:none}}
-
-/* Dimensional sample budget, rendered as accessible HTML instead of a flat image. */
-.budget-art{overflow:hidden;padding:20px 22px 23px;border:1px solid #dbe8df;border-radius:16px;background:radial-gradient(circle at 78% 12%,#e4f6e9 0,transparent 33%),linear-gradient(145deg,#fff,#f2f8f4);box-shadow:inset 0 2px #fff,0 9px 0 #d9e8dc,0 18px 27px #285c4420}
-.budget-art-header{display:flex;justify-content:space-between;align-items:flex-end;gap:12px}.budget-art-kicker{display:inline-block;padding:5px 10px;border-radius:30px;background:#dff0df;color:#245b3b;font-size:10px;font-weight:800;letter-spacing:.1em}.budget-art-header h2{font-size:23px;letter-spacing:-.045em;margin:9px 0 2px;line-height:1.1}.budget-art-header p{margin:0;color:#50685b;font-size:12px}.budget-art-header>strong{color:#122e23;font-size:29px;line-height:1;white-space:nowrap;letter-spacing:-.05em}.budget-art-header>strong small{display:block;margin-top:5px;font-size:10px;letter-spacing:0;text-align:right;font-weight:500;color:#6a8072}
-.budget-art-main{display:grid;grid-template-columns:190px 1fr;align-items:center;gap:16px;margin:14px 0 18px}.budget-donut{position:relative;width:165px;height:165px;margin:0 auto 13px;border-radius:50%;background:conic-gradient(#2c654b 0 50%,#3aada8 50% 60%,#b8dd71 60% 100%);transform:rotateX(18deg) rotate(-15deg);box-shadow:0 9px 0 #83af8e,0 18px 0 #40664c,0 26px 24px #244b3238,inset -12px -10px 19px #173d2b38}
-.budget-donut::after{content:"";position:absolute;inset:25px;border-radius:50%;background:linear-gradient(145deg,#fff,#e9f3e8);box-shadow:inset 0 8px 14px #23483422,0 2px 4px #fff9}
-.budget-donut-core{position:absolute;z-index:1;inset:35px;display:flex;flex-direction:column;align-items:center;justify-content:center;transform:rotate(15deg);color:#1d4733}.budget-donut-core span{font-size:8px;font-weight:800;letter-spacing:.08em}.budget-donut-core strong{font-size:28px;letter-spacing:-.06em;line-height:1.1}.budget-donut-core small{font-size:10px}
-.budget-breakdown{display:grid;gap:8px}.budget-breakdown-row{display:grid;grid-template-columns:1fr auto;gap:1px 10px;padding:9px 12px;border:1px solid #dfece2;border-radius:10px;background:#fff;box-shadow:0 4px 0 #d5e6d9,0 8px 12px #1c4d3020}.budget-breakdown-row span{font-size:11px;font-weight:650;color:#476050}.budget-breakdown-row strong{grid-column:1;font-size:16px;letter-spacing:-.03em;line-height:1.1}.budget-breakdown-row b{grid-column:2;grid-row:1/3;align-self:center;font-size:13px;color:#266443}.budget-breakdown-row::before{content:"";width:7px;height:7px;grid-column:1;grid-row:1;align-self:center;margin-left:-7px;transform:translateX(-10px);border-radius:50%;background:#2c654b}.budget-breakdown-row span{padding-left:4px}.budget-breakdown-row.safety::before{background:#3aada8}.budget-breakdown-row.investing::before{background:#a5d15f}
-.budget-investment-header{display:flex;justify-content:space-between;gap:10px;align-items:center;border-top:1px solid #dbe9dd;padding-top:14px;margin-bottom:9px;color:#24533b;font-size:10px;font-weight:800;letter-spacing:.05em}.budget-investment-header small{font-size:10px;font-weight:600;color:#78907f;letter-spacing:0}
-.budget-investments{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}.budget-investment-card{min-width:0;display:flex;flex-direction:column;gap:5px;min-height:94px;padding:11px 11px 10px;border-radius:10px;color:#fff;background:linear-gradient(145deg,#245944,#143b2a);box-shadow:0 5px 0 #103522,0 12px 14px #1d4a332e;transition:transform .2s,box-shadow .2s}.budget-investment-card:hover{transform:translateY(-5px);box-shadow:0 10px 0 #103522,0 19px 20px #1d4a333b}.budget-investment-card span{font-size:10px;line-height:1.2;font-weight:600}.budget-investment-card strong{font-size:17px;line-height:1.1}.budget-investment-card small{margin-top:auto;font-size:9px;color:#c8f4d5}.budget-investment-card.debt{background:linear-gradient(145deg,#81704a,#584323);box-shadow:0 5px 0 #483619,0 12px 14px #5b482a2e}.budget-investment-card.debt small{color:#fff1b4}.budget-investment-card.equity{background:linear-gradient(145deg,#7a4260,#4b263e);box-shadow:0 5px 0 #3f2035,0 12px 14px #5b2d482e}.budget-investment-card.equity small{color:#ffd4e9}
-.landing-income-visual figcaption{margin-top:17px;font-size:12px;line-height:1.5}
-@media(max-width:1100px){.budget-art-main{grid-template-columns:150px 1fr;gap:8px}.budget-donut{width:135px;height:135px}.budget-donut::after{inset:21px}.budget-donut-core{inset:27px}.budget-donut-core strong{font-size:24px}}
-@media(max-width:900px){.budget-art-main{grid-template-columns:190px 1fr}.budget-donut{width:165px;height:165px}.budget-donut::after{inset:25px}.budget-donut-core{inset:35px}}
-@media(max-width:520px){.budget-art{padding:17px 15px 20px}.budget-art-header h2{font-size:20px}.budget-art-header>strong{font-size:24px}.budget-art-main{grid-template-columns:125px 1fr;gap:7px}.budget-donut{width:112px;height:112px}.budget-donut::after{inset:18px}.budget-donut-core{inset:23px}.budget-donut-core strong{font-size:20px}.budget-donut-core span{font-size:7px}.budget-breakdown-row{padding:7px 9px}.budget-breakdown-row strong{font-size:14px}.budget-investments{gap:6px}.budget-investment-card{padding:9px 7px;min-height:90px}.budget-investment-card span{font-size:9px}.budget-investment-card strong{font-size:15px}.budget-investment-card small{font-size:8px}}
-@media(max-width:380px){.budget-art-main{grid-template-columns:1fr}.budget-donut{margin:8px auto 20px}.budget-investments{grid-template-columns:1fr}.budget-investment-card{min-height:auto}}
-@media(prefers-reduced-motion:reduce){.budget-investment-card{transition:none}.budget-investment-card:hover{transform:none}}
-.landing-sip-link{display:inline-flex;margin-top:13px;color:#245b3b;font-size:14px;font-weight:700;text-decoration:underline;text-underline-offset:3px}.landing-sip-link:hover{color:#133b27}
-
-
-@media(max-width:600px){.welcome-shell .landing-nav{display:flex;margin-left:auto}.welcome-shell .landing-nav a:not(:last-child){display:none}.welcome-shell .landing-nav a{font-size:12px}.welcome-shell .landing-signin-link{margin-left:0}}

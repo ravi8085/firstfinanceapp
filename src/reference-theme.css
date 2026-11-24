@@ -6,29 +6,6 @@
 body,button,input,select,textarea{font-family:var(--font-body)}
 .welcome-shell,.welcome-shell *,.welcome-shell *::before,.welcome-shell *::after,
 .calc-page,.calc-page *,.sip-page,.sip-page *{font-family:var(--font-body)!important}
-/* Landing illustrations added after the supplied design. */
-.welcome-shell{background:#f7f9fd;color:#172820}
-.welcome-shell .welcome-header{background:#fff;border-bottom-color:#dce6de}
-.welcome-shell .welcome-header .cf-brand{color:#172820}
-.welcome-shell .welcome-header .cf-brand small{color:#52645b}
-.welcome-shell .welcome-header .cf-logo{background:linear-gradient(145deg,#35694e,#28563f);color:#fff}
-.welcome-shell .landing-nav a{color:#304e40}.welcome-shell .landing-nav a:hover{color:#285c44}
-.welcome-shell .landing-signin-link{background:#285c44!important;border-color:#285c44!important;color:#fff!important}
-.welcome-shell .landing-signin-link:hover{background:#38664c!important}
-.landing-example,.landing-showcase>.signin-card{border-color:#dce6de}
-.budget-art{border-color:#dbe8df;background:radial-gradient(circle at 78% 12%,#e4f6e9 0,transparent 33%),linear-gradient(145deg,#fff,#f2f8f4)}
-.budget-art-kicker{background:#dff0df;color:#245b3b}
-.budget-art-header h2,.budget-art-header>strong,.budget-donut-core{color:#172820}
-.budget-donut{background:conic-gradient(#285c44 0 50%,#45a79a 50% 60%,#c8ec82 60% 100%)}
-.budget-breakdown-row b,.budget-investment-header{color:#285c44}
-.budget-investment-card{background:linear-gradient(145deg,#245944,#143b2a)}
-.budget-investment-card.debt{background:linear-gradient(145deg,#81704a,#584323)}
-.budget-investment-card.equity{background:linear-gradient(145deg,#7a4260,#4b263e)}
-.journey-scene{border-color:#d8e6db;background:radial-gradient(circle at 82% 8%,#dceede 0,transparent 29%),radial-gradient(circle at 14% 80%,#dcece7 0,transparent 31%),linear-gradient(135deg,#f4f8f3,#eaf2ec 70%,#e6efe9)}
-.journey-scene-heading span,.journey-step-number{color:#285c44}
-.journey-scene-heading strong,.journey-step h3{color:#172820}
-.journey-step{border-color:#d3e1d6;background:linear-gradient(145deg,#fff 3%,#f6faf7 77%,#e4ede7)}
-.journey-icon,.journey-step:nth-child(3) .journey-icon,.journey-step:nth-child(5) .journey-icon{background:linear-gradient(145deg,#f7fff5,#d6ebd9 58%,#a9d0b5);color:#20543b}
 /* Calculator surfaces use the supplied green, cream, and white visual language. */
 .calc-page,.sip-page{background:#f7f9fd;color:#172820}
 .calc-header,.sip-header{background:#fff;border-bottom-color:#dce6de}
@@ -49,32 +26,6 @@ body,button,input,select,textarea{font-family:var(--font-body)}
 .calc-result-bar,.sip-split{background:#c6ec82}.calc-result-bar i,.sip-split span:first-child{background:#70c0a3}.sip-split span:last-child{background:#c6ec82}
 .sip-input-card label strong{color:#205d3a}.sip-input-card input[type=range]{accent-color:#286c47}
 .sip-table-wrap th{background:#eff6f0;color:#28553d}.sip-bar{background:#c6ec82}.sip-bar span{background:#58ae8a}
-/* Landing hero matched to the supplied visual reference. */
-.welcome-shell .landing-hero{min-height:670px;background-position:center 49%}
-.welcome-shell .landing-hero::after{background:linear-gradient(90deg,rgba(7,10,17,.76),rgba(7,10,17,.2) 78%),linear-gradient(180deg,transparent 65%,rgba(7,10,17,.45))}
-.welcome-shell .welcome-header{height:82px;padding:0 28px;background:#11151d;border-bottom:1px solid #242a35;max-width:none;gap:24px}
-.welcome-shell .welcome-header .cf-brand{gap:12px;color:#f5f5f7;font-size:27px;font-weight:750;letter-spacing:-.04em;white-space:nowrap}
-.welcome-shell .welcome-header .cf-logo{width:48px;height:48px;background:linear-gradient(145deg,#42bf9b,#28a986);border:0;border-radius:15px;color:#07171c;box-shadow:none}
-.welcome-shell .landing-nav{display:flex;align-items:center;justify-content:flex-end;gap:4px;margin-left:auto;margin-right:0}
-.welcome-shell .landing-nav a{display:inline-flex;align-items:center;gap:9px;padding:12px 15px;border-radius:12px;color:#8e96a7;font-size:16px;font-weight:550;text-decoration:none;opacity:1;white-space:nowrap}
-.welcome-shell .landing-nav a:hover{color:#fff;background:#252b38}
-.welcome-shell .landing-nav a.landing-nav-home{background:#2867c8;color:#fff;box-shadow:0 0 0 2px #f5f5f7,0 0 0 5px #11151d}
-.welcome-shell .landing-signin-link{margin-left:12px;background:#f9c422!important;border-color:#f9c422!important;color:#101521!important;border-radius:10px;font-size:14px;font-weight:750;box-shadow:none}
-.welcome-shell .landing-signin-link:hover{background:#ffda4d!important}
-.welcome-shell .landing-hero-inner{max-width:1600px;min-height:588px;padding:106px 28px 150px;display:block;text-align:left}
-.welcome-shell .landing-intro{max-width:900px}
-.landing-hero-badge{display:inline-flex;align-items:center;gap:11px;padding:8px 17px;margin-bottom:34px;border:1px solid #6a541c;border-radius:50px;background:#3a3017b5;color:#ffc31a;font-size:16px;font-weight:600;line-height:1.25}
-.welcome-shell .landing-intro h1,.welcome-shell .landing-intro h1 em{font-family:var(--font-display)!important;font-size:clamp(56px,5.6vw,94px);line-height:1.02;letter-spacing:-.055em;font-weight:800}
-.welcome-shell .landing-intro h1{color:#f7f7f8;margin:0 0 28px}.welcome-shell .landing-intro h1 em{color:#ffc31a;font-style:normal}
-.welcome-shell .landing-intro>p{max-width:790px;margin:0 0 40px;color:#9aa6bd;font-size:clamp(20px,1.55vw,27px);line-height:1.55;font-weight:400}
-.landing-hero-actions{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
-.welcome-shell .landing-start{min-width:225px;min-height:65px;gap:20px;padding:15px 25px;border-radius:16px;background:#f9c422!important;border-color:#f9c422!important;color:#0b1119!important;font-size:18px;font-weight:750}
-.welcome-shell .landing-start:hover{background:#ffda4d!important}
-.welcome-shell .landing-explore{min-height:65px;padding:15px 29px;border:1px solid #575b66;border-radius:16px;background:#ffffff17;color:#fff;font-size:18px;font-weight:700;backdrop-filter:blur(8px)}
-.welcome-shell .landing-explore:hover{background:#ffffff2e;color:#fff}
-@media(max-width:1250px){.welcome-shell .welcome-header .cf-brand{font-size:22px}.welcome-shell .landing-nav a{font-size:13px;padding:10px 9px;gap:5px}.welcome-shell .landing-nav a svg{width:16px}.welcome-shell .landing-signin-link{font-size:12px;padding:10px 13px}}
-@media(max-width:850px){.welcome-shell .welcome-header{padding:0 18px}.welcome-shell .landing-nav a:not(.landing-nav-home):not([href="/calculators"]){display:none}.welcome-shell .landing-hero-inner{padding:95px 22px 130px;min-height:545px}.welcome-shell .landing-intro h1,.welcome-shell .landing-intro h1 em{font-size:clamp(49px,8vw,70px)}}
-@media(max-width:600px){.welcome-shell .welcome-header{height:70px;gap:8px}.welcome-shell .welcome-header .cf-brand{font-size:18px;gap:8px}.welcome-shell .welcome-header .cf-logo{width:37px;height:37px;border-radius:10px}.welcome-shell .welcome-header .cf-logo svg{width:18px}.welcome-shell .landing-nav{display:flex;margin-left:auto}.welcome-shell .landing-nav a.landing-nav-home{display:none}.welcome-shell .landing-nav a[href="/calculators"]{display:inline-flex;padding:7px;font-size:11px}.welcome-shell .landing-nav a[href="/calculators"] svg{display:none}.welcome-shell .landing-signin-link{margin-left:0;font-size:11px;padding:8px 10px}.welcome-shell .landing-hero{min-height:560px;background-position:62% center}.welcome-shell .landing-hero-inner{padding:75px 18px 135px}.landing-hero-badge{font-size:11px;margin-bottom:25px;padding:7px 11px}.landing-hero-badge svg{flex-shrink:0}.welcome-shell .landing-intro h1,.welcome-shell .landing-intro h1 em{font-size:clamp(43px,10vw,60px)}.welcome-shell .landing-intro>p{font-size:17px;line-height:1.5;margin-bottom:26px}.landing-hero-actions{gap:10px}.welcome-shell .landing-start,.welcome-shell .landing-explore{min-height:48px;min-width:0;padding:10px 14px;font-size:13px;border-radius:10px}}
 /* Shared landing-style chrome and accents on every app page. */
 body{background:#f7f8fb;background-image:none;color:#17202e}
 .site-header.app-header,.public-site-header{height:82px;max-width:none;padding:0 28px;background:#11151d;border-bottom:1px solid #242a35;box-shadow:none;backdrop-filter:none;display:flex;align-items:center;gap:24px;position:sticky;top:0;z-index:40}
