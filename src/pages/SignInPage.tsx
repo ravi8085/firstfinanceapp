@@ -72,6 +72,7 @@ export default function SignInPage({ onDemo, initialError = '' }: { onDemo?: () 
           </nav>
           <a className="cf-button cf-primary landing-signin-link" href="#customer-signin">Sign in</a>
         </header>
+        <div className="landing-motto"><p lang="te">ధనం మూలం ఇదం జగత్</p><p lang="hi">धन ही इस संसार का आधार है।</p><p lang="en">Money is the foundation that runs this world</p></div>
         <div className="landing-hero-inner">
           <div className="landing-intro">
             <div className="landing-hero-badge"><BarChart3 size={17} aria-hidden="true" />Chanakya Finance Solutions — Built for Indian salaried professionals</div>
