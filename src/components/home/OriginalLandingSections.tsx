@@ -1,24 +1,30 @@
 import { ArrowRight } from 'lucide-react';
-import homeRetirementImage from '@/assets/marketing/home-retirement.webp';
-import lifeGoalsImage from '@/assets/marketing/life-goals.webp';
-import retirementSavingsImage from '@/assets/marketing/retirement-savings.webp';
+import homeRetirementImage from '@/assets/marketing/first-home.webp';
+import lifeGoalsImage from '@/assets/marketing/family-milestones.webp';
+import retirementSavingsImage from '@/assets/marketing/retirement-together.webp';
 
 const questions = [
   {
     image: homeRetirementImage,
-    alt: 'Can I buy a home and save for retirement? See how both goals fit into one monthly plan.',
+    kicker: 'A PLACE TO CALL YOURS',
+    title: "A home is where your next chapter begins.",
+    detail: 'See how a home goal could fit into your monthly plan.',
     href: '/calculators',
     action: 'Explore goal calculators',
   },
   {
     image: lifeGoalsImage,
-    alt: 'A car, a wedding, an education. Where do I start? Put every goal on a timeline you can adjust.',
+    kicker: 'LIFE HAS MANY MILESTONES',
+    title: 'The moments you celebrate are worth planning for.',
+    detail: 'A car, a wedding, an education. Give each goal a place.',
     href: '#customer-signin',
     action: 'Build my plan',
   },
   {
     image: retirementSavingsImage,
-    alt: 'How much should I save each month for retirement? Work backwards from the future you want.',
+    kicker: 'TIME TOGETHER MATTERS',
+    title: 'Make room for the days you want to share.',
+    detail: 'Explore what regular retirement saving could look like.',
     href: '/calculators',
     action: 'Explore retirement planning',
   },
@@ -32,8 +38,13 @@ export default function OriginalLandingSections() {
       <p>Explore different scenarios, then adjust the numbers to fit your life.</p>
     </div>
     <div className="campaign-questions-grid">
-      {questions.map(({ image, alt, href, action }) => <a className="campaign-question-card" href={href} key={alt} aria-label={action}>
-        <img src={image} alt={alt} loading="lazy" />
+      {questions.map(({ image, kicker, title, detail, href, action }) => <a className="campaign-question-card" href={href} key={title}>
+        <img src={image} alt="" loading="lazy" />
+        <div className="campaign-question-copy">
+          <span className="campaign-copy-kicker">{kicker}</span>
+          <h3>{title}</h3>
+          <p>{detail}</p>
+        </div>
         <span>{action} <ArrowRight size={17} aria-hidden="true" /></span>
       </a>)}
     </div>

@@ -1,8 +1,8 @@
 import { useEffect, useState, type FormEvent } from 'react';
 import { ShieldCheck, ArrowRight, TrendingUp, Home, Calculator, ChartNoAxesCombined, MapPin } from 'lucide-react';
 import { authClient } from '@/lib/auth';
-import termInsuranceImage from '@/assets/marketing/term-insurance.webp';
-import investmentOptionsImage from '@/assets/marketing/investment-options.webp';
+import termInsuranceImage from '@/assets/marketing/family-protection.webp';
+import investmentOptionsImage from '@/assets/marketing/investment-choices.webp';
 import OriginalLandingSections from '@/components/home/OriginalLandingSections';
 
 export default function SignInPage({ onDemo, initialError = '' }: { onDemo?: () => void; initialError?: string }) {
@@ -76,14 +76,23 @@ export default function SignInPage({ onDemo, initialError = '' }: { onDemo?: () 
         </header>
         <div className="landing-motto"><p lang="te">ధనం మూలం ఇదం జగత్</p><p lang="hi">धन ही इस संसार का आधार है।</p><p lang="en">Money is the foundation that runs this world</p></div>
         <div className="campaign-hero-content">
-          <h1 className="sr-only">Plan term insurance, investments, and life goals with Chanakya Finance</h1>
-          <img src={termInsuranceImage} alt="I’m 26. What might term insurance cost me? Compare cover and estimated premiums in one place." />
-          <a className="cf-button cf-primary campaign-hero-cta" href="#customer-signin">Start my plan <ArrowRight size={18} aria-hidden="true" /></a>
+          <img src={termInsuranceImage} alt="" />
+          <div className="campaign-hero-copy">
+            <span className="campaign-copy-kicker">FAMILY PROTECTION</span>
+            <h1>I'm 26. How do I protect the people I love?</h1>
+            <p>Compare term cover and estimated premiums with your own details.</p>
+            <a className="cf-button cf-primary campaign-hero-cta" href="#customer-signin">Start my plan <ArrowRight size={18} aria-hidden="true" /></a>
+          </div>
         </div>
       </div>
       <div className="landing-showcase">
-            <a className="campaign-feature-card" href="/investments" aria-label="Explore gold, mutual funds, and NPS investment choices and risks">
-              <img src={investmentOptionsImage} alt="I’m 28. Gold, mutual funds, or NPS? Explore potential growth and understand the risks." loading="lazy" />
+            <a className="campaign-feature-card" href="/investments">
+              <img src={investmentOptionsImage} alt="" loading="lazy" />
+              <div className="campaign-feature-copy">
+                <span className="campaign-copy-kicker">INVEST WITH CLARITY</span>
+                <h2>Your dreams deserve more than a guess.</h2>
+                <p>Compare gold, mutual funds and NPS, with risk beside potential growth.</p>
+              </div>
               <span>Explore investments <ArrowRight size={17} aria-hidden="true" /></span>
             </a>
     <section className="signin-card" id="customer-signin" tabIndex={-1}><div className="cf-eyebrow">YOUR ACCOUNT</div><h2>Sign in to Chanakya</h2><p>Sign in to start your personal money plan.</p><button className="cf-button google-button" disabled={busy} onClick={google}><span className="google-letter">G</span>Continue with Google</button><div className="signin-divider">or use your mobile number</div>
