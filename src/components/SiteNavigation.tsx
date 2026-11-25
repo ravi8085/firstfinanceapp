@@ -1,9 +1,10 @@
-import { Calculator, ChartNoAxesCombined, Home, Landmark, MapPin, ShieldCheck, TrendingUp } from 'lucide-react';
+import { BookOpen, Calculator, ChartNoAxesCombined, Home, Landmark, MapPin, ShieldCheck, TrendingUp } from 'lucide-react';
 
 const items = [
   { href: '/', label: 'Home', icon: Home },
   { href: '/calculators', label: 'Calculator', icon: Calculator },
   { href: '/investments', label: 'Investments', icon: TrendingUp },
+  { href: '/knowledge', label: 'Knowledge', icon: BookOpen },
   { href: '/mutual-funds', label: 'Mutual Funds', icon: ChartNoAxesCombined },
   { href: '/expenses', label: 'City Expenses', icon: MapPin },
   { href: '/fixed-deposits', label: 'Fixed Deposits', icon: Landmark },

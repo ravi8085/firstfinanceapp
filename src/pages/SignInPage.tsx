@@ -6,6 +6,7 @@ import investmentOptionsImage from '@/assets/marketing/investment-choices.webp';
 import OriginalLandingSections from '@/components/home/OriginalLandingSections';
 import SiteNavigation from '@/components/SiteNavigation';
 import InvestmentHorizonGraphic from '@/components/home/InvestmentHorizonGraphic';
+import LandingGoals from '@/components/home/LandingGoals';
 
 export default function SignInPage({ onDemo, initialError = '' }: { onDemo?: () => void; initialError?: string }) {
   const [phone, setPhone] = useState('');
@@ -73,6 +74,7 @@ export default function SignInPage({ onDemo, initialError = '' }: { onDemo?: () 
           <a className="cf-button cf-primary landing-signin-link" href="#customer-signin">Sign in</a>
         </header>
         <div className="landing-motto" aria-label="ధనం మూలం ఇదం జగత్ | धन ही इस संसार का आधार है। | Money is the foundation that runs this world"><span lang="te">ధనం మూలం ఇదం జగత్</span><span className="motto-divider" aria-hidden="true">|</span><span lang="hi">धन ही इस संसार का आधार है।</span><span className="motto-divider" aria-hidden="true">|</span><span lang="en">Money is the foundation that runs this world</span></div>
+        <LandingGoals />
         <section className="campaign-hero-content" aria-labelledby="landing-main-title">
           <img src={futureHeroImage} alt="An illustrated family looking ahead to their home, education and protection goals" />
           <div className="campaign-hero-copy">

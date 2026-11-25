@@ -19,6 +19,7 @@ import SipCalculatorPage from './pages/SipCalculatorPage';
 import CalculatorsPage, { FdCalculatorPage, NpsCalculatorPage, InvestmentCalculatorPage } from './pages/CalculatorsPage';
 import InteractiveDemoPage from './pages/InteractiveDemoPage';
 import PublicHeader from './components/PublicHeader';
+import KnowledgeBasePage from './pages/KnowledgeBasePage';
 
 const queryClient = new QueryClient();
 
@@ -28,7 +29,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <Routes><Route path="/demo" element={<InteractiveDemoPage />} /><Route path="/calculators" element={<CalculatorsPage />} /><Route path="/fd-calculator" element={<FdCalculatorPage />} /><Route path="/sip-calculator" element={<SipCalculatorPage />} /><Route path="/nps-calculator" element={<NpsCalculatorPage />} /><Route path="/investment-calculator" element={<InvestmentCalculatorPage />} /><Route path="/investments" element={<><PublicHeader activeHref="/investments" /><InvestmentsPage /></>} /><Route path="/expenses" element={<><PublicHeader activeHref="/expenses" /><ExpensesPage /></>} /><Route path="/*" element={
+        <Routes><Route path="/demo" element={<InteractiveDemoPage />} /><Route path="/calculators" element={<CalculatorsPage />} /><Route path="/fd-calculator" element={<FdCalculatorPage />} /><Route path="/sip-calculator" element={<SipCalculatorPage />} /><Route path="/nps-calculator" element={<NpsCalculatorPage />} /><Route path="/investment-calculator" element={<InvestmentCalculatorPage />} /><Route path="/investments" element={<><PublicHeader activeHref="/investments" /><InvestmentsPage /></>} /><Route path="/knowledge" element={<><PublicHeader activeHref="/knowledge" /><KnowledgeBasePage /></>} /><Route path="/expenses" element={<><PublicHeader activeHref="/expenses" /><ExpensesPage /></>} /><Route path="/*" element={
         <AuthProvider>
         <PlannerSessionProvider>
         <Navbar />

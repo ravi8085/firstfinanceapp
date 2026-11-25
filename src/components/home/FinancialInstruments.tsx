@@ -6,7 +6,7 @@ type Risk = 'Lower' | 'Varies' | 'Higher' | 'Very high' | 'Protection';
 type Instrument = { name: string; risk: Risk; detail?: string };
 type Group = { title: string; icon: LucideIcon; accent: string; instruments: Instrument[] };
 
-const groups: Group[] = [
+export const groups: Group[] = [
   { title: 'Banks & savings', icon: Landmark, accent: 'teal', instruments: [
     { name: 'Fixed Deposits', risk: 'Lower', detail: 'Bank deposit' }, { name: 'Recurring Deposits', risk: 'Lower', detail: 'Regular bank deposit' },
     { name: 'PPF', risk: 'Lower', detail: 'Long-term small savings' }, { name: 'NSC', risk: 'Lower', detail: 'Small-savings certificate' },
@@ -36,10 +36,12 @@ const groups: Group[] = [
 
 const groupIcons: Record<string, LucideIcon> = { 'Fixed Deposits': PiggyBank, 'Recurring Deposits': Wallet, PPF: Shield, NSC: Coins, SCSS: Clock, 'Direct Stocks': BarChart3, 'Mutual Funds': LineChart, Gold: Coins, 'Real Estate': Home, Chits: Handshake };
 
+import { investmentKnowledge } from '@/data/investmentKnowledge';
+
 export default function FinancialInstruments() {
   return <section className="financial-instruments" aria-labelledby="financial-instruments-title">
     <div className="financial-instruments-heading"><span>THE FULL LANDSCAPE</span><h2 id="financial-instruments-title">Financial Instruments in India</h2><p>Explore the major ways people save, invest and protect their families. Select a category in the directory below to learn how products work.</p></div>
-    <div className="instrument-groups">{groups.map(({ title, icon: Icon, accent, instruments }) => <article className={`instrument-group instrument-${accent}`} key={title}><header><span className="instrument-group-icon"><Icon size={21} aria-hidden="true" /></span><h3>{title}</h3><span className="instrument-count">{instruments.length} options</span></header><div className="instrument-grid">{instruments.map(({ name, risk, detail }) => { const ItemIcon = groupIcons[name] ?? Icon; return <div className="instrument-tile" key={name}><div className="instrument-name"><ItemIcon size={17} aria-hidden="true" /><strong>{name}</strong></div><span className={`instrument-risk risk-${risk.toLowerCase().replace(' ', '-')}`}>{risk === 'Protection' ? 'Protection only' : `${risk} risk`}</span>{detail && <small>{detail}</small>}</div>; })}</div></article>)}</div>
+    <div className="instrument-groups">{groups.map(({ title, icon: Icon, accent, instruments }) => <article className={`instrument-group instrument-${accent}`} key={title}><header><span className="instrument-group-icon"><Icon size={21} aria-hidden="true" /></span><h3>{title}</h3><span className="instrument-count">{instruments.length} options</span></header><div className="instrument-grid">{instruments.map(({ name, risk, detail }) => { const ItemIcon = groupIcons[name] ?? Icon; const knowledge = investmentKnowledge[name]; return <div className="instrument-tile knowledge-hover-tile" key={name} tabIndex={0} aria-label={`${name}. ${knowledge?.definition ?? detail ?? ''} ${risk === 'Protection' ? 'Protection only' : `${risk} risk`}. ${knowledge?.why ?? ''}`}><div className="instrument-name"><ItemIcon size={17} aria-hidden="true" /><strong>{name}</strong></div><span className={`instrument-risk risk-${risk.toLowerCase().replace(' ', '-')}`}>{risk === 'Protection' ? 'Protection only' : `${risk} risk`}</span>{detail && <small>{detail}</small>}<span className="knowledge-hover-panel" aria-hidden="true"><b>What it is</b>{knowledge?.definition ?? detail}<b>When it may help</b>{knowledge?.why ?? 'Compare this option with your goal, time horizon and its current terms.'}<b>Risk</b>{risk === 'Protection' ? 'Protection product, not investment return' : `${risk} risk; check the specific product`}</span></div>; })}</div></article>)}</div>
     <p className="instrument-note">For learning only. These are different products and methods, not equal alternatives. Risk and access vary by provider and product; returns and tax treatment are not shown because they change and require current documents. SIP is a way to invest regularly. Term insurance provides protection, not an investment return.</p>
   </section>;
 }

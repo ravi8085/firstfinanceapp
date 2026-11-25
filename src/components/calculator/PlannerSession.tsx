@@ -1,9 +1,15 @@
 import { createContext, useContext, useState, type ReactNode } from 'react';
 import { initialDetails, type PlannerDetails } from '@/lib/planner';
 import type { TermProfile } from './TermPlanComparison';
+import { financialGoals } from '@/data/financialGoals';
 
 function useSessionState(){
-  const [details,setDetails]=useState<PlannerDetails>({...initialDetails});
+  const [details,setDetails]=useState<PlannerDetails>(() => {
+    const selected = sessionStorage.getItem('chanakya.selectedGoal');
+    sessionStorage.removeItem('chanakya.selectedGoal');
+    const goal = financialGoals.find(item => item.key === selected);
+    return {...initialDetails, ...(goal ? { goal: goal.name } : {})};
+  });
   const [mode,setMode]=useState<'form'|'voice'>('form');
   const [step,setStep]=useState(0);
   const [transcript,setTranscript]=useState('');
