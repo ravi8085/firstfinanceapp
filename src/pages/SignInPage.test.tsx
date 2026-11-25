@@ -6,15 +6,20 @@ import SignInPage from './SignInPage';
 afterEach(cleanup);
 beforeEach(()=>{vi.clearAllMocks();auth.signInWithOtp.mockResolvedValue({error:null});auth.verifyOtp.mockResolvedValue({data:{session:null},error:new Error('Invalid verification code')});});
 describe('mobile OTP sign-in',()=>{
-  it('shows the interactive demo beside the brand and opens it from the header',()=>{
+  it('shows the interactive demo below the brand and opens it from the header',()=>{
     const onDemo=vi.fn();
     render(<SignInPage onDemo={onDemo}/>);
-    const demo=screen.getByRole('button',{name:'Interactive demo'});
+    const demo=screen.getByRole('link',{name:'Interactive demo'});
     expect(demo.closest('header')).toBeInTheDocument();
     expect(demo.previousElementSibling).toHaveClass('cf-brand');
+    expect(demo).toHaveAttribute('href','/demo');
     fireEvent.click(demo);
     expect(onDemo).toHaveBeenCalledOnce();
     expect(screen.queryByText('Want to see how it works?')).not.toBeInTheDocument();
+  });
+  it('keeps the public preview visible when the account-free planner demo is disabled',()=>{
+    render(<SignInPage/>);
+    expect(screen.getByRole('link',{name:'Interactive demo'})).toHaveAttribute('href','/demo');
   });
   it('sends to the normalized number and verifies against the same destination',async()=>{
     render(<SignInPage/>);

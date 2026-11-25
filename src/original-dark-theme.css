@@ -253,3 +253,10 @@ button,input,select,textarea{font-family:var(--font-body)}
   .campaign-feature-copy h2,.campaign-question-copy h3,.campaign-question-card:not(:first-child) .campaign-question-copy h3{font-size:clamp(25px,4vw,32px)}
 }
 @media(max-width:600px){.campaign-hero-copy{padding:20px 14px 10px}.campaign-copy-kicker{font-size:11px}.campaign-hero-copy h1{font-size:32px}.campaign-hero-copy p{font-size:17px}.campaign-feature-copy,.campaign-question-copy{padding:16px 14px 12px}}
+
+/* The public preview link stays visible beneath the brand on Azure. */
+.welcome-shell .welcome-header.has-demo{height:auto;min-height:106px;padding-top:10px;padding-bottom:10px}
+.landing-brand-stack{display:flex;flex-direction:column;align-items:flex-start;gap:6px;flex-shrink:0}
+.welcome-shell .landing-demo-button{display:inline-flex;align-items:center;min-height:30px;margin-left:49px;padding:6px 12px;text-decoration:none}
+@media(max-width:1250px){.welcome-shell .landing-demo-button{margin-left:0}}
+@media(max-width:600px){.welcome-shell .welcome-header.has-demo{min-height:98px}.welcome-shell .landing-demo-button{font-size:12px;margin-left:0;padding:5px 9px}}

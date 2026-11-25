@@ -62,9 +62,11 @@ export default function SignInPage({ onDemo, initialError = '' }: { onDemo?: () 
   return <div className="welcome-shell">
     <main>
       <div className="landing-hero campaign-landing-hero">
-        <header className={`welcome-header${onDemo ? ' has-demo' : ''}`}>
-          <a href="/" className="cf-brand"><span className="cf-logo"><TrendingUp size={22} aria-hidden="true" /></span><span>Chanakya Finance</span></a>
-          {onDemo && <button type="button" className="landing-demo-button" onClick={onDemo} title="Explore without creating an account">Interactive demo</button>}
+        <header className="welcome-header has-demo">
+          <div className="landing-brand-stack">
+            <a href="/" className="cf-brand"><span className="cf-logo"><TrendingUp size={22} aria-hidden="true" /></span><span>Chanakya Finance</span></a>
+            <a href="/demo" className="landing-demo-button" onClick={onDemo ? event => { event.preventDefault(); onDemo(); } : undefined}>Interactive demo</a>
+          </div>
           <nav className="landing-nav" aria-label="On this page">
             <a className="landing-nav-home" href="/"><Home size={18} aria-hidden="true" />Home</a>
             <a href="/calculators" target="_blank" rel="noopener noreferrer"><Calculator size={18} aria-hidden="true" />Calculator</a>
