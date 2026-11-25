@@ -1,9 +1,10 @@
 import { useEffect, useState, type FormEvent } from 'react';
-import { ShieldCheck, ArrowRight, TrendingUp, Home, Calculator, ChartNoAxesCombined, MapPin } from 'lucide-react';
+import { ShieldCheck, ArrowRight, TrendingUp } from 'lucide-react';
 import { authClient } from '@/lib/auth';
 import futureHeroImage from '@/assets/marketing/chanakya-future-hero.webp';
 import investmentOptionsImage from '@/assets/marketing/investment-choices.webp';
 import OriginalLandingSections from '@/components/home/OriginalLandingSections';
+import SiteNavigation from '@/components/SiteNavigation';
 
 export default function SignInPage({ onDemo, initialError = '' }: { onDemo?: () => void; initialError?: string }) {
   const [phone, setPhone] = useState('');
@@ -62,18 +63,12 @@ export default function SignInPage({ onDemo, initialError = '' }: { onDemo?: () 
   return <div className="welcome-shell">
     <main>
       <div className="landing-hero campaign-landing-hero">
-        <header className="welcome-header has-demo">
+        <header className="welcome-header has-demo unified-header">
           <div className="landing-brand-stack">
             <a href="/" className="cf-brand"><span className="cf-logo"><TrendingUp size={22} aria-hidden="true" /></span><span>Chanakya Finance</span></a>
             <a href="/demo" className="landing-demo-button" onClick={onDemo ? event => { event.preventDefault(); onDemo(); } : undefined}>Interactive demo</a>
           </div>
-          <nav className="landing-nav" aria-label="On this page">
-            <a className="landing-nav-home" href="/"><Home size={18} aria-hidden="true" />Home</a>
-            <a href="/calculators"><Calculator size={18} aria-hidden="true" />Calculator</a>
-            <a href="/investments"><TrendingUp size={18} aria-hidden="true" />Investments</a>
-            <a href="/mutual-funds"><ChartNoAxesCombined size={18} aria-hidden="true" />Mutual Funds</a>
-            <a href="/expenses"><MapPin size={18} aria-hidden="true" />City Expenses</a>
-          </nav>
+          <SiteNavigation className="landing-nav" activeHref="/" />
           <a className="cf-button cf-primary landing-signin-link" href="#customer-signin">Sign in</a>
         </header>
         <div className="landing-motto" aria-label="ధనం మూలం ఇదం జగత్ | धन ही इस संसार का आधार है। | Money is the foundation that runs this world"><span lang="te">ధనం మూలం ఇదం జగత్</span><span className="motto-divider" aria-hidden="true">|</span><span lang="hi">धन ही इस संसार का आधार है।</span><span className="motto-divider" aria-hidden="true">|</span><span lang="en">Money is the foundation that runs this world</span></div>
