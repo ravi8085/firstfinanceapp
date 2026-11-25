@@ -269,3 +269,31 @@ button,input,select,textarea{font-family:var(--font-body)}
 .welcome-video{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:16px;border:1px solid #526078;background:#0b1020;box-shadow:0 16px 34px #0008}
 @media(max-width:800px){.welcome-video-section{grid-template-columns:1fr;margin:20px 16px 12px;padding:22px;gap:20px}}
 @media(max-width:600px){.welcome-video-section{padding:18px;border-radius:16px}.welcome-video-copy h2{font-size:30px}.welcome-video-copy p{font-size:16px}}
+
+/* A brighter landing story, with the three-language motto kept together. */
+.welcome-shell .campaign-landing-hero{background:radial-gradient(circle at 75% 25%,#17466a 0,transparent 45%),#090d16}
+.welcome-shell .landing-motto{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;column-gap:14px;row-gap:5px;padding:20px 20px 0;color:#f6f2e8;font-size:clamp(13px,1.1vw,17px);font-weight:600;text-align:center}
+.welcome-shell .landing-motto span[lang="te"]{color:#f8c525;font-family:'Noto Sans Telugu','Gautami','Segoe UI',sans-serif!important;font-size:clamp(16px,1.35vw,21px)}
+.welcome-shell .landing-motto span[lang="hi"]{font-family:'Noto Sans Devanagari','Nirmala UI','Segoe UI',sans-serif!important}
+.welcome-shell .landing-motto span[lang="en"]{color:#d5deec}
+.welcome-shell .landing-motto .motto-divider{color:#f8c525;font-weight:700}
+.welcome-shell .campaign-hero-content{max-width:1480px;margin-top:20px;padding-bottom:30px}
+.welcome-shell .campaign-hero-content>img{aspect-ratio:2.25;min-height:560px;object-position:center;border-color:#365272}
+.welcome-shell .campaign-hero-content::after{content:"";position:absolute;inset:0 24px 30px;border-radius:18px;background:linear-gradient(90deg,#07152ca8 0%,#07152c55 36%,transparent 63%);pointer-events:none}
+.welcome-shell .campaign-hero-copy{z-index:1;width:min(45%,620px)}
+.welcome-shell .campaign-hero-copy h1{font-size:clamp(42px,4.4vw,70px)}
+.welcome-shell .campaign-hero-copy h1 em{color:#f8c525;font-style:normal}
+.welcome-shell .campaign-hero-copy p{color:#e8eef8}
+.landing-hero-actions{display:flex;align-items:center;flex-wrap:wrap;gap:18px}
+.landing-hero-explore{display:inline-flex;align-items:center;gap:8px;color:#fff;font-size:16px;font-weight:700;text-decoration:none;border-bottom:1px solid #f8c525;padding:10px 0}
+.landing-hero-explore:hover{color:#f8c525}
+.landing-hero-sparks{position:absolute;z-index:1;left:clamp(46px,6vw,100px);bottom:56px;display:flex;flex-wrap:wrap;gap:9px}
+.landing-hero-sparks span{padding:7px 11px;border:1px solid #ffffff50;border-radius:999px;background:#0b1b36b8;backdrop-filter:blur(12px);color:#f6f7fa;font-size:12px;font-weight:700}
+.welcome-shell .landing-showcase{margin-top:18px}
+.landing-video-wrap{padding:38px 24px 0;background:radial-gradient(circle at 12% 70%,#12345c55,transparent 45%)}
+.landing-video-wrap .welcome-video-section{margin-top:0}
+.campaign-feature-card:hover,.campaign-question-card:hover{box-shadow:0 22px 48px #0008,0 0 26px #f8c52526}
+@media(max-width:900px){.welcome-shell .campaign-hero-content>img{min-height:430px}.welcome-shell .campaign-hero-copy h1{font-size:clamp(34px,4.8vw,48px)}.landing-hero-sparks{bottom:44px}}
+@media(max-width:800px){.welcome-shell .campaign-hero-content>img{min-height:0;aspect-ratio:16/9}.welcome-shell .campaign-hero-content::after{display:none}.welcome-shell .campaign-hero-copy{width:auto}.landing-hero-sparks{position:static;padding:4px 22px 0}.landing-video-wrap{padding:24px 0 0}}
+@media(max-width:600px){.welcome-shell .landing-motto{column-gap:8px;padding:16px 12px 0;font-size:12px}.welcome-shell .landing-motto span[lang="te"]{font-size:15px}.welcome-shell .campaign-hero-content>img{aspect-ratio:1.2;object-position:67% center}.welcome-shell .campaign-hero-copy h1{font-size:38px}.landing-hero-actions{gap:12px}.landing-hero-sparks{padding:4px 14px 0}.landing-hero-sparks span{font-size:11px}}
+@media(prefers-reduced-motion:no-preference){.landing-hero-sparks span{animation:landing-spark-in .7s both}.landing-hero-sparks span:nth-child(2){animation-delay:.15s}.landing-hero-sparks span:nth-child(3){animation-delay:.3s}@keyframes landing-spark-in{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}}
