@@ -5,11 +5,12 @@ import { formatCurrency } from '@/data/investmentData';
 import GoalOptions from './GoalOptions';
 import {FundingProgress,GoalGrowthVisual} from './FinancialVisuals';
 import { getGoalAssumptions, assumptionSources, assumptionsReviewed } from '@/data/goalAssumptions';
+import type { GoalJourneyInput } from '@/lib/goalJourney';
 
 interface GoalState { currentCost:number; yearsAway:number; inflationRate:number; annualReturn:number; savings:number; name:string; customInflation:boolean; customReturn:boolean }
-export default function GoalPlanner({salary, initialGoal, customGoalName='', availableMonthly}: {salary:number; initialGoal?:string; customGoalName?:string; availableMonthly?:number}) {
+export default function GoalPlanner({salary, initialGoal, customGoalName='', availableMonthly, initialJourney}: {salary:number; initialGoal?:string; customGoalName?:string; availableMonthly?:number; initialJourney?:GoalJourneyInput}) {
   const [selectedGoal,setSelectedGoal]=useState(financialGoals.find(g=>g.name===initialGoal)?.key || financialGoals[0].key);
-  const [states,setStates]=useState<Record<string,GoalState>>(()=>Object.fromEntries(financialGoals.map(g=>[g.key,{currentCost:0,yearsAway:g.defaultYearsAway,inflationRate:getGoalAssumptions(g,g.defaultYearsAway).inflationRate,annualReturn:getGoalAssumptions(g,g.defaultYearsAway).annualReturn,savings:0,customInflation:false,customReturn:false,name:g.key==='custom'?customGoalName:''}])));
+  const [states,setStates]=useState<Record<string,GoalState>>(()=>Object.fromEntries(financialGoals.map(g=>[g.key,{currentCost:g.key===initialJourney?.key?initialJourney.target:0,yearsAway:g.key===initialJourney?.key?initialJourney.years:g.defaultYearsAway,inflationRate:getGoalAssumptions(g,g.defaultYearsAway).inflationRate,annualReturn:g.key===initialJourney?.key&&initialJourney.risk==='steady'?0:getGoalAssumptions(g,g.defaultYearsAway).annualReturn,savings:g.key===initialJourney?.key?initialJourney.saved:0,customInflation:false,customReturn:false,name:g.key==='custom'?customGoalName:''}])));
   const goal=financialGoals.find(g=>g.key===selectedGoal)!;
   const state=states[selectedGoal];
   const protection=goal.kind==='protection';

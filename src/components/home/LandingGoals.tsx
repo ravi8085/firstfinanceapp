@@ -2,12 +2,14 @@ import { useState } from 'react';
 import { ArrowRight, ChevronDown, Target } from 'lucide-react';
 import { financialGoals, goalGroups } from '@/data/financialGoals';
 
-export default function LandingGoals() {
+export default function LandingGoals({onSelect}: {onSelect?: (goalName: string) => void}) {
   const [selected, setSelected] = useState<string | null>(null);
   const [expanded, setExpanded] = useState(false);
   const choose = (key: string) => {
     sessionStorage.setItem('chanakya.selectedGoal', key);
     setSelected(key);
+    onSelect?.(financialGoals.find(item => item.key === key)?.name ?? 'Your goal');
+    window.location.hash = 'customer-signin';
     document.getElementById('customer-signin')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
     document.getElementById('customer-signin')?.focus({ preventScroll: true });
   };
