@@ -77,6 +77,19 @@ export default function SignInPage({ onDemo, initialError = '' }: { onDemo?: () 
           <a className="cf-button cf-primary landing-signin-link" href="#customer-signin">Sign in</a>
         </header>
         <div className="landing-motto"><p lang="te">ధనం మూలం ఇదం జగత్</p><p lang="hi">धन ही इस संसार का आधार है।</p><p lang="en">Money is the foundation that runs this world</p></div>
+        <section className="welcome-video-section" aria-labelledby="welcome-video-title">
+          <div className="welcome-video-copy">
+            <span className="campaign-copy-kicker">A WELCOME FROM CHANAKYA</span>
+            <h2 id="welcome-video-title">Care for what you earn. Build toward what matters.</h2>
+            <p>Every rupee reflects your hard work. Give your money care and direction today, and it can help you build the future you dream of.</p>
+            <span className="welcome-video-hint">Play the narrated welcome video</span>
+          </div>
+          <video className="welcome-video" controls playsInline preload="metadata" poster="/media/chanakya-welcome-poster.webp" aria-label="Narrated welcome to Chanakya Investments">
+            <source src="/media/chanakya-welcome.mp4" type="video/mp4" />
+            <track kind="captions" src="/media/chanakya-welcome.vtt" srcLang="en" label="English" default />
+            Your browser does not support video playback.
+          </video>
+        </section>
         <div className="campaign-hero-content">
           <img src={termInsuranceImage} alt="" />
           <div className="campaign-hero-copy">
