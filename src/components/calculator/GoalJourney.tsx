@@ -38,4 +38,3 @@ export function GoalJourneyResult({ goal, input, availableMonthly, onEdit }: { g
     <p className="goal-journey-caution"><ShieldAlert size={17} aria-hidden="true" />These are options to compare, not a product recommendation. Rates, tax, fees, risk and eligibility differ by provider. The timeline assumes smooth annual returns and cost increases; actual results can vary.</p>
   </section>;
 }
-\n

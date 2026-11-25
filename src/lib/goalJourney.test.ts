@@ -27,4 +27,3 @@ describe('goal journey', () => {
     expect(result.monthlyCapacity).toBe(8_000);
   });
 });
-\n

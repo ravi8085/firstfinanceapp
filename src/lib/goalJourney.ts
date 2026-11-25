@@ -47,4 +47,3 @@ export function buildGoalJourney(goal: FinancialGoal, input: GoalJourneyInput, a
   const routeYears = monthsAtCapacity === null ? input.years : Math.min(input.years, Math.max(1, Math.ceil(monthsAtCapacity / 12)));
   return { inflation, rate, projection, monthlyCapacity, monthsAtCapacity, routes: investmentRoutes(goal, routeYears, input.risk) };
 }
-\n

@@ -3,4 +3,3 @@
 .goal-journey-method{margin-top:17px;padding:13px 15px;border:1px solid #3d5871;border-radius:12px;background:#122033;color:#b9c9d8;font-size:12px;line-height:1.5}.goal-journey-method summary{cursor:pointer;color:#f8c525;font-weight:700}.goal-journey-method p{margin:9px 0}.goal-journey-method a{display:inline-block;margin:0 15px 6px 0;color:#80d6d4}
 @media(max-width:600px){.goal-journey-questions,.goal-journey-result{padding:16px}.goal-journey-questions .planner-fields,.goal-journey-metrics{grid-template-columns:1fr}.goal-journey-metrics>div:last-child{grid-column:span 1}.goal-result-heading{display:block}.goal-result-heading .cf-button{margin-top:12px}.goal-journey-metrics>div{min-height:0}.goal-journey-routes{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){.goal-journey-routes>a{transition:none}.goal-journey-routes>a:hover{transform:none}}
-\n
