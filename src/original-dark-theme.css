@@ -205,3 +205,25 @@ button,input,select,textarea{font-family:var(--font-body)}
 .landing-showcase .signin-card .signin-links{font-size:14px}
 @media(max-width:1050px){.welcome-shell .welcome-header.has-demo{height:auto;min-height:86px;flex-wrap:wrap;padding-top:12px;padding-bottom:12px;gap:10px 16px}.welcome-shell .welcome-header.has-demo .landing-nav{order:3;flex:1 0 100%;justify-content:center;margin:0}.welcome-shell .welcome-header.has-demo .landing-signin-link{margin-left:auto}}
 @media(max-width:600px){.welcome-shell .welcome-header.has-demo{min-height:70px}.welcome-shell .landing-demo-button{font-size:12px;padding:8px 10px}.welcome-shell .welcome-header.has-demo .landing-nav{display:none}.landing-showcase .signin-card h2{font-size:30px}}
+
+/* Customer-question campaign artwork replaces the earlier landing imagery. */
+.welcome-shell .campaign-landing-hero{min-height:0;background:#090d16}
+.welcome-shell .campaign-landing-hero::after{display:none}
+.campaign-hero-content{position:relative;max-width:1480px;margin:22px auto 0;padding:0 24px 28px}
+.campaign-hero-content img,.campaign-feature-card img,.campaign-question-card img{display:block;width:100%;height:auto;object-fit:cover}
+.campaign-hero-content img{border-radius:18px;border:1px solid #354256;box-shadow:0 22px 55px #0007}
+.campaign-hero-cta{position:absolute;left:clamp(45px,6vw,95px);bottom:clamp(42px,5vw,80px);background:#f8c525!important;color:#11151d!important;border-color:#f8c525!important}
+.welcome-shell .landing-showcase{margin:26px auto 0;align-items:stretch;max-width:1432px;grid-template-columns:minmax(0,1.25fr) minmax(340px,.85fr)}
+.campaign-feature-card,.campaign-question-card{display:block;overflow:hidden;border:1px solid #313b4f;border-radius:18px;background:#151c2b;color:#f8c525;text-decoration:none;box-shadow:0 16px 38px #0005;transition:transform .2s,border-color .2s}
+.campaign-feature-card:hover,.campaign-question-card:hover{transform:translateY(-4px);border-color:#f8c525}
+.campaign-feature-card img{object-fit:contain}
+.campaign-feature-card>span,.campaign-question-card>span{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 20px;font-size:16px;font-weight:700}
+.campaign-questions{max-width:1432px;margin:0 auto;padding:64px 24px 74px}
+.campaign-questions-heading span{color:#f8c525;font-size:13px;font-weight:800;letter-spacing:.14em}
+.campaign-questions-heading h2{margin:10px 0;font-size:clamp(29px,3vw,42px);color:#f4f6fa}
+.campaign-questions-heading p,.campaign-questions-note{color:#aeb7c7;font-size:16px;line-height:1.6}
+.campaign-questions-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin-top:26px}
+.campaign-question-card:first-child{grid-column:1/-1}
+.campaign-questions-note{margin:22px 0 0;font-size:13px}
+@media(max-width:800px){.welcome-shell .landing-showcase{grid-template-columns:1fr;max-width:650px}.campaign-feature-card img{min-height:0}.campaign-questions-grid{grid-template-columns:1fr}.campaign-question-card:first-child{grid-column:auto}}
+@media(max-width:600px){.campaign-hero-content{margin-top:12px;padding:0 16px 18px}.campaign-hero-content img{border-radius:12px}.campaign-hero-cta{position:static;margin-top:12px}.welcome-shell .landing-showcase{margin-top:14px}.campaign-questions{padding:44px 16px 54px}.campaign-questions-grid{gap:16px}.campaign-feature-card>span,.campaign-question-card>span{font-size:14px;padding:11px 14px}}
