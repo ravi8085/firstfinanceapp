@@ -21,12 +21,11 @@ describe('mobile OTP sign-in',()=>{
     render(<SignInPage/>);
     expect(screen.getByRole('link',{name:'Interactive demo'})).toHaveAttribute('href','/demo');
   });
-  it('opens investments and city expenses in separate tabs',()=>{
+  it('opens investments and city expenses in the current tab',()=>{
     render(<SignInPage/>);
     for(const name of ['Investments','City Expenses']){
       const link=screen.getByRole('link',{name});
-      expect(link).toHaveAttribute('target','_blank');
-      expect(link).toHaveAttribute('rel','noopener noreferrer');
+      expect(link).not.toHaveAttribute('target');
     }
   });
   it('sends to the normalized number and verifies against the same destination',async()=>{
