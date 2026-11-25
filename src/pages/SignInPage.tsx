@@ -82,7 +82,7 @@ export default function SignInPage({ onDemo, initialError = '' }: { onDemo?: () 
             <span className="campaign-copy-kicker">A WELCOME FROM CHANAKYA</span>
             <h2 id="welcome-video-title">Care for what you earn. Build toward what matters.</h2>
             <p>Every rupee reflects your hard work. Give your money care and direction today, and it can help you build the future you dream of.</p>
-            <span className="welcome-video-hint">Play the narrated welcome video</span>
+            <span className="welcome-video-hint">Play the welcome video with Indian English narration</span>
           </div>
           <video className="welcome-video" controls playsInline preload="metadata" poster="/media/chanakya-welcome-poster.webp" aria-label="Narrated welcome to Chanakya Investments">
             <source src="/media/chanakya-welcome.mp4" type="video/mp4" />
