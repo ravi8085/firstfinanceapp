@@ -5,6 +5,7 @@ import futureHeroImage from '@/assets/marketing/chanakya-future-hero.webp';
 import investmentOptionsImage from '@/assets/marketing/investment-choices.webp';
 import OriginalLandingSections from '@/components/home/OriginalLandingSections';
 import SiteNavigation from '@/components/SiteNavigation';
+import InvestmentHorizonGraphic from '@/components/home/InvestmentHorizonGraphic';
 
 export default function SignInPage({ onDemo, initialError = '' }: { onDemo?: () => void; initialError?: string }) {
   const [phone, setPhone] = useState('');
@@ -98,6 +99,7 @@ export default function SignInPage({ onDemo, initialError = '' }: { onDemo?: () 
     : <form onSubmit={verify}><label htmlFor="code">Code sent to {sentPhone.slice(0, 3)} ••••••{sentPhone.slice(-4)}</label><input id="code" className="cf-input otp-input" type="text" inputMode="numeric" autoComplete="one-time-code" pattern="[0-9]{6}" maxLength={6} value={otp} onChange={e => setOtp(e.target.value.replace(/\D/g, ''))} required autoFocus /><button className="cf-button cf-primary" disabled={busy}>{busy ? 'Verifying…' : 'Verify and continue'}</button><div className="signin-links"><button type="button" disabled={busy} onClick={() => { setSentPhone(''); setOtp(''); setMessage(''); }}>Change number</button><button type="button" disabled={busy || cooldown > 0} onClick={() => sendCode()}>{cooldown ? `Resend in ${cooldown}s` : 'Resend code'}</button></div></form>}
     {message && <p className="signin-message" role="status">{message}</p>}<div className="signin-privacy"><ShieldCheck size={18} /><p>Your financial details stay yours.<small>We never ask for your bank password or payment PIN.</small></p></div></section>
       </div>
+      <InvestmentHorizonGraphic />
       <div className="landing-video-wrap">
         <section className="welcome-video-section" aria-labelledby="welcome-video-title">
           <div className="welcome-video-copy">

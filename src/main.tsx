@@ -12,5 +12,6 @@ import "./finance-guide.css";
 import "./reference-theme.css";
 import "./original-dark-theme.css";
 import "./site-navigation.css";
+import "./investment-horizon-graphic.css";
 
 createRoot(document.getElementById("root")!).render(<App />);
