@@ -8,6 +8,8 @@ describe('public investment directory', () => {
     expect(screen.getByRole('heading', { name: 'A clearer way to explore your options' })).toBeInTheDocument();
     expect(screen.getByText('Under 1 year')).toBeInTheDocument();
     expect(screen.getByText('5+ years')).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: 'Financial Instruments in India' })).toBeInTheDocument();
+    expect(screen.getByText('Term Insurance')).toBeInTheDocument();
     expect(screen.getByRole('heading', { name: 'Bank fixed deposit' })).toBeInTheDocument();
     expect(screen.getByRole('heading', { name: 'National Pension System (NPS)' })).toBeInTheDocument();
     fireEvent.change(screen.getByPlaceholderText('Search investments or institutions'), { target: { value: 'India Post' } });

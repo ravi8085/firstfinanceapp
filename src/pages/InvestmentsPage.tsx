@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react';
 import { ArrowUpRight, Search, ShieldCheck } from 'lucide-react';
 import { investmentDirectory, type InvestmentGroup } from '@/data/investmentDirectory';
 import investmentHeroImage from '@/assets/marketing/investment-horizons-hero.webp';
+import FinancialInstruments from '@/components/home/FinancialInstruments';
 import './investments.css';
 
 const groups: Array<'All' | InvestmentGroup> = ['All', 'Deposits & savings', 'Government & retirement', 'Market investments', 'Property & gold'];
@@ -30,6 +31,7 @@ export default function InvestmentsPage() {
       </div>
     </header>
     <section className="investment-horizons" aria-labelledby="investment-horizons-title"><div className="horizons-heading"><span>TIME · RISK · GOALS</span><h2 id="investment-horizons-title">A clearer way to explore your options</h2><p>Examples are for learning, not fixed return forecasts or personal recommendations.</p></div><div className="horizons-grid">{horizons.map((item, index) => <article className="horizon-card" key={item.period}><div className="horizon-number">0{index + 1}</div><span className="horizon-period">{item.period}</span><h3>{item.title}</h3><p className="horizon-examples">{item.examples}</p><span className="horizon-risk">{item.risk}</span><p className="horizon-note">{item.note}</p></article>)}</div></section>
+    <FinancialInstruments />
     <section className="directory-content" aria-label="Browse investment types">
       <div className="directory-controls"><label className="directory-search"><Search size={18} aria-hidden="true" /><span className="sr-only">Search investment types or institutions</span><input value={query} onChange={event => setQuery(event.target.value)} placeholder="Search investments or institutions" /></label><div className="directory-filters" aria-label="Filter investment types">{groups.map(item => <button key={item} type="button" aria-pressed={group === item} onClick={() => setGroup(item)}>{item}</button>)}</div></div>
       <p className="directory-context">Educational directory, not a product recommendation or a complete list of every institution. Rates, fees, eligibility and tax rules can change. Check the current product document with its provider. Risk labels are broad guides; mutual funds have scheme-specific SEBI Riskometers.</p>
