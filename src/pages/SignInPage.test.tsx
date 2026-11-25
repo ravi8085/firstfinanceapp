@@ -21,6 +21,14 @@ describe('mobile OTP sign-in',()=>{
     render(<SignInPage/>);
     expect(screen.getByRole('link',{name:'Interactive demo'})).toHaveAttribute('href','/demo');
   });
+  it('opens investments and city expenses in separate tabs',()=>{
+    render(<SignInPage/>);
+    for(const name of ['Investments','City Expenses']){
+      const link=screen.getByRole('link',{name});
+      expect(link).toHaveAttribute('target','_blank');
+      expect(link).toHaveAttribute('rel','noopener noreferrer');
+    }
+  });
   it('sends to the normalized number and verifies against the same destination',async()=>{
     render(<SignInPage/>);
     fireEvent.change(screen.getByLabelText('Mobile number'),{target:{value:'9876543210'}});

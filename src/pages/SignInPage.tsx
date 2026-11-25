@@ -70,9 +70,9 @@ export default function SignInPage({ onDemo, initialError = '' }: { onDemo?: () 
           <nav className="landing-nav" aria-label="On this page">
             <a className="landing-nav-home" href="/"><Home size={18} aria-hidden="true" />Home</a>
             <a href="/calculators" target="_blank" rel="noopener noreferrer"><Calculator size={18} aria-hidden="true" />Calculator</a>
-            <a href="/investments"><TrendingUp size={18} aria-hidden="true" />Investments</a>
+            <a href="/investments" target="_blank" rel="noopener noreferrer"><TrendingUp size={18} aria-hidden="true" />Investments</a>
             <a href="/mutual-funds"><ChartNoAxesCombined size={18} aria-hidden="true" />Mutual Funds</a>
-            <a href="/expenses"><MapPin size={18} aria-hidden="true" />City Expenses</a>
+            <a href="/expenses" target="_blank" rel="noopener noreferrer"><MapPin size={18} aria-hidden="true" />City Expenses</a>
           </nav>
           <a className="cf-button cf-primary landing-signin-link" href="#customer-signin">Sign in</a>
         </header>
@@ -89,7 +89,7 @@ export default function SignInPage({ onDemo, initialError = '' }: { onDemo?: () 
         </section>
       </div>
       <div className="landing-showcase">
-            <a className="campaign-feature-card" href="/investments">
+            <a className="campaign-feature-card" href="/investments" target="_blank" rel="noopener noreferrer">
               <img src={investmentOptionsImage} alt="" loading="lazy" />
               <div className="campaign-feature-copy">
                 <span className="campaign-copy-kicker">INVEST WITH CLARITY</span>
