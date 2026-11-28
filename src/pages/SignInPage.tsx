@@ -1,7 +1,6 @@
 import { useEffect, useState, type FormEvent } from 'react';
-import { ShieldCheck, ArrowRight, TrendingUp } from 'lucide-react';
+import { ShieldCheck, ArrowRight } from 'lucide-react';
 import { authClient } from '@/lib/auth';
-import futureHeroImage from '@/assets/marketing/chanakya-future-hero.webp';
 import investmentOptionsImage from '@/assets/marketing/investment-choices.webp';
 import OriginalLandingSections from '@/components/home/OriginalLandingSections';
 import SiteNavigation from '@/components/SiteNavigation';
@@ -63,29 +62,15 @@ export default function SignInPage({ onDemo, initialError = '' }: { onDemo?: () 
     } catch (error) { sessionStorage.removeItem('chanakya.voiceWelcome'); sessionStorage.removeItem('chanakya.welcomeName'); setMessage(error instanceof Error ? error.message : 'Code verification failed.'); }
     finally { setBusy(false); }
   };
-  return <div className="welcome-shell">
+  return <div className="welcome-shell landing-reference-shell">
     <main>
-      <div className="landing-hero campaign-landing-hero">
-        <header className="welcome-header has-demo unified-header">
-          <div className="landing-brand-stack">
-            <a href="/" className="cf-brand"><span className="cf-logo"><TrendingUp size={22} aria-hidden="true" /></span><span>Chanakya Finance</span></a>
-            <a href="/demo" className="landing-demo-button" onClick={onDemo ? event => { event.preventDefault(); onDemo(); } : undefined}>Interactive demo</a>
-          </div>
-          <SiteNavigation className="landing-nav" activeHref="/" />
-          <a className="cf-button cf-primary landing-signin-link" href="#customer-signin">Sign in</a>
+      <div className="landing-hero campaign-landing-hero landing-reference-hero">
+        <header className="welcome-header unified-header landing-reference-header">
+          <a href="/" className="landing-reference-brand">Chanakya Financial Solutions</a>
+          <SiteNavigation className="landing-nav" activeHref="/" variant="landing" />
         </header>
         <div className="landing-motto" aria-label="ధనం మూలం ఇదం జగత్ | धन ही इस संसार का आधार है। | Money is the foundation that runs this world"><span lang="te">ధనం మూలం ఇదం జగత్</span><span className="motto-divider" aria-hidden="true">|</span><span lang="hi">धन ही इस संसार का आधार है।</span><span className="motto-divider" aria-hidden="true">|</span><span lang="en">Money is the foundation that runs this world</span></div>
-        <LandingGoals onSelect={setSelectedGoalName} />
-        <section className="campaign-hero-content" aria-labelledby="landing-main-title">
-          <img src={futureHeroImage} alt="An illustrated family looking ahead to their home, education and protection goals" />
-          <div className="campaign-hero-copy">
-            <span className="campaign-copy-kicker">YOUR FUTURE STARTS WITH A PLAN</span>
-            <h1 id="landing-main-title">Your money has places to go. <em>Give it a plan.</em></h1>
-            <p>From today’s paycheque to tomorrow’s big moments, see how every decision can move you forward.</p>
-            <div className="landing-hero-actions"><a className="cf-button cf-primary campaign-hero-cta" href="#customer-signin">Start my plan <ArrowRight size={18} aria-hidden="true" /></a><a className="landing-hero-explore" href="/calculators">Explore calculators <ArrowRight size={17} aria-hidden="true" /></a></div>
-          </div>
-          <div className="landing-hero-sparks" aria-label="Plan for your goals"><span>✦ Protect what matters</span><span>✦ Grow with purpose</span><span>✦ Make dreams possible</span></div>
-        </section>
+        <LandingGoals onSelect={setSelectedGoalName} onDemo={onDemo} />
       </div>
       <div className="landing-showcase">
             <a className="campaign-feature-card" href="/investments">

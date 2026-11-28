@@ -15,5 +15,6 @@ import "./site-navigation.css";
 import "./investment-horizon-graphic.css";
 import "./knowledge-goals.css";
 import "./goal-journey.css";
+import "./landing-goal-search.css";
 
 createRoot(document.getElementById("root")!).render(<App />);
