@@ -1,75 +1,42 @@
-import { useEffect, useState, type FormEvent } from 'react';
-import { ShieldCheck, ArrowRight } from 'lucide-react';
+import { useState } from 'react';
+import { ShieldCheck, ArrowRight, TrendingUp } from 'lucide-react';
 import { authClient } from '@/lib/auth';
 import investmentOptionsImage from '@/assets/marketing/investment-choices.webp';
+import investmentHeroImage from '@/assets/marketing/investment-horizons-hero.webp';
 import OriginalLandingSections from '@/components/home/OriginalLandingSections';
 import SiteNavigation from '@/components/SiteNavigation';
 import InvestmentHorizonGraphic from '@/components/home/InvestmentHorizonGraphic';
 import LandingGoals from '@/components/home/LandingGoals';
 
 export default function SignInPage({ onDemo, initialError = '' }: { onDemo?: () => void; initialError?: string }) {
-  const [phone, setPhone] = useState('');
-  const [customerName,setCustomerName]=useState('');
   const [selectedGoalName,setSelectedGoalName]=useState('');
-  const [sentPhone, setSentPhone] = useState('');
-  const [otp, setOtp] = useState('');
   const [busy, setBusy] = useState(false);
   const [message, setMessage] = useState(initialError);
-  const [cooldown, setCooldown] = useState(0);
-  useEffect(() => {
-    if (!cooldown) return;
-    const timer = window.setTimeout(() => setCooldown(cooldown - 1), 1000);
-    return () => window.clearTimeout(timer);
-  }, [cooldown]);
   const requireAuth = () => {
     if (!authClient) throw new Error('Sign-in is not available yet. Please try again once the service is connected.');
     return authClient;
   };
-  const google = async () => {
+  const socialSignIn = async (provider: 'google' | 'azure', providerName: string) => {
     setBusy(true); setMessage('');
     try {
       const client=requireAuth();
       sessionStorage.removeItem('chanakya.welcomeName');
       sessionStorage.setItem('chanakya.voiceWelcome','pending');
-      const { error } = await client.auth.signInWithOAuth({ provider: 'google', options: { redirectTo: window.location.origin + window.location.pathname } });
+      const { error } = await client.auth.signInWithOAuth({ provider, options: { redirectTo: window.location.origin + window.location.pathname, ...(provider === 'azure' ? { scopes: 'email' } : {}) } });
       if (error) throw error;
-    } catch (error) { sessionStorage.removeItem('chanakya.voiceWelcome'); sessionStorage.removeItem('chanakya.welcomeName'); setMessage(error instanceof Error ? error.message : 'Could not start Google sign-in.'); }
-    finally { setBusy(false); }
-  };
-  const sendCode = async (event?: FormEvent) => {
-    event?.preventDefault();
-    if (busy || cooldown) return;
-    const number = sentPhone || '+91' + phone;
-    if (!/^\+91[6-9]\d{9}$/.test(number)) { setMessage('Enter a valid 10-digit Indian mobile number.'); return; }
-    setBusy(true); setMessage('');
-    try {
-      const { error } = await requireAuth().auth.signInWithOtp({ phone: number });
-      if (error) throw error;
-      setSentPhone(number); setOtp(''); setCooldown(60); setMessage('Code sent. Check your SMS messages.');
-    } catch (error) { setMessage(error instanceof Error ? error.message : 'Could not send the code. Please retry.'); }
-    finally { setBusy(false); }
-  };
-  const verify = async (event: FormEvent) => {
-    event.preventDefault(); if (busy) return;
-    setBusy(true); setMessage('');
-    try {
-      const client=requireAuth();
-      sessionStorage.setItem('chanakya.voiceWelcome','pending');
-      sessionStorage.setItem('chanakya.welcomeName',customerName.trim());
-      const { data, error } = await client.auth.verifyOtp({ phone: sentPhone, token: otp, type: 'sms' });
-      if (error) throw error;
-      if (!data.session) throw new Error('Verification did not complete. Please request a new code.');
-    } catch (error) { sessionStorage.removeItem('chanakya.voiceWelcome'); sessionStorage.removeItem('chanakya.welcomeName'); setMessage(error instanceof Error ? error.message : 'Code verification failed.'); }
+    } catch (error) { sessionStorage.removeItem('chanakya.voiceWelcome'); sessionStorage.removeItem('chanakya.welcomeName'); setMessage(error instanceof Error ? error.message : `Could not start ${providerName} sign-in.`); }
     finally { setBusy(false); }
   };
   return <div className="welcome-shell landing-reference-shell">
     <main>
       <div className="landing-hero campaign-landing-hero landing-reference-hero">
         <header className="welcome-header unified-header landing-reference-header">
-          <a href="/" className="landing-reference-brand">Chanakya Financial Solutions</a>
-          <SiteNavigation className="landing-nav" activeHref="/" variant="landing" />
+          <a href="/" className="cf-brand"><span className="cf-logo"><TrendingUp size={22} aria-hidden="true" /></span>Chanakya Finance</a>
+          <SiteNavigation activeHref="/" />
         </header>
+        <img className="landing-reference-hero-art" src={investmentHeroImage} alt="" aria-hidden="true" />
         <div className="landing-motto" aria-label="ధనం మూలం ఇదం జగత్ | धन ही इस संसार का आधार है। | Money is the foundation that runs this world"><span lang="te">ధనం మూలం ఇదం జగత్</span><span className="motto-divider" aria-hidden="true">|</span><span lang="hi">धन ही इस संसार का आधार है।</span><span className="motto-divider" aria-hidden="true">|</span><span lang="en">Money is the foundation that runs this world</span></div>
+        <div className="landing-goal-intro"><span>CHANAKYA FINANCE SOLUTIONS · BUILT FOR INDIA</span><h1>Your salary, <em>smartly invested.</em></h1><p>Choose a goal to get a clear path from today’s income to the future you’re building.</p></div>
         <LandingGoals onSelect={setSelectedGoalName} onDemo={onDemo} />
       </div>
       <div className="landing-showcase">
@@ -82,9 +49,7 @@ export default function SignInPage({ onDemo, initialError = '' }: { onDemo?: () 
               </div>
               <span>Explore investments <ArrowRight size={17} aria-hidden="true" /></span>
             </a>
-    <section className="signin-card" id="customer-signin" tabIndex={-1}><div className="cf-eyebrow">YOUR ACCOUNT</div><h2>Sign in to Chanakya</h2><p>{selectedGoalName ? `Planning for ${selectedGoalName.toLowerCase()}. Sign in to continue.` : 'Sign in to start your personal money plan.'}</p><button className="cf-button google-button" disabled={busy} onClick={google}><span className="google-letter">G</span>Continue with Google</button><div className="signin-divider">or use your mobile number</div>
-    {!sentPhone ? <form onSubmit={sendCode}><label htmlFor="customer-name">Your first name (optional)</label><input id="customer-name" className="cf-input" autoComplete="given-name" maxLength={60} value={customerName} onChange={e=>setCustomerName(e.target.value)} placeholder="How should we greet you?" disabled={busy} style={{marginBottom:16}}/><label htmlFor="mobile">Mobile number</label><div className="mobile-field"><span>🇮🇳 &nbsp; +91</span><input id="mobile" type="tel" inputMode="numeric" autoComplete="tel-national" pattern="[6-9][0-9]{9}" maxLength={10} value={phone} onChange={e => setPhone(e.target.value.replace(/\D/g, ''))} placeholder="Enter 10-digit number" required disabled={busy} /></div><p className="cf-help">We’ll send a one-time code to verify it.</p><button className="cf-button cf-primary" disabled={busy || cooldown > 0}>{busy ? 'Please wait…' : cooldown > 0 ? `Request a code in ${cooldown}s` : 'Get verification code'}</button></form>
-    : <form onSubmit={verify}><label htmlFor="code">Code sent to {sentPhone.slice(0, 3)} ••••••{sentPhone.slice(-4)}</label><input id="code" className="cf-input otp-input" type="text" inputMode="numeric" autoComplete="one-time-code" pattern="[0-9]{6}" maxLength={6} value={otp} onChange={e => setOtp(e.target.value.replace(/\D/g, ''))} required autoFocus /><button className="cf-button cf-primary" disabled={busy}>{busy ? 'Verifying…' : 'Verify and continue'}</button><div className="signin-links"><button type="button" disabled={busy} onClick={() => { setSentPhone(''); setOtp(''); setMessage(''); }}>Change number</button><button type="button" disabled={busy || cooldown > 0} onClick={() => sendCode()}>{cooldown ? `Resend in ${cooldown}s` : 'Resend code'}</button></div></form>}
+    <section className="signin-card" id="customer-signin" tabIndex={-1}><div className="cf-eyebrow">YOUR ACCOUNT</div><h2>Sign in to Chanakya</h2><p>{selectedGoalName ? `Planning for ${selectedGoalName.toLowerCase()}. Sign in to continue.` : 'Sign in to start your personal money plan.'}</p><div className="signin-social-options"><button className="cf-button google-button" disabled={busy} onClick={() => socialSignIn('google', 'Google')}><span className="google-letter">G</span>Continue with Google</button><button className="cf-button google-button microsoft-button" disabled={busy} onClick={() => socialSignIn('azure', 'Microsoft')}><span className="microsoft-logo" aria-hidden="true"><i/><i/><i/><i/></span>Continue with Microsoft</button></div>
     {message && <p className="signin-message" role="status">{message}</p>}<div className="signin-privacy"><ShieldCheck size={18} /><p>Your financial details stay yours.<small>We never ask for your bank password or payment PIN.</small></p></div></section>
       </div>
       <InvestmentHorizonGraphic />
@@ -107,3 +72,4 @@ export default function SignInPage({ onDemo, initialError = '' }: { onDemo?: () 
     </main><footer className="cf-footer"><span>© {new Date().getFullYear()} Chanakya Finance Solutions</span><span>Clarity today. Confidence tomorrow.</span></footer>
   </div>;
 }
+
