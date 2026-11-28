@@ -1,5 +1,4 @@
-import { Link } from 'react-router-dom';
-import { LogOut, TrendingUp } from 'lucide-react';
+import { LogOut, UserRound } from 'lucide-react';
 import { useState } from 'react';
 import { useAuth } from '@/components/auth/AuthProvider';
 import SiteNavigation from './SiteNavigation';
@@ -15,11 +14,8 @@ export default function Navbar() {
   };
 
   return <>
-    <header className="app-header site-header unified-header">
-      <Link to="/" className="cf-brand"><span className="cf-logo"><TrendingUp size={22} aria-hidden="true" /></span><span>Chanakya Finance</span></Link>
-      <SiteNavigation />
-      <div className="account-actions">{demo && <span className="cf-badge">Demo</span>}<button aria-label="Sign out" onClick={logout} disabled={busy}><LogOut size={18} /></button></div>
-    </header>
+    <SiteNavigation footer={<div className="sidebar-account"><span className="sidebar-avatar"><UserRound size={17} aria-hidden="true" /></span><span className="sidebar-account-name">{demo ? 'Interactive demo' : 'My account'}<small>{demo ? 'Preview mode' : 'Signed in'}</small></span><button type="button" className="sidebar-signout" aria-label="Sign out" onClick={logout} disabled={busy}><LogOut size={17} aria-hidden="true" /></button></div>} />
     {error && <p className="signin-message" role="alert">{error}</p>}
   </>;
 }
+
