@@ -1,6 +1,7 @@
-import { TrendingUp } from 'lucide-react';
+import { LogIn } from 'lucide-react';
 import SiteNavigation from './SiteNavigation';
 
 export default function PublicHeader({ activeHref = '/calculators' }: { activeHref?: string }) {
-  return <header className="public-site-header unified-header"><a className="public-site-brand" href="/"><span><TrendingUp size={22} aria-hidden="true" /></span>Chanakya Finance</a><SiteNavigation activeHref={activeHref} /><a className="public-site-signin" href="/#customer-signin">Sign in</a></header>;
+  return <SiteNavigation activeHref={activeHref} footer={<a className="sidebar-signin" href="/#customer-signin"><LogIn size={17} aria-hidden="true"/><span>Sign in</span></a>} />;
 }
+
