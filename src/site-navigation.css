@@ -1,77 +1,56 @@
-/* One menu design for the landing page, public tools and signed-in pages. */
-.unified-header.public-site-header,.site-header.app-header.unified-header,.welcome-shell .welcome-header.unified-header{box-sizing:border-box;width:100%;max-width:none;min-height:82px;height:auto;margin:0;padding:12px clamp(16px,2vw,30px);display:flex;align-items:center;gap:14px 20px;flex-wrap:wrap;background:#11151d;border-bottom:1px solid #303746;box-shadow:0 7px 22px #0003}
-.unified-header .public-site-brand,.unified-header .cf-brand,.welcome-shell .welcome-header.unified-header .cf-brand{display:inline-flex;align-items:center;gap:11px;flex:none;color:#f5f5f7;font-family:'Segoe UI',Arial,sans-serif!important;font-size:clamp(21px,1.55vw,26px);font-weight:750;letter-spacing:-.035em;text-decoration:none;white-space:nowrap}
-.unified-header .public-site-brand>span,.unified-header .cf-logo,.welcome-shell .welcome-header.unified-header .cf-logo{display:grid;place-items:center;width:42px;height:42px;flex:none;border-radius:12px;background:linear-gradient(135deg,#35b994,#4bcea8);color:#08131a}
-.unified-header .public-site-brand svg,.unified-header .cf-logo svg{width:22px;height:22px}
-.unified-header .unified-site-nav,.site-header .unified-site-nav,.welcome-shell .welcome-header.unified-header .unified-site-nav{display:flex!important;position:static!important;align-items:center;justify-content:center;flex:1 1 auto;min-width:0;max-height:none;gap:5px;margin:0;padding:4px 0;overflow-x:auto;overflow-y:hidden;background:transparent;border:0;box-shadow:none;scrollbar-width:thin;scrollbar-color:#53637a transparent}
-.unified-header .unified-site-nav>a,.site-header .unified-site-nav>a,.welcome-shell .welcome-header.unified-header .unified-site-nav>a{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:8px;flex:none;min-height:42px;padding:9px 12px;border:1px solid transparent;border-radius:11px;background:transparent;color:#b9c5d6;font-family:'Segoe UI',Arial,sans-serif!important;font-size:14px!important;font-weight:600;line-height:1.25;letter-spacing:0;text-decoration:none;white-space:nowrap;opacity:1;transition:background .18s ease,color .18s ease,transform .18s ease,border-color .18s ease}
-.unified-site-nav>a svg{flex:none;width:18px;height:18px;stroke-width:1.8;transition:transform .2s ease}
-.unified-header .unified-site-nav>a:hover{color:#fff;background:#252f40;border-color:#41506a;transform:translateY(-2px)}
-.unified-header .unified-site-nav>a:hover svg{transform:translateY(-2px) scale(1.12)}
-.unified-header .unified-site-nav>a.unified-nav-active,.unified-header .unified-site-nav>a[aria-current=page]{background:#2867c8;border-color:#77a7f2;color:#fff;box-shadow:0 0 0 1px #9bc2ff33,0 5px 15px #0b3c8866}
-.unified-header .unified-site-nav>a.unified-nav-active svg{color:#fff}
-.unified-header .unified-site-nav>a:focus-visible{outline:2px solid #f8c525;outline-offset:2px}
-.unified-header .public-site-signin,.welcome-shell .welcome-header.unified-header .landing-signin-link{flex:none;min-height:42px;padding:10px 18px;border-radius:10px;background:#f8c525;color:#101521;font-family:'Segoe UI',Arial,sans-serif!important;font-size:14px;font-weight:750;white-space:nowrap;text-decoration:none;transition:transform .18s ease,background .18s ease}
-.unified-header .public-site-signin:hover,.welcome-shell .welcome-header.unified-header .landing-signin-link:hover{background:#ffda4d;transform:translateY(-2px)}
-.site-header.app-header.unified-header .account-actions{flex:none;margin-left:0}
-.welcome-shell .welcome-header.unified-header .landing-brand-stack{gap:5px}
-.welcome-shell .welcome-header.unified-header .landing-demo-button{margin-left:53px;font-family:'Segoe UI',Arial,sans-serif!important}
-@media(max-width:1500px){.unified-header.public-site-header,.site-header.app-header.unified-header,.welcome-shell .welcome-header.unified-header{gap:7px 14px}.unified-header .unified-site-nav,.site-header .unified-site-nav,.welcome-shell .welcome-header.unified-header .unified-site-nav{order:3;flex:1 0 100%;justify-content:flex-start;flex-flow:row nowrap;padding:5px 0 3px}.unified-header .public-site-signin,.welcome-shell .welcome-header.unified-header .landing-signin-link,.site-header.app-header.unified-header .account-actions{margin-left:auto}}
-@media(max-width:650px){.unified-header.public-site-header,.site-header.app-header.unified-header,.welcome-shell .welcome-header.unified-header{padding:10px 15px}.unified-header .public-site-brand,.unified-header .cf-brand,.welcome-shell .welcome-header.unified-header .cf-brand{font-size:20px}.unified-header .public-site-brand>span,.unified-header .cf-logo,.welcome-shell .welcome-header.unified-header .cf-logo{width:36px;height:36px}.unified-header .unified-site-nav>a,.site-header .unified-site-nav>a,.welcome-shell .welcome-header.unified-header .unified-site-nav>a{font-size:14px!important;min-height:40px;padding:8px 11px}.welcome-shell .welcome-header.unified-header .landing-demo-button{margin-left:0;font-size:12px}.unified-header .public-site-signin,.welcome-shell .welcome-header.unified-header .landing-signin-link{min-height:36px;padding:7px 11px;font-size:12px}}
-@media(prefers-reduced-motion:no-preference){.unified-site-nav>a{animation:nav-reveal .4s both}.unified-site-nav>a:nth-child(2){animation-delay:.04s}.unified-site-nav>a:nth-child(3){animation-delay:.08s}.unified-site-nav>a:nth-child(4){animation-delay:.12s}.unified-site-nav>a:nth-child(5){animation-delay:.16s}.unified-site-nav>a:nth-child(6){animation-delay:.2s}.unified-site-nav>a:nth-child(7){animation-delay:.24s}@keyframes nav-reveal{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:translateY(0)}}}
-@media(prefers-reduced-motion:reduce){.unified-header .unified-site-nav>a,.unified-site-nav>a svg,.unified-header .public-site-signin,.welcome-shell .welcome-header.unified-header .landing-signin-link{transition:none;animation:none}}
-
-/* Shared app sidebar used by the landing page and every tool window. */
 :root{--chanakya-sidebar-width:240px}
 body{overflow-x:hidden}
-.unified-sidebar{box-sizing:border-box;position:fixed;z-index:100;inset:0 auto 0 0;display:flex;flex-direction:column;width:var(--chanakya-sidebar-width);height:100dvh;padding:12px 12px 10px;background:#11151d;border-right:1px solid #2b3341;color:#e7ebf3;font-family:'Segoe UI',Arial,sans-serif;box-shadow:8px 0 24px #0002}
-.sidebar-brand{display:flex;align-items:center;gap:11px;min-height:62px;padding:6px 7px 15px;color:#f5f5f7;text-decoration:none;font-size:19px;font-weight:750;letter-spacing:-.03em;white-space:nowrap}
-.sidebar-logo{display:grid;place-items:center;flex:none;width:41px;height:41px;border-radius:13px;background:linear-gradient(135deg,#35b994,#4bcea8);color:#08131a}
-.sidebar-brand small{display:block;margin-top:4px;color:#8490a3;font-size:8px;font-weight:700;letter-spacing:.16em}
-.unified-site-nav{display:flex;flex:1;flex-direction:column;gap:23px;min-height:0;margin:5px 0;padding:12px 0;overflow-y:auto;scrollbar-color:#394455 transparent;scrollbar-width:thin}
-.sidebar-nav-group{display:grid;gap:4px}
-.sidebar-nav-heading{margin:0 8px 5px;color:#8792a4;font-size:9px;font-weight:800;letter-spacing:.12em}
-.unified-site-nav>a{display:flex;align-items:center;gap:12px;min-height:37px;padding:8px 10px;border:1px solid transparent;border-radius:7px;background:transparent;color:#aab3c2;font-size:12px;font-weight:600;text-decoration:none;transition:background .16s ease,color .16s ease,border-color .16s ease}
+
+/* Compact shared header with the full menu inside an accessible hamburger drawer. */
+.unified-menu-header{box-sizing:border-box;position:sticky;z-index:50;top:0;display:flex;align-items:center;justify-content:space-between;gap:18px;width:100%;min-height:72px;padding:10px clamp(16px,3vw,34px);border-bottom:1px solid #303746;background:#11151d;box-shadow:0 7px 22px #0003}
+.sidebar-brand{display:inline-flex;align-items:center;gap:11px;min-width:0;color:#f5f5f7;text-decoration:none;font-family:'Segoe UI',Arial,sans-serif;font-size:clamp(19px,1.6vw,25px);font-weight:750;letter-spacing:-.035em;white-space:nowrap}
+.sidebar-brand small{display:block;margin-top:3px;color:#91a0b2;font-size:8px;font-weight:700;letter-spacing:.17em}
+.sidebar-logo{display:grid;place-items:center;flex:none;width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,#35b994,#4bcea8);color:#08131a}
+.menu-trigger{display:inline-flex;align-items:center;justify-content:center;gap:8px;flex:none;min-width:48px;min-height:46px;padding:0 13px;border:1px solid #394557;border-radius:10px;background:#1b2432;color:#edf2fa;font:700 13px 'Segoe UI',Arial,sans-serif;cursor:pointer;transition:background .16s,border-color .16s,color .16s}
+.menu-trigger:hover,.menu-trigger[aria-expanded=true]{border-color:#6482aa;background:#253247;color:#fff}
+.menu-trigger:focus-visible,.drawer-close:focus-visible,.unified-site-nav a:focus-visible,.sidebar-signin:focus-visible,.sidebar-signout:focus-visible{outline:2px solid #f8c525;outline-offset:3px}
+.menu-backdrop{position:fixed;z-index:120;inset:0;width:100%;height:100%;border:0;background:#030711a8;backdrop-filter:blur(2px);cursor:pointer;animation:menu-fade .18s ease both}
+.unified-sidebar{box-sizing:border-box;position:fixed;z-index:121;inset:0 auto 0 0;display:flex;flex-direction:column;width:min(340px,88vw);height:100dvh;padding:18px 15px 13px;border-right:1px solid #303a4a;background:#111722;color:#e7ebf3;font-family:'Segoe UI',Arial,sans-serif;box-shadow:18px 0 50px #0008;animation:menu-slide .2s ease both}
+.drawer-heading{display:flex;align-items:center;justify-content:space-between;min-height:44px;padding:0 5px 11px;border-bottom:1px solid #303746;color:#9ba7b8;font-size:10px;font-weight:800;letter-spacing:.15em}
+.drawer-close{display:grid;place-items:center;width:38px;height:38px;border:0;border-radius:9px;background:#202938;color:#d6deea;cursor:pointer}
+.drawer-close:hover{background:#303b4d;color:#fff}
+.unified-site-nav{display:flex;flex:1;flex-direction:column;gap:24px;min-height:0;margin:10px 0;padding:9px 0;overflow-y:auto;scrollbar-color:#394455 transparent;scrollbar-width:thin}
+.sidebar-nav-group{display:grid;gap:5px}
+.sidebar-nav-heading{margin:0 9px 5px;color:#8792a4;font-size:10px;font-weight:800;letter-spacing:.12em}
+.unified-site-nav>a{display:flex;align-items:center;gap:12px;min-height:43px;padding:9px 11px;border:1px solid transparent;border-radius:8px;background:transparent;color:#abb5c4;font:600 14px 'Segoe UI',Arial,sans-serif;text-decoration:none;transition:background .16s ease,color .16s ease,border-color .16s ease}
 .unified-site-nav>a svg{flex:none;color:#aab3c2}
-.unified-site-nav>a:hover{background:#232b39;color:#f5f6fa}
+.unified-site-nav>a:hover{background:#232d3d;color:#f5f6fa}
 .unified-site-nav>a:hover svg{color:#f5f6fa}
 .unified-site-nav>a.unified-nav-active,.unified-site-nav>a[aria-current=page]{background:#2867c8;border-color:#4b83d7;color:#fff;box-shadow:0 4px 12px #071e4b66}
 .unified-site-nav>a.unified-nav-active svg,.unified-site-nav>a[aria-current=page] svg{color:#fff}
-.sidebar-footer{flex:none;padding:12px 0 0;border-top:1px solid #303746}
-.sidebar-signin{display:flex;align-items:center;justify-content:center;gap:9px;min-height:39px;padding:8px 10px;border:1px solid #354052;border-radius:8px;background:#202938;color:#edf2fa;font-size:12px;font-weight:700;text-decoration:none;transition:background .16s ease,border-color .16s ease}
+.sidebar-footer{flex:none;padding:13px 0 0;border-top:1px solid #303746}
+.sidebar-signin{display:flex;align-items:center;justify-content:center;gap:9px;min-height:43px;padding:9px 10px;border:1px solid #354052;border-radius:9px;background:#202938;color:#edf2fa;font:700 13px 'Segoe UI',Arial,sans-serif;text-decoration:none;transition:background .16s ease,border-color .16s ease}
 .sidebar-signin:hover{background:#2c3749;border-color:#56657b}
 .sidebar-account{display:flex;align-items:center;gap:9px;min-width:0;padding:3px 2px}
-.sidebar-avatar{display:grid;place-items:center;flex:none;width:34px;height:34px;border-radius:50%;background:#25374a;color:#62cdb0}
-.sidebar-account-name{display:grid;gap:3px;min-width:0;flex:1;color:#edf2fa;font-size:11px;font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.sidebar-account-name small{color:#8f9aad;font-size:10px;font-weight:500}
-.sidebar-signout{display:grid;place-items:center;flex:none;width:30px;height:30px;border:0;border-radius:7px;background:transparent;color:#aab3c2;cursor:pointer}
+.sidebar-avatar{display:grid;place-items:center;flex:none;width:36px;height:36px;border-radius:50%;background:#25374a;color:#62cdb0}
+.sidebar-account-name{display:grid;gap:3px;min-width:0;flex:1;color:#edf2fa;font-size:12px;font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.sidebar-account-name small{color:#8f9aad;font-size:11px;font-weight:500}
+.sidebar-signout{display:grid;place-items:center;flex:none;width:36px;height:36px;border:0;border-radius:8px;background:transparent;color:#aab3c2;cursor:pointer}
 .sidebar-signout:hover{background:#293445;color:#fff}
 .sidebar-signout:disabled{opacity:.5;cursor:wait}
-.overview-page,.planner-page,.term-insurance-page,.city-guide-page,.investment-directory,.knowledge-page,.calc-page,.sip-page{box-sizing:border-box;width:calc(100% - var(--chanakya-sidebar-width));max-width:1400px;margin-left:calc(var(--chanakya-sidebar-width) + max(0px,(100% - var(--chanakya-sidebar-width) - 1400px)/2));margin-right:0}
-.welcome-shell.landing-reference-shell{box-sizing:border-box;width:calc(100% - var(--chanakya-sidebar-width));margin-left:var(--chanakya-sidebar-width)}
+
+/* Public pages and signed-in views use the full content width below the header. */
+.overview-page,.planner-page,.term-insurance-page,.city-guide-page,.investment-directory,.knowledge-page,.calc-page,.sip-page{box-sizing:border-box;width:100%;max-width:1420px;margin:0 auto}
+.welcome-shell.landing-reference-shell{box-sizing:border-box;width:100%;margin:0}
 .welcome-shell.landing-reference-shell>main{min-width:0}
-.welcome-shell.landing-reference-shell>.cf-footer{margin-left:0}
 .directory-hero{padding-left:clamp(24px,4vw,70px);padding-right:clamp(24px,4vw,70px)}
-@media(max-width:760px){
-  :root{--chanakya-sidebar-width:0px}
-  .unified-sidebar{position:sticky;inset:0 0 auto;width:100%;height:auto;max-height:190px;padding:7px 12px 8px;border-right:0;border-bottom:1px solid #2b3341;box-shadow:0 7px 18px #0004}
-  .sidebar-brand{min-height:42px;padding:0 3px 6px;font-size:16px}
-  .sidebar-logo{width:32px;height:32px;border-radius:10px}
-  .sidebar-logo svg{width:18px;height:18px}
-  .sidebar-brand small{display:none}
-  .unified-site-nav{flex:none;flex-direction:row;gap:11px;margin:0;padding:3px 0 5px;overflow-x:auto;overflow-y:hidden}
-  .sidebar-nav-group{display:flex;flex:none;align-items:center;gap:4px}
-  .sidebar-nav-heading{display:none}
-  .unified-site-nav>a{gap:7px;min-height:34px;padding:7px 9px;font-size:11px;white-space:nowrap}
-  .unified-site-nav>a svg{width:16px;height:16px}
-  .sidebar-footer{padding:6px 0 0}
-  .sidebar-signin{min-height:32px;padding:5px 8px}
-  .sidebar-account{padding:0}
-  .sidebar-avatar{width:27px;height:27px}
-  .sidebar-signout{width:28px;height:28px}
-  .overview-page,.planner-page,.term-insurance-page,.city-guide-page,.investment-directory,.knowledge-page,.calc-page,.sip-page{width:100%;max-width:none;margin:0}
-  .welcome-shell.landing-reference-shell{width:100%;margin:0}
-  .directory-hero{padding-left:24px;padding-right:24px}
+
+@keyframes menu-slide{from{opacity:.85;transform:translateX(-20px)}to{opacity:1;transform:translateX(0)}}
+@keyframes menu-fade{from{opacity:0}to{opacity:1}}
+@media(max-width:600px){
+  .unified-menu-header{min-height:64px;padding:8px 13px;gap:10px}
+  .sidebar-brand{gap:9px;font-size:18px}
+  .sidebar-brand small{font-size:7px;letter-spacing:.14em}
+  .sidebar-logo{width:38px;height:38px;border-radius:11px}
+  .menu-trigger{min-width:48px;min-height:44px;padding:0 10px}
+  .unified-sidebar{width:min(340px,88vw);padding:13px 13px 12px}
+  .unified-site-nav>a{min-height:46px;font-size:15px}
+  .sidebar-signin{min-height:46px;font-size:14px}
 }
-@media(prefers-reduced-motion:reduce){.unified-site-nav>a,.sidebar-signin,.sidebar-signout{transition:none}}
+@media(prefers-reduced-motion:reduce){.menu-trigger,.unified-site-nav>a,.sidebar-signin,.sidebar-signout{transition:none}.menu-backdrop,.unified-sidebar{animation:none}}
 
