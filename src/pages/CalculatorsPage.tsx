@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import type { ReactNode } from 'react';
-import { Landmark, TrendingUp, PiggyBank, ChartNoAxesCombined } from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
+import { Activity, Bike, Calculator, Car, ChartNoAxesCombined, HeartPulse, Landmark, PiggyBank, Plane, ShieldCheck, TrendingUp } from 'lucide-react';
 import LandingInvestmentCalculator from '@/components/home/LandingInvestmentCalculator';
 import PublicHeader from '@/components/PublicHeader';
 import SipCalculatorPage from './SipCalculatorPage';
@@ -8,11 +9,22 @@ import { calculateFd, calculateNps } from '@/lib/standaloneCalculators';
 import './calculators.css';
 
 const money = (value: number) => new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 }).format(value);
-const tools = [
-  { href: '/fd-calculator', icon: Landmark, title: 'FD calculator', description: 'Estimate a fixed deposit’s maturity value and interest.' },
-  { href: '/sip-calculator', icon: TrendingUp, title: 'SIP calculator', description: 'Project monthly investing and see year-by-year growth.' },
-  { href: '/nps-calculator', icon: PiggyBank, title: 'NPS calculator', description: 'Explore a retirement corpus and illustrative pension.' },
-  { href: '/investment-calculator', icon: ChartNoAxesCombined, title: 'Investment growth', description: 'Compare monthly or annual contributions over time.' },
+type CalculatorTool = { id: string; href?: string; group?: string; icon: LucideIcon; title: string; description: string };
+const tools: CalculatorTool[] = [
+  { id: 'fd', href: '/fd-calculator', group: 'Investment Calculators', icon: Landmark, title: 'FD calculator', description: 'Estimate a fixed deposit’s maturity value and interest.' },
+  { id: 'sip', href: '/sip-calculator', group: 'Investment Calculators', icon: TrendingUp, title: 'SIP calculator', description: 'Project monthly investing and see year-by-year growth.' },
+  { id: 'nps', href: '/nps-calculator', group: 'Investment Calculators', icon: PiggyBank, title: 'NPS calculator', description: 'Explore a retirement corpus and illustrative pension.' },
+  { id: 'investment', href: '/investment-calculator', group: 'Investment Calculators', icon: ChartNoAxesCombined, title: 'Investment growth', description: 'Compare monthly or annual contributions over time.' },
+  { id: 'bmi', group: 'Fitness Calculators', icon: Activity, title: 'BMI calculator', description: 'Estimate body mass index from height and weight.' },
+  { id: 'tax', icon: Calculator, title: 'Income Tax Calculator', description: 'Estimate tax using your own effective tax rate and deductions.' },
+  { id: 'term', icon: ShieldCheck, title: 'Term Insurance Calculator', description: 'Estimate a life-cover gap and an assumption-based monthly budget.' },
+  { id: 'emi', icon: Calculator, title: 'EMI Calculator', description: 'Estimate monthly loan payments and total interest.' },
+  { id: 'lic', icon: ShieldCheck, title: 'LIC Calculator', description: 'Estimate premiums from a rate you enter; not an LIC quote.' },
+  { id: 'life', icon: ShieldCheck, title: 'Life Insurance Calculator', description: 'Estimate an annual premium from cover and a rate assumption.' },
+  { id: 'health', icon: HeartPulse, title: 'Health Insurance Calculator', description: 'Estimate a premium using your own per-person rate.' },
+  { id: 'travel', icon: Plane, title: 'Travel Insurance Calculator', description: 'Build a trip premium estimate from days and people.' },
+  { id: 'car', icon: Car, title: 'Car Insurance Calculator', description: 'Estimate a basic premium from vehicle value and rate.' },
+  { id: 'bike', icon: Bike, title: 'Bike Insurance Calculator', description: 'Estimate a basic premium from vehicle value and rate.' },
 ];
 
 function Shell({ title, eyebrow, description, children, embedded = false }: { title: string; eyebrow: string; description: string; children: ReactNode; embedded?: boolean }) {
@@ -22,8 +34,50 @@ function Shell({ title, eyebrow, description, children, embedded = false }: { ti
 
 export default function CalculatorsPage() {
   const [selected, setSelected] = useState('nps');
-  const active = tools.find(tool => tool.href === `/${selected}-calculator`) ?? tools[2];
-  return <Shell eyebrow="PLAN WITH THE NUMBERS" title="Financial calculators" description="Select a tool on the left and explore your numbers on the right."><div className="calc-selector-layout"><nav className="calc-selector" aria-label="Choose a calculator">{tools.map(({ href, icon: Icon, title }) => { const id = href.replace(/^\//, '').replace('-calculator', ''); return <button type="button" key={href} aria-pressed={selected === id} onClick={() => setSelected(id)}><Icon size={18} strokeWidth={1.8}/><span>{title}</span></button>; })}</nav><section className="calc-preview" aria-live="polite"><div className="calc-preview-heading"><span>SELECTED CALCULATOR</span><h2>{active.title}</h2><p>{active.description}</p></div>{selected === 'fd' ? <FdCalculatorPage embedded /> : selected === 'sip' ? <SipCalculatorPage embedded /> : selected === 'nps' ? <NpsCalculatorPage embedded /> : <InvestmentCalculatorPage embedded />}</section></div><p className="calc-note">All returns and rates are editable illustrations. Actual product terms, charges, taxes, and returns can differ.</p></Shell>;
+  const active = tools.find(tool => tool.id === selected) ?? tools[2];
+  const investmentTools = tools.filter(tool => tool.group === 'Investment Calculators');
+  const fitnessTools = tools.filter(tool => tool.group === 'Fitness Calculators');
+  const otherTools = tools.filter(tool => !tool.group);
+  const renderTool = ({ id, icon: Icon, title }: CalculatorTool) => <button type="button" key={id} aria-pressed={selected === id} onClick={() => setSelected(id)}><Icon size={18} strokeWidth={1.8}/><span>{title}</span></button>;
+  return <Shell eyebrow="PLAN WITH THE NUMBERS" title="Financial calculators" description="Choose a calculator and explore your numbers in this window."><div className="calc-selector-layout"><nav className="calc-selector" aria-label="Choose a calculator"><details className="calc-selector-group" open><summary><ChartNoAxesCombined size={18}/><span>Investment Calculators</span></summary>{investmentTools.map(renderTool)}</details><details className="calc-selector-group" open><summary><Activity size={18}/><span>Fitness Calculators</span></summary>{fitnessTools.map(renderTool)}</details><div className="calc-selector-standalone">{otherTools.map(renderTool)}</div></nav><section className="calc-preview" aria-live="polite"><div className="calc-preview-heading"><span>SELECTED CALCULATOR</span><h2>{active.title}</h2><p>{active.description}</p></div>{selected === 'fd' ? <FdCalculatorPage embedded /> : selected === 'sip' ? <SipCalculatorPage embedded /> : selected === 'nps' ? <NpsCalculatorPage embedded /> : selected === 'investment' ? <InvestmentCalculatorPage embedded /> : <UtilityCalculator key={selected} id={selected} />}</section></div><p className="calc-note">Calculations are estimates based on the values and assumptions you enter. Insurance results are not insurer quotes; confirm current product terms and rates with the provider.</p></Shell>;
+}
+
+type UtilityId = 'bmi' | 'tax' | 'term' | 'emi' | 'lic' | 'life' | 'health' | 'travel' | 'car' | 'bike';
+type FieldSpec = { key: string; label: string; initial: number; step?: number; min?: number };
+const utilityFields: Record<UtilityId, FieldSpec[]> = {
+  bmi: [{ key: 'weight', label: 'Weight (kg)', initial: 68, step: 0.1 }, { key: 'height', label: 'Height (cm)', initial: 170, step: 0.1 }],
+  tax: [{ key: 'income', label: 'Annual income (₹)', initial: 1200000, step: 10000 }, { key: 'deductions', label: 'Deductions to include (₹)', initial: 0, step: 10000 }, { key: 'rate', label: 'Estimated effective tax rate (%)', initial: 10, step: 0.5 }],
+  term: [{ key: 'income', label: 'Annual income (₹)', initial: 1200000, step: 10000 }, { key: 'existing', label: 'Existing life cover (₹)', initial: 0, step: 100000 }, { key: 'rate', label: 'Assumed monthly cost per ₹1 lakh cover (₹)', initial: 8, step: 1 }],
+  emi: [{ key: 'principal', label: 'Loan amount (₹)', initial: 2500000, step: 50000 }, { key: 'rate', label: 'Annual interest rate (%)', initial: 9, step: 0.1 }, { key: 'years', label: 'Loan term (years)', initial: 20, step: 1 }],
+  lic: [{ key: 'cover', label: 'Sum assured (₹)', initial: 1000000, step: 100000 }, { key: 'rate', label: 'Assumed annual premium per ₹1,000 cover (₹)', initial: 50, step: 1 }, { key: 'years', label: 'Premium-paying years', initial: 20, step: 1 }],
+  life: [{ key: 'cover', label: 'Life cover (₹)', initial: 5000000, step: 100000 }, { key: 'rate', label: 'Assumed annual premium per ₹1 lakh cover (₹)', initial: 600, step: 25 }],
+  health: [{ key: 'cover', label: 'Health cover per person (₹)', initial: 1000000, step: 100000 }, { key: 'people', label: 'People covered', initial: 2, step: 1, min: 1 }, { key: 'rate', label: 'Assumed annual premium per person (₹)', initial: 4000, step: 250 }],
+  travel: [{ key: 'days', label: 'Trip length (days)', initial: 10, step: 1, min: 1 }, { key: 'people', label: 'Travellers', initial: 1, step: 1, min: 1 }, { key: 'rate', label: 'Assumed premium per person per day (₹)', initial: 80, step: 5 }],
+  car: [{ key: 'value', label: 'Vehicle value / IDV (₹)', initial: 800000, step: 10000 }, { key: 'rate', label: 'Assumed basic annual rate (%)', initial: 2.5, step: 0.1 }],
+  bike: [{ key: 'value', label: 'Vehicle value / IDV (₹)', initial: 100000, step: 5000 }, { key: 'rate', label: 'Assumed basic annual rate (%)', initial: 2, step: 0.1 }],
+};
+
+function UtilityCalculator({ id }: { id: string }) {
+  const calculatorId = id as UtilityId;
+  const fields = utilityFields[calculatorId];
+  const [values, setValues] = useState<Record<string, number>>(() => Object.fromEntries(fields.map(field => [field.key, field.initial])));
+  const value = (key: string) => values[key] ?? 0;
+  const setValue = (key: string, next: number) => setValues(current => ({ ...current, [key]: Math.max(0, next || 0) }));
+  let resultLabel = 'Estimated amount';
+  let result = 0;
+  let details: { label: string; amount: string | number }[] = [];
+  let note = 'Illustration only. Actual product pricing, eligibility, fees and taxes may differ.';
+  if (calculatorId === 'bmi') { resultLabel = 'Body mass index'; result = value('weight') / Math.max((value('height') / 100) ** 2, 0.01); const category = result < 18.5 ? 'Below the commonly used adult range' : result < 25 ? 'Within the commonly used adult range' : result < 30 ? 'Above the commonly used adult range' : 'High range'; details = [{ label: 'Category estimate', amount: category }]; note = 'BMI is a general screening measure, not a diagnosis. It may not fit every person or age group.'; }
+  if (calculatorId === 'tax') { const taxable = Math.max(0, value('income') - value('deductions')); resultLabel = 'Estimated annual tax'; result = taxable * value('rate') / 100; details = [{ label: 'Income after entered deductions', amount: taxable }, { label: 'Estimated monthly take-home after this tax', amount: (value('income') - result) / 12 }]; note = 'Uses only the effective tax rate you enter. It does not apply tax slabs, rebates, cess or current tax rules.'; }
+  if (calculatorId === 'term') { const coverGap = Math.max(0, value('income') * 10 - value('existing')); resultLabel = 'Illustrative cover gap'; result = coverGap; details = [{ label: 'Simple income-based cover target (10× income)', amount: value('income') * 10 }, { label: 'Assumed monthly premium budget', amount: coverGap / 100000 * value('rate') }]; note = 'The 10× income figure is a rough starting illustration, not a personal recommendation. Premium uses your own editable rate and is not an insurer quote.'; }
+  if (calculatorId === 'emi') { const months = Math.max(1, value('years') * 12); const monthlyRate = value('rate') / 1200; resultLabel = 'Estimated monthly EMI'; result = monthlyRate ? value('principal') * monthlyRate * (1 + monthlyRate) ** months / ((1 + monthlyRate) ** months - 1) : value('principal') / months; details = [{ label: 'Total repayment', amount: result * months }, { label: 'Total interest', amount: result * months - value('principal') }]; note = 'Estimate excludes fees, insurance, rate changes and lender-specific repayment rules.'; }
+  if (calculatorId === 'lic') { resultLabel = 'Illustrative annual premium'; result = value('cover') / 1000 * value('rate'); details = [{ label: 'Total paid over entered premium years', amount: result * value('years') }, { label: 'Sum assured entered', amount: value('cover') }]; note = 'Uses only your entered premium rate. LIC premiums vary by plan, age, term, riders and underwriting; this is not an LIC quote.'; }
+  if (calculatorId === 'life') { resultLabel = 'Illustrative annual premium'; result = value('cover') / 100000 * value('rate'); details = [{ label: 'Life cover entered', amount: value('cover') }, { label: 'Illustrative monthly equivalent', amount: result / 12 }]; note = 'Assumption-based estimate only. Real premiums depend on age, health, tobacco use, term, riders and insurer underwriting.'; }
+  if (calculatorId === 'health') { resultLabel = 'Illustrative annual premium'; result = value('people') * value('rate'); details = [{ label: 'People covered', amount: value('people') }, { label: 'Cover per person entered', amount: value('cover') }]; note = 'Uses your entered per-person rate; actual family-floater and individual policy prices differ by age, city, cover and insurer.'; }
+  if (calculatorId === 'travel') { resultLabel = 'Illustrative trip premium'; result = value('days') * value('people') * value('rate'); details = [{ label: 'Trip length', amount: value('days') }, { label: 'Travellers', amount: value('people') }]; note = 'Uses your entered daily rate only. Actual cover, destination, age, activities and insurer terms change the premium.'; }
+  if (calculatorId === 'car' || calculatorId === 'bike') { resultLabel = 'Illustrative annual base premium'; result = value('value') * value('rate') / 100; details = [{ label: 'Vehicle value / IDV entered', amount: value('value') }, { label: 'Rate assumption', amount: `${value('rate')}%` }]; note = 'Basic estimate only; it excludes taxes, add-ons, discounts, vehicle details, location and insurer pricing. Not a quote.'; }
+  const isCategory = calculatorId === 'bmi';
+  return <div className="calc-workspace"><section className="calc-form"><h2>Enter your assumptions</h2>{fields.map(field => <label key={field.key}>{field.label}<input type="number" min={field.min ?? 0} step={field.step ?? 1} value={value(field.key)} onChange={event => setValue(field.key, Number(event.target.value))}/></label>)}</section><section className="calc-results" aria-live="polite"><span>{resultLabel}</span><strong>{isCategory ? result.toFixed(1) : money(result)}</strong>{details.map(({ label, amount }) => <div className="calc-result-row" key={label}><span>{label}</span><b>{typeof amount === 'number' ? money(amount) : amount}</b></div>)}<p>{note}</p></section></div>;
 }
 
 export function FdCalculatorPage({ embedded = false }: { embedded?: boolean }) {
