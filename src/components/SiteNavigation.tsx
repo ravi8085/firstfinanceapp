@@ -41,7 +41,7 @@ export default function SiteNavigation({ activeHref, className = '', footer }: {
 
   return <>
     <header className={`unified-menu-header ${className}`}>
-      <a href="/" className="sidebar-brand"><span className="sidebar-logo"><TrendingUp size={21} aria-hidden="true" /></span><span>Chanakya Finance<small>FINANCE, SIMPLIFIED</small></span></a>
+      <a href="/" className="sidebar-brand"><span className="sidebar-logo"><TrendingUp size={21} aria-hidden="true" /></span><span>Chanakya Financial Solutions<small>FINANCE, SIMPLIFIED</small></span></a>
       <button type="button" className="menu-trigger" aria-label={open ? 'Close navigation menu' : 'Open navigation menu'} aria-expanded={open} aria-controls="chanakya-menu-drawer" onClick={() => setOpen(value => !value)}>{open ? <X size={22} /> : <Menu size={22} />}<span>Menu</span></button>
     </header>
     {open && <>

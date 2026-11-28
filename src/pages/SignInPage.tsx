@@ -33,7 +33,7 @@ export default function SignInPage({ onDemo, initialError = '' }: { onDemo?: () 
       <div className="landing-hero campaign-landing-hero landing-reference-hero">
         <img className="landing-reference-hero-art" src={investmentHeroImage} alt="" aria-hidden="true" />
         <div className="landing-motto" aria-label="ధనం మూలం ఇదం జగత్ | धन ही इस संसार का आधार है। | Money is the foundation that runs this world"><span lang="te">ధనం మూలం ఇదం జగత్</span><span className="motto-divider" aria-hidden="true">|</span><span lang="hi">धन ही इस संसार का आधार है।</span><span className="motto-divider" aria-hidden="true">|</span><span lang="en">Money is the foundation that runs this world</span></div>
-        <div className="landing-goal-intro"><span>CHANAKYA FINANCE SOLUTIONS · BUILT FOR INDIA</span><h1>Your salary, <em>smartly invested.</em></h1><p>Choose a goal to get a clear path from today’s income to the future you’re building.</p></div>
+        <div className="landing-goal-intro"><span>CHANAKYA FINANCIAL SOLUTIONS · BUILT FOR INDIA</span><h1>Your salary, <em>smartly invested.</em></h1><p>Choose a goal to get a clear path from today’s income to the future you’re building.</p></div>
         <LandingGoals onSelect={setSelectedGoalName} onDemo={onDemo} />
       </div>
       <div className="landing-showcase">
